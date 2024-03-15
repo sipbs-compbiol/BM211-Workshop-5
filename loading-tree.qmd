@@ -12,9 +12,6 @@ filters:
 
 # Download tree data
 download.file('https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk', 'tree_newick.nwk')
-
-library(ggplot2)
-library(tidyverse)
 ```
 
 ## Introduction
