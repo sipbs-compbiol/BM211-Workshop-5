@@ -1,9 +1,32 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+## Working with phylogenetic trees
 
-See @knuth84 for additional discussion of literate programming.
+When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in one of a number of file formats, such as:
 
-```{r}
-1 + 1
+- [`newick`](https://en.wikipedia.org/wiki/Newick_format)
+- [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file)
+- [`phylip`](https://en.wikipedia.org/wiki/PHYLIP)
+
+These files can be cryptic to read, as a human. For example, the first `newick` format file we will work with has these contents:
+
+```text
+(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);
 ```
+
+It is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.
+
+![A genAI representation of "phylogenetic tree as a real tree."](assets/images/bing_tree.jpg){#fig-bing-tree width=80%}
+
+### Why we are using `R` 
+
+A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:
+
+- [`figtree`]() _this is the one I use most often - LP_
+- [`dendroscope`]()
+
+but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.
+
+In this workshop we will be using `R` with the `ggtree` package to visualise and interpret trees. The `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
+
+

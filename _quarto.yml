@@ -24,7 +24,7 @@ book:
   
   chapters:
     - index.qmd
-#    - intro.qmd
+    - intro.qmd
 #    - part: part-01_16s.qmd
 #      chapters:
 #        - exercise-01_16s.qmd

@@ -1,9 +1,36 @@
-# Preface {.unnumbered}
+# Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees {.unnumbered}
 
-This is a Quarto book.
+Welcome to the BM211 (Introduction to Microbiology) workshop on phylogenetic trees, for {{< var ay >}}.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This year is the first presentation of the workshop material in this format, and we would be very grateful to hear feedback [by email](mailto:{{< var admin.email >}}) or through the [GitHub repository Issues page]({{< var github.issues >}}).
 
-```{r}
-1 + 1
-```
+## Overview
+
+This workshop asks you to work through some computational exercises to gain some practice visualising and working with phylogenetic trees.
+
+::: { .callout-note }
+Phylogenetic trees are typically constructed _after_ sequence alignment has been performed. You learned about the fundamentals of (pairwise) sequence alignment in BM214 Workshop 2 -  [slides](https://classes.myplace.strath.ac.uk/mod/resource/view.php?id=1956504), [workshop](https://sipbs-compbiol.github.io/BM214-Workshop-2/). You may find it useful to refresh your memory about pairwise alignment.
+:::
+
+::: { .callout-tip }
+We also provide an ["`R` playground"](playground.qmd) if you would like to get further practice interacting with and plotting data in `R`.
+:::
+
+::: { .callout-warning title="Important Note" }
+There is new material in this workshop that is not covered in lectures, and this material is examinable. Please take care to reach the text in the expandable callout boxes, as well as that for the workshop activities, to be sure you have understood the topic and obtain full value from the exercises.
+:::
+
+## Learning Objectives
+
+By the end of this workshop, students will be able to:
+
+[**FILL IN TEXT HERE**]
+
+## Assessment
+
+The workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. [**FILL IN TEXT HERE**]
+
+::: { .callout-important }
+There are three formative exercises, one for each exercise in the workshop, and they can be found on the workshop [MyPlace page]({{< var myplace.bm211 >}}). You should complete these as part of the workshop.
+:::
+
