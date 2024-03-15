@@ -4,9 +4,59 @@
     "href": "index.html",
     "title": "BM211 Workshop 5: Phylogenetic Trees",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees\nWelcome to the BM211 (Introduction to Microbiology) workshop on phylogenetic trees, for 2023-24.\nThis year is the first presentation of the workshop material in this format, and we would be very grateful to hear feedback by email or through the GitHub repository Issues page.",
     "crumbs": [
-      "Preface"
+      "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "BM211 Workshop 5: Phylogenetic Trees",
+    "section": "Overview",
+    "text": "Overview\nThis workshop asks you to work through some computational exercises to gain some practice visualising and working with phylogenetic trees.\n\n\n\n\n\n\nNote\n\n\n\nPhylogenetic trees are typically constructed after sequence alignment has been performed. You learned about the fundamentals of (pairwise) sequence alignment in BM214 Workshop 2 - slides, workshop. You may find it useful to refresh your memory about pairwise alignment.\n\n\n\n\n\n\n\n\nTip\n\n\n\nWe also provide an “R playground” if you would like to get further practice interacting with and plotting data in R.\n\n\n\n\n\n\n\n\nImportant Note\n\n\n\nThere is new material in this workshop that is not covered in lectures, and this material is examinable. Please take care to reach the text in the expandable callout boxes, as well as that for the workshop activities, to be sure you have understood the topic and obtain full value from the exercises.",
+    "crumbs": [
+      "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "BM211 Workshop 5: Phylogenetic Trees",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this workshop, students will be able to:\n[FILL IN TEXT HERE]",
+    "crumbs": [
+      "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "BM211 Workshop 5: Phylogenetic Trees",
+    "section": "Assessment",
+    "text": "Assessment\nThe workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. [FILL IN TEXT HERE]\n\n\n\n\n\n\nImportant\n\n\n\nThere are three formative exercises, one for each exercise in the workshop, and they can be found on the workshop MyPlace page. You should complete these as part of the workshop.",
+    "crumbs": [
+      "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Working with phylogenetic trees\nWhen you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in one of a number of file formats, such as:\nThese files can be cryptic to read, as a human. For example, the first newick format file we will work with has these contents:\nIt is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#working-with-phylogenetic-trees",
+    "href": "intro.html#working-with-phylogenetic-trees",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "newick\nNEXUS\nphylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Why we are using R\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\nIn this workshop we will be using R with the ggtree package to visualise and interpret trees. The R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   }
 ]
