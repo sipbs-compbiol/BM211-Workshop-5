@@ -14,7 +14,7 @@
     "href": "index.html#overview",
     "title": "BM211 Workshop 5: Phylogenetic Trees",
     "section": "Overview",
-    "text": "Overview\nThis workshop asks you to work through some computational exercises to gain some practice visualising and working with phylogenetic trees.\n\n\n\n\n\n\nNote\n\n\n\nPhylogenetic trees are typically constructed after sequence alignment has been performed. You learned about the fundamentals of (pairwise) sequence alignment in BM214 Workshop 2 - slides, workshop. You may find it useful to refresh your memory about pairwise alignment.\n\n\n\n\n\n\n\n\nTip\n\n\n\nWe also provide an “R playground” if you would like to get further practice interacting with and plotting data in R.\n\n\n\n\n\n\n\n\nImportant Note\n\n\n\nThere is new material in this workshop that is not covered in lectures, and this material is examinable. Please take care to reach the text in the expandable callout boxes, as well as that for the workshop activities, to be sure you have understood the topic and obtain full value from the exercises.",
+    "text": "Overview\nThis workshop asks you to work through some computational exercises to gain some practice visualising and working with phylogenetic trees.\n\n\n\n\n\n\nNote\n\n\n\nPhylogenetic trees are typically constructed after sequence alignment has been performed. You learned about the fundamentals of (pairwise) sequence alignment in BM214 Workshop 2 - slides, workshop. You may find it useful to refresh your memory about pairwise alignment.\n\n\n\n\n\n\n\n\nImportant Note\n\n\n\nThere is new material in this workshop that is not covered in lectures, and this material is examinable. Please take care to reach the text in the expandable callout boxes, as well as that for the workshop activities, to be sure you have understood the topic and obtain full value from the exercises.",
     "crumbs": [
       "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
     ]
@@ -54,17 +54,7 @@
     "href": "intro.html#working-with-phylogenetic-trees",
     "title": "1  Introduction",
     "section": "",
-    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Why we are using R\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\nIn this workshop we will be using R with the ggtree package to visualise and interpret trees. The R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.\n\n\n\n\n\n\nNote\n\n\n\nYou can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like figtree and dendroscope. Some features of the trees you will produce here can only be achieved using R.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#ggtree",
-    "href": "intro.html#ggtree",
-    "title": "1  Introduction",
-    "section": "1.2 ggtree",
-    "text": "1.2 ggtree\nggtree(Yu et al. (2017)) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the ggplot2 data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).\n\nggtree homepage\nThe ggtree book\n\n\n\n\n\nYu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk Lam. 2017. “Ggtree: An r Package for Visualization and Annotation of Phylogenetic Trees with Their Covariates and Other Associated Data.” Methods Ecol. Evol. 8 (1): 28–36.",
+    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Phylogenetic tree visualisation software\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\n\n\n\n\n\n\nCaution\n\n\n\nIn this workshop we will be using the online iToL service to visualise and interpret trees.\n\n\nThe R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.\n\n\n\n\n\n\nNote\n\n\n\nYou can produce equivalent trees to those you will produce in these exercises using standalone tools like figtree and dendroscope. Some tree visualisations can only be achieved in specialised packages, or with tools like ggtree.\nggtree is an R packages that extends the ggplot2 data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).\n\nggtree homepage\nThe ggtree book",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -74,7 +64,7 @@
     "href": "loading-tree.html",
     "title": "2  Loading a Phylogenetic Tree",
     "section": "",
-    "text": "2.1 Introduction\nAs noted in Chapter 1, you will generally encounter phylogenetic trees as a plain text file in one of a handful of common file formats, such as:\nWhichever software tool you use to read and visualise your tree, you will need to load the data into that tool. In iToL you would need to upload the data to the server. In figtree or dendroscope you would open the file through a dialogue box. Using ggtree in R, we need to write code and run it.",
+    "text": "2.1 Introduction\nAs noted in Chapter 1, you will generally encounter phylogenetic trees as a plain text file in one of a handful of common file formats, such as:\nWhichever software tool you use to read and visualise your tree, you will need to load the data into that tool. In iToL you would need to upload the data to the server. In figtree or dendroscope you would open the file through a dialogue box. Using ggtree in R, you would write code to open the file and run commands to visualise it.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
     ]
@@ -84,7 +74,7 @@
     "href": "loading-tree.html#introduction",
     "title": "2  Loading a Phylogenetic Tree",
     "section": "",
-    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this workshop we provide interactive WebR cells so you can run the examples in your browser. This does not require you to install any software on your machine.",
+    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this workshop we will be using the online iToL service to visualise and interpret trees. This does not require you to install any software on your machine. The iToL service is available at the link below.\n\niToL\n\n\n\n\n\n\n\n\n\nFigure 2.1: iToL landing page at https://itol.embl.de.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
     ]
@@ -94,19 +84,9 @@
     "href": "loading-tree.html#load-your-tree-data",
     "title": "2  Loading a Phylogenetic Tree",
     "section": "2.2 Load your tree data",
-    "text": "2.2 Load your tree data\nYour tree data is in a file called tree_newick.nwk. It contains a phylogeny with 13 samples. The function to load data into ggtree is read.tree() and it takes the name of the file as its only argument.\n\n\n\n\n\n\nTask\n\n\n\nUse the WebR cell below to load your data into a variable called tree, and show the contents of the tree.\n\n\n\n\n\n\n\n\nI need a hint!\n\n\n\n\n\n\nUse the read.tree() function with your filename (tree_newick.nwk)\nDon’t forget to include a line that shows file contents!\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHelp! I’m stuck!\n\n\n\n\n\nUse the R code below to load your data\ntree &lt;- read.tree(\"tree_newick.nwk\")\ntree",
+    "text": "2.2 Load your tree data\nYour tree data is in a file called tree_newick.nwk. This tree file describes a phylogeny with 13 samples, and it should be downloaded to your computer from the link below.\n\ntree_newick.nwk\n\n\n\n\n\n\n\nTask\n\n\n\nUpload the tree file tree_newick.nwk to iToL.\n\n\n\n\n\n\n\n\nI need a hint!\n\n\n\n\n\n\nClick on the Upload button (Figure 2.2) to see the tree file upload page\nFollow the instructions on the page\n\n\n\n\n\n\n\nFigure 2.2: iTol tree file upload button.\n\n\n\n\n\n\n\n\n\n\n\n\nHelp! I’m stuck!\n\n\n\n\n\n\nClick on the Upload button (Figure 2.2) to see the tree file upload page\nEnter a name for the tree in the Tree name: field.\nClick on the Browse button, and select your downloaded tree_newick.nwk file. The name of the file will appear next to the button.\nClick on the Upload button\n\n\n\n\n\n\n\nFigure 2.3: iToL tree file upload page.\n\n\n\n\n\n\n\n\n\n\n\n\nCheck your result\n\n\n\n\n\nAfter uploading the tree, iTol should present the default tree view, as in (Figure 2.4).\n\n\n\n\n\n\nFigure 2.4: The default iToL view of the uploaded tree_newick.nwk tree.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Yu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk\nLam. 2017. “Ggtree: An r Package for Visualization and Annotation\nof Phylogenetic Trees with Their Covariates and Other Associated\nData.” Methods Ecol. Evol. 8 (1): 28–36.",
-    "crumbs": [
-      "References"
     ]
   }
 ]

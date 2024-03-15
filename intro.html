@@ -21,27 +21,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -172,9 +152,8 @@ div.csl-indent {
   <ul>
   <li><a href="#working-with-phylogenetic-trees" id="toc-working-with-phylogenetic-trees" class="nav-link active" data-scroll-target="#working-with-phylogenetic-trees"><span class="header-section-number">1.1</span> Working with phylogenetic trees</a>
   <ul class="collapse">
-  <li><a href="#why-we-are-using-r" id="toc-why-we-are-using-r" class="nav-link" data-scroll-target="#why-we-are-using-r"><span class="header-section-number">1.1.1</span> Why we are using <code>R</code></a></li>
+  <li><a href="#phylogenetic-tree-visualisation-software" id="toc-phylogenetic-tree-visualisation-software" class="nav-link" data-scroll-target="#phylogenetic-tree-visualisation-software"><span class="header-section-number">1.1.1</span> Phylogenetic tree visualisation software</a></li>
   </ul></li>
-  <li><a href="#ggtree" id="toc-ggtree" class="nav-link" data-scroll-target="#ggtree"><span class="header-section-number">1.2</span> <code>ggtree</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -221,15 +200,28 @@ Figure&nbsp;1.1: A genAI representation of “phylogenetic tree as a real tree.�
 </figcaption>
 </figure>
 </div>
-<section id="why-we-are-using-r" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="why-we-are-using-r"><span class="header-section-number">1.1.1</span> Why we are using <code>R</code></h3>
+<section id="phylogenetic-tree-visualisation-software" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="phylogenetic-tree-visualisation-software"><span class="header-section-number">1.1.1</span> Phylogenetic tree visualisation software</h3>
 <p>A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:</p>
 <ul>
 <li><a href=""><code>figtree</code></a> <em>this is the one I use most often - LP</em></li>
 <li><a href="https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/"><code>dendroscope</code></a></li>
 </ul>
 <p>but the <a href="https://itol.embl.de/">interactive Tree of Life (iTol)</a> service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.</p>
-<p>In this workshop we will be using <code>R</code> with the <code>ggtree</code> package to visualise and interpret trees. The <code>R</code> software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As <code>R</code> is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in <code>R</code> are in high demand in academia and industry.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this workshop we will be using the online <code>iToL</code> service to visualise and interpret trees.</p>
+</div>
+</div>
+<p>The <code>R</code> software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As <code>R</code> is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in <code>R</code> are in high demand in academia and industry.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -240,25 +232,17 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like <code>figtree</code> and <code>dendroscope</code>. Some features of the trees you will produce here can only be achieved using <code>R</code>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="ggtree" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="ggtree"><span class="header-section-number">1.2</span> <code>ggtree</code></h2>
-<p><a href="https://bioconductor.org/packages/release/bioc/html/ggtree.html"><code>ggtree</code></a>(<span class="citation" data-cites="Yu2017-yq">Yu et al. (<a href="references.html#ref-Yu2017-yq" role="doc-biblioref">2017</a>)</span>) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the <code>ggplot2</code> data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).</p>
+<p>You can produce equivalent trees to those you will produce in these exercises using standalone tools like <code>figtree</code> and <code>dendroscope</code>. Some tree visualisations can only be achieved in specialised packages, or with tools like <code>ggtree</code>.</p>
+<p><code>ggtree</code> is an <code>R</code> packages that extends the <code>ggplot2</code> data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).</p>
 <ul>
 <li><a href="https://guangchuangyu.github.io/ggtree/"><code>ggtree</code> homepage</a></li>
 <li><a href="https://yulab-smu.top/treedata-book/">The <code>ggtree</code> book</a></li>
 </ul>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-Yu2017-yq" class="csl-entry" role="listitem">
-Yu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk Lam. 2017. <span>“Ggtree: An r Package for Visualization and Annotation of Phylogenetic Trees with Their Covariates and Other Associated Data.”</span> <em>Methods Ecol. Evol.</em> 8 (1): 28–36.
 </div>
 </div>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
