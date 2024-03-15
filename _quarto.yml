@@ -1,0 +1,54 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "BM211 Workshop 5: Phylogenetic Trees"
+  reader-mode: true
+  
+  cover-image: sipbs_compbio_800.png
+  favicon: icon_32.png
+  
+  page-footer:
+    left: |
+      This workshop was written by Dr Leighton Pritchard and Dr Morgan Feeney
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  
+  repo-url: https://github.com/sipbs-compbiol/BM211-Workshop-5
+  repo-branch: main
+  repo-actions: [edit, issue]
+  
+  author: "Leighton Pritchard and Morgan Feeney"
+  date: "2024-03-19"
+  
+  chapters:
+    - index.qmd
+#    - intro.qmd
+#    - part: part-01_16s.qmd
+#      chapters:
+#        - exercise-01_16s.qmd
+#    - part: part-02_yeast.qmd
+#      chapters:
+#        - exercise-02_yeast.qmd
+#    - part: part-03_reporter.qmd
+#      chapters:
+#        - exercise-03_reporter.qmd
+#    - playground.qmd        
+#    - summary.qmd
+#    - glossary.qmd
+#    - resources.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-link: true
+    author-meta: "Leighton Pritchard"
+    
+execute: 
+  freeze: auto
+
+

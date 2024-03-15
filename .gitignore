@@ -1,0 +1,24 @@
+# R project files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.RBuildignore
+
+# Quarto files
+/.quarto/
+_book/
+_freeze/
+
+# macOS files
+.DS_Store
+
+# Office temp files
+~*
+
+# Downloaded .csv files, when running locally
+AM*.csv
+PM*.csv
+
+# Jupyter/iPython checkpoints
+.ipynb_checkpoints
