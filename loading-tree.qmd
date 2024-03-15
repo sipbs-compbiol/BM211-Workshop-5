@@ -1,18 +1,4 @@
----
-webr:
-  packages: ["ggtree"]
-filters:
-  - webr
----
-
 # Loading a Phylogenetic Tree
-
-```{webr-r}
-#| context: setup
-
-# Download tree data
-download.file('https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk', 'tree_newick.nwk')
-```
 
 ## Introduction
 
@@ -22,41 +8,50 @@ As noted in @sec-introduction, you will generally encounter phylogenetic trees a
 - [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file), file ending `.nex`, `.nexus`
 - [`phylip`](https://en.wikipedia.org/wiki/PHYLIP), file ending `.phy`, `.phylip`
 
-Whichever software tool you use to read and visualise your tree, you will need to _load_ the data into that tool. In `iToL` you would need to upload the data to the server. In `figtree` or `dendroscope` you would open the file through a dialogue box. Using `ggtree` in `R`, we need to write code and run it.
+Whichever software tool you use to read and visualise your tree, you will need to _load_ the data into that tool. In `iToL` you would need to upload the data to the server. In `figtree` or `dendroscope` you would open the file through a dialogue box. Using `ggtree` in `R`, you would write code to open the file and run commands to visualise it.
 
 ::: { .callout-note }
-In this workshop we provide interactive `WebR` cells so you can run the examples in your browser. This does not require you to install any software on your machine.
+In this workshop we will be using the online `iToL` service to visualise and interpret trees. This does not require you to install any software on your machine. The `iToL` service is available at the link below.
+
+- [**`iToL`**](https://itol.embl.de/)
 :::
+
+![`iToL` landing page at [https://itol.embl.de](https://itol.embl.de).](assets/images/itol-landing.png){#fig-itol-landing width=80%}
 
 ## Load your tree data
 
-Your tree data is in a file called `tree_newick.nwk`. It contains a phylogeny with 13 samples. The function to load data into `ggtree` is `read.tree()` and it takes the name of the file as its only argument.
+Your tree data is in a file called `tree_newick.nwk`. This tree file describes a phylogeny with 13 samples, and it should be downloaded to your computer from the link below.
+
+- [**`tree_newick.nwk`**](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk)
 
 ::: { .callout-important title="Task" }
-Use the `WebR` cell below to load your data into a variable called `tree`, and show the contents of the tree.
+Upload the tree file `tree_newick.nwk` to `iToL`.
 :::
 
 ::: { .callout-tip collapse="true" }
 ## I need a hint!
 
-- Use the `read.tree()` function with your filename (`tree_newick.nwk`)
-- Don't forget to include a line that shows file contents!
+- Click on the `Upload` button (@fig-itol-upload-button) to see the tree file upload page
+- Follow the instructions on the page
+
+![`iTol` tree file upload button.](assets/images/itol-upload-button.png){#fig-itol-upload-button width=-80%}
 :::
-
-
-```{webr-r}
-# Load the phylogenetic tree data in this cell
-# Use the read.tree() function load your data.
-
-```
 
 ::: { .callout-warning collapse="true" }
 ## Help! I'm stuck!
 
-Use the `R` code below to load your data
+- Click on the `Upload` button (@fig-itol-upload-button) to see the tree file upload page
+- Enter a name for the tree in the `Tree name:` field.
+- Click on the `Browse` button, and select your downloaded `tree_newick.nwk` file. The name of the file will appear next to the button.
+- Click on the `Upload` button
 
-```r
-tree <- read.tree("tree_newick.nwk")
-tree
-```
+![`iToL` tree file upload page.](assets/images/itol-tree-upload.png){#fig-itol-tree-upload width=80%}
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+After uploading the tree, `iTol` should present the default tree view, as in (@fig-itol-tree-newick-01).
+
+![The default `iToL` view of the uploaded `tree_newick.nwk` tree.](assets/images/itol-tree-newick-01.png){#fig-itol-tree-newick-01 width=80%}
 :::

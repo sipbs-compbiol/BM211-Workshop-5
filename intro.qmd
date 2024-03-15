@@ -18,7 +18,7 @@ It is difficult, as a human, to read a file like this and understand the structu
 
 ![A genAI representation of "phylogenetic tree as a real tree."](assets/images/bing_tree.jpg){#fig-bing-tree width=80%}
 
-### Why we are using `R` 
+### Phylogenetic tree visualisation software
 
 A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:
 
@@ -27,15 +27,17 @@ A number of software packages are available to visualise, edit, and refine phylo
 
 but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.
 
-In this workshop we will be using `R` with the `ggtree` package to visualise and interpret trees. The `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
-
-::: { .callout-note }
-You can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like `figtree` and `dendroscope`. Some features of the trees you will produce here can only be achieved using `R`.
+::: { .callout-caution }
+In this workshop we will be using the online `iToL` service to visualise and interpret trees.
 :::
 
-## `ggtree`
+The `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
 
-[`ggtree`](https://bioconductor.org/packages/release/bioc/html/ggtree.html)(@Yu2017-yq) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the `ggplot2` data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).
+::: { .callout-note }
+You can produce equivalent trees to those you will produce in these exercises using standalone tools like `figtree` and `dendroscope`. Some tree visualisations can only be achieved in specialised packages, or with tools like `ggtree`.
+
+`ggtree` is an `R` packages that extends the `ggplot2` data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).
 
 - [`ggtree` homepage](https://guangchuangyu.github.io/ggtree/)
 - [The `ggtree` book](https://yulab-smu.top/treedata-book/)
+:::

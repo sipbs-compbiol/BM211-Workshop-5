@@ -12,10 +12,6 @@ This workshop asks you to work through some computational exercises to gain some
 Phylogenetic trees are typically constructed _after_ sequence alignment has been performed. You learned about the fundamentals of (pairwise) sequence alignment in BM214 Workshop 2 -  [slides](https://classes.myplace.strath.ac.uk/mod/resource/view.php?id=1956504), [workshop](https://sipbs-compbiol.github.io/BM214-Workshop-2/). You may find it useful to refresh your memory about pairwise alignment.
 :::
 
-::: { .callout-tip }
-We also provide an ["`R` playground"](playground.qmd) if you would like to get further practice interacting with and plotting data in `R`.
-:::
-
 ::: { .callout-warning title="Important Note" }
 There is new material in this workshop that is not covered in lectures, and this material is examinable. Please take care to reach the text in the expandable callout boxes, as well as that for the workshop activities, to be sure you have understood the topic and obtain full value from the exercises.
 :::
