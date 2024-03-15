@@ -152,6 +152,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
   <li><a href="#load-your-tree-data" id="toc-load-your-tree-data" class="nav-link" data-scroll-target="#load-your-tree-data"><span class="header-section-number">2.2</span> Load your tree data</a></li>
+  <li><a href="#understanding-your-tree" id="toc-understanding-your-tree" class="nav-link" data-scroll-target="#understanding-your-tree"><span class="header-section-number">2.3</span> Understanding your tree</a>
+  <ul class="collapse">
+  <li><a href="#trees-and-time" id="toc-trees-and-time" class="nav-link" data-scroll-target="#trees-and-time"><span class="header-section-number">2.3.1</span> Trees and time</a></li>
+  <li><a href="#ancestry-and-history" id="toc-ancestry-and-history" class="nav-link" data-scroll-target="#ancestry-and-history"><span class="header-section-number">2.3.2</span> Ancestry and history</a></li>
+  <li><a href="#clades" id="toc-clades" class="nav-link" data-scroll-target="#clades"><span class="header-section-number">2.3.3</span> Clades</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/loading-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -318,8 +324,217 @@ Figure&nbsp;2.4: The default <code>iToL</code> view of the uploaded <code>tree_n
 </div>
 </div>
 </div>
+</section>
+<section id="understanding-your-tree" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="understanding-your-tree"><span class="header-section-number">2.3</span> Understanding your tree</h2>
+<p>Considering the <code>newick</code> file contents you saw in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a> (and shown below), you might expect that the tree shows relationships between species represented by the letters <code>A</code>-<code>M</code> in that file:</p>
+<pre class="text"><code>(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);</code></pre>
+<p>The tree <code>iTol</code> presents at first (<a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>) shows these relationships.</p>
+<div id="fig-tree-newick-01" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/tree-newick-01.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Rectangular phylogram representation of the <code>tree_newick.nwk</code> file.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>the tree is a set of <em>bifurcating branches</em> that spread out from the last common ancestor (LCA) and represent an <strong>estimated</strong> evolutionary history</li>
+<li>this is a <em>rooted tree</em>, so the last common ancestor (LCA) is considered to be represented at the very far left of the tree, at its <em>root</em>
+<ul>
+<li><strong>in this tree, <em>ancestors</em> are on the left, and <em>descendants</em> are on the right</strong></li>
+</ul></li>
+<li>the horizontal dimension in this plot shows the amount of genetic change since the LCA - less change towards the left-hand side, more towards the right
+<ul>
+<li><strong>this tree is a <em>phylogram</em>, which means that the lengths of the branches are meaningful and represent the amount of genetic change</strong></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Branch lengths are usually drawn in units of <em>nucleotide substitutions per site</em> - the estimated total number of nucleotide substitutions, divided by (<em>normalised to</em>) the length of the sequence.</p>
+<p>You may sometimes see alternative units being used, such as estimated time, or the percentage of sites that have changed.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 01
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which species shows the most genetic change since the LCA?</p>
+<ul>
+<li><code>A</code></li>
+<li><code>E</code></li>
+<li><code>G</code></li>
+<li><code>K</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer 01
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The total distance from the LCA to the leaf node for a species represents the total amount of genetic change. More straightforwardly here, the species whose leaf node is farthest to the right in <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> has accumulated the most genetic change since the LCA. Of the four options presented, the species with greatest genetic change since the LCA is <code>G</code>.</p>
+</div>
+</div>
+</div>
+<section id="trees-and-time" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="trees-and-time"><span class="header-section-number">2.3.1</span> Trees and time</h3>
+<p>The general relationship between this phylogram and time is shown in <a href="#fig-tree-newick-02" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>.</p>
+<div id="fig-tree-newick-02" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tree-newick-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/tree-newick-02.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: <code>iToL</code> phylogram annotated with <em>root</em>, <em>leaves</em>, <em>bifurcations</em>, and the relationship between ancestors and descendents.
+</figcaption>
+</figure>
+</div>
+<p>As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can’t immediately interpret branch lengths as time. The best we can sometimes do is - when the sequences/organisms used to build the tree are known to exist <em>now</em> - say that the leaves of the tree approximately represent the current date.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are phylogenetic techniques that allow us to convert genetic distances into approximate times, but they are beyond the scope of this workshop.</p>
+</div>
+</div>
+<ul>
+<li><strong>currently existing species (<code>A</code>-<code>M</code>) - the input for building the tree - are shown at the <em>leaves</em></strong> (or <em>leaf nodes</em>) of the tree, at the ends of the <em>branches</em></li>
+<li>the branching events (<em>bifurcations</em>) show how evolutionary lineages split, as the amount of genetic change increases from left to right; they represent events in evolution where a population divides into two subgroups with different genetic histories
+<ul>
+<li><strong>in a biological context, this process is often referred to as <em>speciation</em></strong></li>
+<li><strong>the order of bifurcation can be interpreted as the order in which speciation events occurred</strong></li>
+</ul></li>
+<li>the amount of genetic change between branching events is represented by the length of the branch that separates them; the scale bar allows you to interpret the branch length quantitatively</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 02
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> implies that which speciation event was the earliest?</p>
+<ul>
+<li>the speciation separating <code>A</code> and <code>B</code></li>
+<li>the speciation separating <code>B</code> and <code>C</code></li>
+<li>the speciation separating <code>B</code> and <code>D</code></li>
+<li>the speciation separating <code>C</code> and <code>E</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer 02
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have to be careful with the interpretation because the <strong>lengths of branches represent genetic change, not time</strong>. However, moving from left to right we can see that <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, and <code>E</code> derived from a single common ancestor. The order in which the individual species emerged is the order of speciations from left to right in this tree. So, <code>E</code> diverged first, then <code>D</code>, <code>C</code>, <code>B</code> and <code>A</code> in that order. The earliest specietion is the one involving species <code>E</code>, so the answer is the speciation separating <code>C</code> and <code>E</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ancestry-and-history" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="ancestry-and-history"><span class="header-section-number">2.3.2</span> Ancestry and history</h3>
+<p>Phylogenetic trees represent patterns of shared ancestry and history between lineages. For instance, in <a href="#fig-tree-newick-03" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> common and unique ancestors of <code>A</code>, <code>B</code> and <code>C</code> are indicated, as are common and unique histories of <code>I</code> and <code>J</code>.</p>
+<div id="fig-tree-newick-03" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tree-newick-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/tree-newick-03.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: <code>iToL</code> phylogram annotated unique and shared ancestries and histories.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 03
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following accumulated the greatest amount of genetic change?</p>
+<ul>
+<li>the unique history of <code>E</code></li>
+<li>the shared history of <code>I</code> and <code>J</code></li>
+<li>the shared history of <code>I</code>, <code>J</code>, <code>K</code>, and <code>L</code></li>
+<li>the unique history of <code>D</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer 03
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>From those listed, the branch that accumulated the most genetic change is the longest of the branches. The shared history of <code>I</code> and <code>J</code> is the longest of these, so has accumulated the most genetic change.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="clades" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="clades"><span class="header-section-number">2.3.3</span> Clades</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
