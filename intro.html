@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./loading-tree.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -130,6 +150,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./loading-tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -148,6 +174,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#why-we-are-using-r" id="toc-why-we-are-using-r" class="nav-link" data-scroll-target="#why-we-are-using-r"><span class="header-section-number">1.1.1</span> Why we are using <code>R</code></a></li>
   </ul></li>
+  <li><a href="#ggtree" id="toc-ggtree" class="nav-link" data-scroll-target="#ggtree"><span class="header-section-number">1.2</span> <code>ggtree</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -156,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
 </div>
 
 
@@ -175,11 +202,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="working-with-phylogenetic-trees" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="working-with-phylogenetic-trees"><span class="header-section-number">1.1</span> Working with phylogenetic trees</h2>
-<p>When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in one of a number of file formats, such as:</p>
+<p>When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats, such as:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Newick_format"><code>newick</code></a></li>
-<li><a href="https://en.wikipedia.org/wiki/Nexus_file"><code>NEXUS</code></a></li>
-<li><a href="https://en.wikipedia.org/wiki/PHYLIP"><code>phylip</code></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Newick_format"><code>newick</code></a>, file ending <code>.new</code>, <code>.nwk</code>, <code>.newick</code></li>
+<li><a href="https://en.wikipedia.org/wiki/Nexus_file"><code>NEXUS</code></a>, file ending <code>.nex</code>, <code>.nexus</code></li>
+<li><a href="https://en.wikipedia.org/wiki/PHYLIP"><code>phylip</code></a>, file ending <code>.phy</code>, <code>.phylip</code></li>
 </ul>
 <p>These files can be cryptic to read, as a human. For example, the first <code>newick</code> format file we will work with has these contents:</p>
 <pre class="text"><code>(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);</code></pre>
@@ -199,13 +226,39 @@ Figure&nbsp;1.1: A genAI representation of “phylogenetic tree as a real tree.�
 <p>A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:</p>
 <ul>
 <li><a href=""><code>figtree</code></a> <em>this is the one I use most often - LP</em></li>
-<li><a href=""><code>dendroscope</code></a></li>
+<li><a href="https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/"><code>dendroscope</code></a></li>
 </ul>
 <p>but the <a href="https://itol.embl.de/">interactive Tree of Life (iTol)</a> service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.</p>
 <p>In this workshop we will be using <code>R</code> with the <code>ggtree</code> package to visualise and interpret trees. The <code>R</code> software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As <code>R</code> is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in <code>R</code> are in high demand in academia and industry.</p>
-
-
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like <code>figtree</code> and <code>dendroscope</code>. Some features of the trees you will produce here can only be achieved using <code>R</code>.</p>
+</div>
+</div>
 </section>
+</section>
+<section id="ggtree" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="ggtree"><span class="header-section-number">1.2</span> <code>ggtree</code></h2>
+<p><a href="https://bioconductor.org/packages/release/bioc/html/ggtree.html"><code>ggtree</code></a>(<span class="citation" data-cites="Yu2017-yq">Yu et al. (<a href="references.html#ref-Yu2017-yq" role="doc-biblioref">2017</a>)</span>) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the <code>ggplot2</code> data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).</p>
+<ul>
+<li><a href="https://guangchuangyu.github.io/ggtree/"><code>ggtree</code> homepage</a></li>
+<li><a href="https://yulab-smu.top/treedata-book/">The <code>ggtree</code> book</a></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Yu2017-yq" class="csl-entry" role="listitem">
+Yu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk Lam. 2017. <span>“Ggtree: An r Package for Visualization and Annotation of Phylogenetic Trees with Their Covariates and Other Associated Data.”</span> <em>Methods Ecol. Evol.</em> 8 (1): 28–36.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -625,8 +678,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./loading-tree.html" class="pagination-link" aria-label="Loading a Phylogenetic Tree">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

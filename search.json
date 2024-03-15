@@ -44,7 +44,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1 Working with phylogenetic trees\nWhen you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in one of a number of file formats, such as:\nThese files can be cryptic to read, as a human. For example, the first newick format file we will work with has these contents:\nIt is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.",
+    "text": "1.1 Working with phylogenetic trees\nWhen you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats, such as:\nThese files can be cryptic to read, as a human. For example, the first newick format file we will work with has these contents:\nIt is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -54,9 +54,59 @@
     "href": "intro.html#working-with-phylogenetic-trees",
     "title": "1  Introduction",
     "section": "",
-    "text": "newick\nNEXUS\nphylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Why we are using R\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\nIn this workshop we will be using R with the ggtree package to visualise and interpret trees. The R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.",
+    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Why we are using R\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\nIn this workshop we will be using R with the ggtree package to visualise and interpret trees. The R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.\n\n\n\n\n\n\nNote\n\n\n\nYou can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like figtree and dendroscope. Some features of the trees you will produce here can only be achieved using R.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#ggtree",
+    "href": "intro.html#ggtree",
+    "title": "1  Introduction",
+    "section": "1.2 ggtree",
+    "text": "1.2 ggtree\nggtree(Yu et al. (2017)) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the ggplot2 data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).\n\nggtree homepage\nThe ggtree book\n\n\n\n\n\nYu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk Lam. 2017. “Ggtree: An r Package for Visualization and Annotation of Phylogenetic Trees with Their Covariates and Other Associated Data.” Methods Ecol. Evol. 8 (1): 28–36.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "loading-tree.html",
+    "href": "loading-tree.html",
+    "title": "2  Loading a Phylogenetic Tree",
+    "section": "",
+    "text": "2.1 Introduction\nAs noted in Chapter 1, you will generally encounter phylogenetic trees as a plain text file in one of a handful of common file formats, such as:\nWhichever software tool you use to read and visualise your tree, you will need to load the data into that tool. In iToL you would need to upload the data to the server. In figtree or dendroscope you would open the file through a dialogue box. Using ggtree in R, we need to write code and run it.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
+    ]
+  },
+  {
+    "objectID": "loading-tree.html#introduction",
+    "href": "loading-tree.html#introduction",
+    "title": "2  Loading a Phylogenetic Tree",
+    "section": "",
+    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn this workshop we provide interactive WebR cells so you can run the examples in your browser. This does not require you to install any software on your machine.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
+    ]
+  },
+  {
+    "objectID": "loading-tree.html#load-your-tree-data",
+    "href": "loading-tree.html#load-your-tree-data",
+    "title": "2  Loading a Phylogenetic Tree",
+    "section": "2.2 Load your tree data",
+    "text": "2.2 Load your tree data\nYour tree data is in a file called tree_newick.nwk. It contains a phylogeny with 13 samples. The function to load data into ggtree is read.tree() and it takes the name of the file as its only argument.\n\n\n\n\n\n\nTask\n\n\n\nUse the WebR cell below to load your data into a variable called tree, and show the contents of the tree.\n\n\n\n\n\n\n\n\nI need a hint!\n\n\n\n\n\n\nUse the read.tree() function with your filename (tree_newick.nwk)\nDon’t forget to include a line that shows file contents!\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nHelp! I’m stuck!\n\n\n\n\n\nUse the R code below to load your data\ntree &lt;- read.tree(\"tree_newick.nwk\")\ntree",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Loading a Phylogenetic Tree</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Yu, Guangchuang, David K Smith, Huachen Zhu, Yi Guan, and Tommy Tsan-Yuk\nLam. 2017. “Ggtree: An r Package for Visualization and Annotation\nof Phylogenetic Trees with Their Covariates and Other Associated\nData.” Methods Ecol. Evol. 8 (1): 28–36.",
+    "crumbs": [
+      "References"
     ]
   }
 ]
