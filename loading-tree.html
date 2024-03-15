@@ -158,6 +158,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ancestry-and-history" id="toc-ancestry-and-history" class="nav-link" data-scroll-target="#ancestry-and-history"><span class="header-section-number">2.3.2</span> Ancestry and history</a></li>
   <li><a href="#clades" id="toc-clades" class="nav-link" data-scroll-target="#clades"><span class="header-section-number">2.3.3</span> Clades</a></li>
   </ul></li>
+  <li><a href="#myplace-quiz" id="toc-myplace-quiz" class="nav-link" data-scroll-target="#myplace-quiz"><span class="header-section-number">2.4</span> MyPlace Quiz</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/loading-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -487,7 +488,7 @@ Answer 02
 <img src="assets/images/tree-newick-03.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: <code>iToL</code> phylogram annotated unique and shared ancestries and histories.
+Figure&nbsp;2.7: <code>iToL</code> phylogram annotated with unique and shared ancestries and histories. Ancestors are single points on a branch (represented here as boxes), whereas histories are the entire set of ancestors represented by a branch.
 </figcaption>
 </figure>
 </div>
@@ -532,9 +533,92 @@ Answer 03
 </section>
 <section id="clades" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="clades"><span class="header-section-number">2.3.3</span> Clades</h3>
-
-
+<p>A <em>clade</em> is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties <em>monpphyletic</em> (i.e.&nbsp;it comprises a single phylum). <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows examples of clades in the <code>iToL</code> tree you generated.</p>
+<div id="fig-tree-newick-04" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tree-newick-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/tree-newick-04.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: <code>iToL</code> phylogram annotated with <em>clades</em>, groupings on the tree that include a common ancestor and all its descendants. Clades can be <em>nested</em> inside each other as a hierarchy. Clade4 (<code>A</code>, <code>B</code>, <code>C</code>) is completely contained within Clade3 (<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>).
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question 04
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following groups of leaf nodes form a <em>clade</em>?</p>
+<ol type="1">
+<li>(<code>J</code>, <code>K</code>, <code>L</code>)</li>
+<li>(<code>F</code>, <code>G</code>, <code>H</code>)</li>
+<li>(<code>D</code>, <code>E</code>)</li>
+<li>(<code>K</code>, <code>L</code>)</li>
+</ol>
+<ul>
+<li>all of the groups form a clade</li>
+<li>only groups 1 and 4 form clades</li>
+<li>only groups 2 and 4 form clades</li>
+<li>only group 1 forms a clade</li>
+<li>only group 2 forms a clade</li>
+<li>only group 3 forms a clade</li>
+<li>only group 4 forms a clade</li>
+<li>only groups 2 and 3 form clades</li>
+<li>none of the groups form a clade</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer 04
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Group 1, (<code>J</code>, <code>K</code>, <code>L</code>) does not form a clade because the common ancestor of these species also has <code>I</code> as a descendent, and it is not included in the group.</p>
+<p>Group 2, (<code>F</code>, <code>G</code>, <code>H</code>) forms a clade (see <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>).</p>
+<p>Group 3, (<code>D</code>, <code>E</code>) does not form a clade because the common ancestor of these species also has <code>A</code> , <code>B</code>, and <code>C</code> as descendents, and they are not included in the group.</p>
+<p>Group 4, (<code>K</code>, <code>L</code>) does form a clade as <code>K</code>, <code>L</code> and all descendants from their common ancestor are included.</p>
+<p>Thus, the answer is <strong>only groups 2 and 4 form clades</strong>.</p>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section id="myplace-quiz" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="myplace-quiz"><span class="header-section-number">2.4</span> MyPlace Quiz</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Please answer the questions below in the formative quiz on MyPlace</strong></p>
+<ul>
+<li><a href="?var:myplace.quiz1">MyPlace formative quiz</a></li>
+</ul>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
