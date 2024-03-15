@@ -1,12 +1,12 @@
-# Introduction
+# Introduction {#sec-introduction}
 
 ## Working with phylogenetic trees
 
-When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in one of a number of file formats, such as:
+When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats, such as:
 
-- [`newick`](https://en.wikipedia.org/wiki/Newick_format)
-- [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file)
-- [`phylip`](https://en.wikipedia.org/wiki/PHYLIP)
+- [`newick`](https://en.wikipedia.org/wiki/Newick_format), file ending `.new`, `.nwk`, `.newick`
+- [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file), file ending `.nex`, `.nexus`
+- [`phylip`](https://en.wikipedia.org/wiki/PHYLIP), file ending `.phy`, `.phylip`
 
 These files can be cryptic to read, as a human. For example, the first `newick` format file we will work with has these contents:
 
@@ -23,10 +23,19 @@ It is difficult, as a human, to read a file like this and understand the structu
 A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:
 
 - [`figtree`]() _this is the one I use most often - LP_
-- [`dendroscope`]()
+- [`dendroscope`](https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/)
 
 but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.
 
 In this workshop we will be using `R` with the `ggtree` package to visualise and interpret trees. The `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
 
+::: { .callout-note }
+You can produce equivalent trees to (most of) those you will produce in these exercises using standalone tools like `figtree` and `dendroscope`. Some features of the trees you will produce here can only be achieved using `R`.
+:::
 
+## `ggtree`
+
+[`ggtree`](https://bioconductor.org/packages/release/bioc/html/ggtree.html)(@Yu2017-yq) is the phylogenetic tree visualisation package we will be using in this workshop. It extends the `ggplot2` data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).
+
+- [`ggtree` homepage](https://guangchuangyu.github.io/ggtree/)
+- [The `ggtree` book](https://yulab-smu.top/treedata-book/)

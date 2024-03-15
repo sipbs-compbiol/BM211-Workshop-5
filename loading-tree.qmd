@@ -1,0 +1,65 @@
+---
+webr:
+  packages: ["ggtree"]
+filters:
+  - webr
+---
+
+# Loading a Phylogenetic Tree
+
+```{webr-r}
+#| context: setup
+
+# Download tree data
+download.file('https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk', 'tree_newick.nwk')
+
+library(ggplot2)
+library(tidyverse)
+```
+
+## Introduction
+
+As noted in @sec-introduction, you will generally encounter phylogenetic trees as a plain text file in one of a handful of common file formats, such as:
+
+- [`newick`](https://en.wikipedia.org/wiki/Newick_format), file ending `.new`, `.nwk`, `.newick`
+- [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file), file ending `.nex`, `.nexus`
+- [`phylip`](https://en.wikipedia.org/wiki/PHYLIP), file ending `.phy`, `.phylip`
+
+Whichever software tool you use to read and visualise your tree, you will need to _load_ the data into that tool. In `iToL` you would need to upload the data to the server. In `figtree` or `dendroscope` you would open the file through a dialogue box. Using `ggtree` in `R`, we need to write code and run it.
+
+::: { .callout-note }
+In this workshop we provide interactive `WebR` cells so you can run the examples in your browser. This does not require you to install any software on your machine.
+:::
+
+## Load your tree data
+
+Your tree data is in a file called `tree_newick.nwk`. It contains a phylogeny with 13 samples. The function to load data into `ggtree` is `read.tree()` and it takes the name of the file as its only argument.
+
+::: { .callout-important title="Task" }
+Use the `WebR` cell below to load your data into a variable called `tree`, and show the contents of the tree.
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- Use the `read.tree()` function with your filename (`tree_newick.nwk`)
+- Don't forget to include a line that shows file contents!
+:::
+
+
+```{webr-r}
+# Load the phylogenetic tree data in this cell
+# Use the read.tree() function load your data.
+
+```
+
+::: { .callout-warning collapse="true" }
+## Help! I'm stuck!
+
+Use the `R` code below to load your data
+
+```r
+tree <- read.tree("tree_newick.nwk")
+tree
+```
+:::
