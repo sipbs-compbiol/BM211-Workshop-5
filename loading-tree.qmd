@@ -55,3 +55,104 @@ After uploading the tree, `iTol` should present the default tree view, as in (@f
 
 ![The default `iToL` view of the uploaded `tree_newick.nwk` tree.](assets/images/itol-tree-newick-01.png){#fig-itol-tree-newick-01 width=80%}
 :::
+
+## Understanding your tree
+
+Considering the `newick` file contents you saw in @sec-introduction (and shown below), you might expect that the tree shows relationships between species represented by the letters `A`-`M` in that file:
+
+```text
+(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);
+```
+
+The tree `iTol` presents at first (@fig-tree-newick-01) shows these relationships. 
+
+![Rectangular phylogram representation of the `tree_newick.nwk` file.](assets/images/tree-newick-01.png){#fig-tree-newick-01 width=80%}
+
+- the tree is a set of _bifurcating branches_ that spread out from the last common ancestor (LCA) and represent an **estimated** evolutionary history
+- this is a _rooted tree_, so the last common ancestor (LCA) is considered to be represented at the very far left of the tree, at its _root_
+  - **in this tree, _ancestors_ are on the left, and _descendants_ are on the right**
+- the horizontal dimension in this plot shows the amount of genetic change since the LCA - less change towards the left-hand side, more towards the right
+  - **this tree is a _phylogram_, which means that the lengths of the branches are meaningful and represent the amount of genetic change**
+
+::: { .callout-note }
+Branch lengths are usually drawn in units of _nucleotide substitutions per site_ - the estimated total number of nucleotide substitutions, divided by (_normalised to_) the length of the sequence.
+
+You may sometimes see alternative units being used, such as estimated time, or the percentage of sites that have changed.
+:::
+
+::: { .callout-important collapse="true" }
+## Question 01
+
+In @fig-tree-newick-01 which species shows the most genetic change since the LCA?
+
+- `A`
+- `E`
+- `G`
+- `K`
+:::
+
+::: { .callout-warning collapse="true" }
+## Answer 01
+
+The total distance from the LCA to the leaf node for a species represents the total amount of genetic change. More straightforwardly here, the species whose leaf node is farthest to the right in @fig-tree-newick-01 has accumulated the most genetic change since the LCA. Of the four options presented, the species with greatest genetic change since the LCA is `G`.
+:::
+
+### Trees and time
+
+The general relationship between this phylogram and time is shown in @fig-tree-newick-02.
+
+![`iToL` phylogram annotated with _root_, _leaves_, _bifurcations_, and the relationship between ancestors and descendents.](assets/images/tree-newick-02.png){#fig-tree-newick-02 width=80%}
+
+As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can't immediately interpret branch lengths as time. The best we can sometimes do is - when the sequences/organisms used to build the tree are known to exist _now_ - say that the leaves of the tree approximately represent the current date.
+
+::: { .callout-note }
+There are phylogenetic techniques that allow us to convert genetic distances into approximate times, but they are beyond the scope of this workshop.
+:::
+
+- **currently existing species (`A`-`M`) - the input for building the tree - are shown at the _leaves_** (or _leaf nodes_) of the tree, at the ends of the _branches_
+- the branching events (_bifurcations_) show how evolutionary lineages split, as the amount of genetic change increases from left to right; they represent events in evolution where a population divides into two subgroups with different genetic histories
+  - **in a biological context, this process is often referred to as _speciation_**
+  - **the order of bifurcation can be interpreted as the order in which speciation events occurred**
+- the amount of genetic change between branching events is represented by the length of the branch that separates them; the scale bar allows you to interpret the branch length quantitatively
+
+::: { .callout-important collapse="true" }
+## Question 02
+
+@fig-tree-newick-01 implies that which speciation event was the earliest?
+
+- the speciation separating `A` and `B`
+- the speciation separating `B` and `C`
+- the speciation separating `B` and `D`
+- the speciation separating `C` and `E`
+:::
+
+::: { .callout-warning collapse="true" }
+## Answer 02
+
+We have to be careful with the interpretation because the **lengths of branches represent genetic change, not time**. However, moving from left to right we can see that `A`, `B`, `C`, `D`, and `E` derived from a single common ancestor. The order in which the individual species emerged is the order of speciations from left to right in this tree. So, `E` diverged first, then `D`, `C`, `B` and `A` in that order. The earliest specietion is the one involving species `E`, so the answer is the speciation separating `C` and `E`.
+:::
+
+### Ancestry and history
+
+Phylogenetic trees represent patterns of shared ancestry and history between lineages. For instance, in @fig-tree-newick-03 common and unique ancestors of `A`, `B` and `C` are indicated, as are common and unique histories of `I` and `J`.
+
+![`iToL` phylogram annotated unique and shared ancestries and histories.](assets/images/tree-newick-03.png){#fig-tree-newick-03 width=80%}
+
+::: { .callout-important collapse="true" }
+## Question 03
+
+In @fig-tree-newick-01 which of the following accumulated the greatest amount of genetic change?
+
+- the unique history of `E`
+- the shared history of `I` and `J`
+- the shared history of `I`, `J`, `K`, and `L`
+- the unique history of `D`
+:::
+
+::: { .callout-warning collapse="true" }
+## Answer 03
+
+From those listed, the branch that accumulated the most genetic change is the longest of the branches. The shared history of `I` and `J` is the longest of these, so has accumulated the most genetic change.
+:::
+
+### Clades
