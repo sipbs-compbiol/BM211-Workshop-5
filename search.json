@@ -34,7 +34,7 @@
     "href": "index.html#assessment",
     "title": "BM211 Workshop 5: Phylogenetic Trees",
     "section": "Assessment",
-    "text": "Assessment\nThe workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. [FILL IN TEXT HERE]\n\n\n\n\n\n\nImportant\n\n\n\nThere are four formative exercises in this workshop, and they can be found on the workshop MyPlace page. You should complete these as part of the workshop.\n\nFormative quiz 1\nFormative quiz 1\nFormative quiz 1\nFormative quiz 1",
+    "text": "Assessment\nThe workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. [FILL IN TEXT HERE]\n\n\n\n\n\n\nImportant\n\n\n\nThere are four formative exercises in this workshop, and they can be found on the workshop MyPlace page. You should complete these as part of the workshop.\n\nFormative quiz 1\nFormative quiz 2\nFormative quiz 3\nFormative quiz 4",
     "crumbs": [
       "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
     ]
@@ -54,7 +54,7 @@
     "href": "intro.html#working-with-phylogenetic-trees",
     "title": "1  Introduction",
     "section": "",
-    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Phylogenetic tree visualisation software\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\n\n\n\n\n\n\nCaution\n\n\n\nIn this workshop we will be using the online iToL service to visualise and interpret trees.\n\n\nThe R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.\n\n\n\n\n\n\nNote\n\n\n\nYou can produce equivalent trees to those you will produce in these exercises using standalone tools like figtree and dendroscope. Some tree visualisations can only be achieved in specialised packages, or with tools like ggtree.\nggtree is an R packages that extends the ggplot2 data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).\n\nggtree homepage\nThe ggtree book",
+    "text": "newick, file ending .new, .nwk, .newick\nNEXUS, file ending .nex, .nexus\nphylip, file ending .phy, .phylip\n\n\n(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);\n\n\n\n\n\n\n\nFigure 1.1: A genAI representation of “phylogenetic tree as a real tree.”\n\n\n\n\n1.1.1 Phylogenetic tree visualisation software\nA number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:\n\nfigtree this is the one I use most often - LP\ndendroscope\n\nbut the interactive Tree of Life (iTol) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.\n\n\n\n\n\n\nCaution\n\n\n\nIn this workshop we will be using the online iToL service to visualise and interpret trees.\n\n\nThe R software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As R is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in R are in high demand in academia and industry.\n\n\n\n\n\n\nNote\n\n\n\nYou can produce equivalent trees to those you will produce in these exercises using standalone tools like figtree and dendroscope. Some tree visualisations can only be achieved in specialised packages, or with tools like ggtree.\nggtree is an R package that extends the ggplot2 data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).\n\nggtree homepage\nThe ggtree book",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -307,6 +307,46 @@
     "text": "5.5 Summary\n\n\n\n\n\n\nWell Done!\n\n\n\nAfter successfully working through this section you should be able to:\n\nmidpoint root a tree in iToL\ncolour highlight clades of a tree in iToL\nexplain the difference between a gene tree and a species tree\ncompare a gene tree with a species tree to interpret evolutionary history\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nPlease complete the workshop by answering the questions below in the formative quiz on MyPlace\n\nMyPlace formative quiz\n\n\n\n\n\n\n\nHall, Carina M, Anthony L Baker, Jason W Sahl, Mark Mayo, Holger C Scholz, Mirjam Kaestli, James Schupp, et al. 2022. “Expanding the Burkholderia Pseudomallei Complex with the Addition of Two Novel Species: Burkholderia Mayonis Sp. Nov. And Burkholderia Savannae Sp. Nov.” Appl. Environ. Microbiol. 88 (1): e0158321.\n\n\nJanesomboon, Sujintana, Veerachat Muangsombut, Varintip Srinon, Chatruthai Meethai, Chayada S Tharinjaroen, Premjit Amornchai, Patoo Withatanung, et al. 2021. “Detection and Differentiation of Burkholderia Species with Pathogenic Potential in Environmental Soil Samples.” PLoS One 16 (1): e0245175.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Refining a Phylogenetic Tree Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "6  Summary",
+    "section": "",
+    "text": "6.1 That’s All, Folks!\nThank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.\n::: { .callout-caution title=“Tell us about problems with the workshop, what you liked, or how you think it can be improved!”} We would be very grateful to head feedback by email or through the GitHub repository issues page.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Additional Resources",
+    "section": "",
+    "text": "Understanding phylogenetic trees",
+    "crumbs": [
+      "Additional Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#understanding-phylogenetic-trees",
+    "href": "resources.html#understanding-phylogenetic-trees",
+    "title": "Additional Resources",
+    "section": "",
+    "text": "Evolutionary trees: A primer (UC Berkeley) link\nField guide to evolutionary trees (UC Berkeley) link",
+    "crumbs": [
+      "Additional Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#online-tools",
+    "href": "resources.html#online-tools",
+    "title": "Additional Resources",
+    "section": "Online tools",
+    "text": "Online tools\n\niToL (Interactive Tree of Life): online tool to visualise tree files link\nMUSCLE: multiple sequence alignment link\nPhyloT: generate a tree from a list of taxonomic names link\nSimple Phylogeny: simple tree generation methods link",
+    "crumbs": [
+      "Additional Resources"
     ]
   },
   {

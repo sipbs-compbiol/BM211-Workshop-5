@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>BM211 Workshop 5: Phylogenetic Trees - 1&nbsp; Introduction</title>
+<title>BM211 Workshop 5: Phylogenetic Trees - Additional Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./loading-tree.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./summary.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resources.html">Additional Resources</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+  <a href="./resources.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Additional Resources</span></a>
   </div>
 </li>
@@ -180,19 +180,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#working-with-phylogenetic-trees" id="toc-working-with-phylogenetic-trees" class="nav-link active" data-scroll-target="#working-with-phylogenetic-trees"><span class="header-section-number">1.1</span> Working with phylogenetic trees</a>
-  <ul class="collapse">
-  <li><a href="#phylogenetic-tree-visualisation-software" id="toc-phylogenetic-tree-visualisation-software" class="nav-link" data-scroll-target="#phylogenetic-tree-visualisation-software"><span class="header-section-number">1.1.1</span> Phylogenetic tree visualisation software</a></li>
-  </ul></li>
+  <li><a href="#understanding-phylogenetic-trees" id="toc-understanding-phylogenetic-trees" class="nav-link active" data-scroll-target="#understanding-phylogenetic-trees">Understanding phylogenetic trees</a></li>
+  <li><a href="#online-tools" id="toc-online-tools" class="nav-link" data-scroll-target="#online-tools">Online tools</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
+<h1 class="title">Additional Resources</h1>
 </div>
 
 
@@ -209,70 +207,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="working-with-phylogenetic-trees" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="working-with-phylogenetic-trees"><span class="header-section-number">1.1</span> Working with phylogenetic trees</h2>
-<p>When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats, such as:</p>
+<section id="understanding-phylogenetic-trees" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-phylogenetic-trees">Understanding phylogenetic trees</h2>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Newick_format"><code>newick</code></a>, file ending <code>.new</code>, <code>.nwk</code>, <code>.newick</code></li>
-<li><a href="https://en.wikipedia.org/wiki/Nexus_file"><code>NEXUS</code></a>, file ending <code>.nex</code>, <code>.nexus</code></li>
-<li><a href="https://en.wikipedia.org/wiki/PHYLIP"><code>phylip</code></a>, file ending <code>.phy</code>, <code>.phylip</code></li>
+<li>Evolutionary trees: A primer (UC Berkeley) <a href="https://evolution.berkeley.edu/the-tree-room/evolutionary-trees-a-primer/">link</a></li>
+<li>Field guide to evolutionary trees (UC Berkeley) <a href="https://evolution.berkeley.edu/the-tree-room/field-guide-to-evolutionary-trees/">link</a></li>
 </ul>
-<p>These files can be cryptic to read, as a human. For example, the first <code>newick</code> format file we will work with has these contents:</p>
-<pre class="text"><code>(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);</code></pre>
-<p>It is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.</p>
-<div id="fig-bing-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-bing-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/bing_tree.jpg" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bing-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: A genAI representation of “phylogenetic tree as a real tree.”
-</figcaption>
-</figure>
-</div>
-<section id="phylogenetic-tree-visualisation-software" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="phylogenetic-tree-visualisation-software"><span class="header-section-number">1.1.1</span> Phylogenetic tree visualisation software</h3>
-<p>A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:</p>
-<ul>
-<li><a href=""><code>figtree</code></a> <em>this is the one I use most often - LP</em></li>
-<li><a href="https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/"><code>dendroscope</code></a></li>
-</ul>
-<p>but the <a href="https://itol.embl.de/">interactive Tree of Life (iTol)</a> service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In this workshop we will be using the online <code>iToL</code> service to visualise and interpret trees.</p>
-</div>
-</div>
-<p>The <code>R</code> software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As <code>R</code> is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in <code>R</code> are in high demand in academia and industry.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can produce equivalent trees to those you will produce in these exercises using standalone tools like <code>figtree</code> and <code>dendroscope</code>. Some tree visualisations can only be achieved in specialised packages, or with tools like <code>ggtree</code>.</p>
-<p><code>ggtree</code> is an <code>R</code> package that extends the <code>ggplot2</code> data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).</p>
-<ul>
-<li><a href="https://guangchuangyu.github.io/ggtree/"><code>ggtree</code> homepage</a></li>
-<li><a href="https://yulab-smu.top/treedata-book/">The <code>ggtree</code> book</a></li>
-</ul>
-</div>
-</div>
-
-
 </section>
+<section id="online-tools" class="level2">
+<h2 class="anchored" data-anchor-id="online-tools">Online tools</h2>
+<ul>
+<li><code>iToL</code> (Interactive Tree of Life): online tool to visualise tree files <a href="https://itol.embl.de/">link</a></li>
+<li><code>MUSCLE</code>: multiple sequence alignment <a href="https://www.ebi.ac.uk/jdispatcher/msa/muscle">link</a></li>
+<li><code>PhyloT</code>: generate a tree from a list of taxonomic names <a href="https://phylot.biobyte.de/">link</a></li>
+<li><code>Simple Phylogeny</code>: simple tree generation methods <a href="https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny">link</a></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -687,13 +638,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees</span>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./loading-tree.html" class="pagination-link" aria-label="Loading a Phylogenetic Tree">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -705,7 +656,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/resources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
