@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./tree-refinement.html" rel="next">
 <link href="./itol-visualisation-1.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -148,6 +168,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./tree-refinement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -174,6 +200,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#make-a-multiple-sequence-alignment" id="toc-make-a-multiple-sequence-alignment" class="nav-link" data-scroll-target="#make-a-multiple-sequence-alignment"><span class="header-section-number">4.3</span> Make a multiple sequence alignment</a></li>
   <li><a href="#construct-a-phylogenetic-tree" id="toc-construct-a-phylogenetic-tree" class="nav-link" data-scroll-target="#construct-a-phylogenetic-tree"><span class="header-section-number">4.4</span> Construct a phylogenetic tree</a></li>
   <li><a href="#visualise-the-tree" id="toc-visualise-the-tree" class="nav-link" data-scroll-target="#visualise-the-tree"><span class="header-section-number">4.5</span> Visualise the tree</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4.6</span> Summary</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/make-a-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -182,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></h1>
+<h1 class="title"><span id="sec-making-a-tree" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></span></h1>
 </div>
 
 
@@ -223,7 +250,7 @@ Note
 </div>
 <section id="scenario" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="scenario"><span class="header-section-number">4.1.1</span> Scenario</h3>
-<p>You are a biomedical researcher interested in the pathogen <em>Burkholderia pseudomallei</em>, which causes <a href="https://en.wikipedia.org/wiki/Melioidosis">melioidosis</a> in humans. Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called <em>effectors</em>: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.</p>
+<p>You are a biomedical researcher interested in evolution of the pathogen <em>Burkholderia pseudomallei</em>, which causes <a href="https://en.wikipedia.org/wiki/Melioidosis">melioidosis</a> in humans (<span class="citation" data-cites="Chewapreecha2017-lx">Chewapreecha et al. (<a href="references.html#ref-Chewapreecha2017-lx" role="doc-biblioref">2017</a>)</span>). Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called <em>effectors</em>: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.</p>
 <p>The protein you are studying, BipC, is such an <em>effector</em> protein. Specifically, it is a <em>translocator</em> protein that makes holes in the host’s cells, allowing its own effector proteins to enter and manipulate host biochemistry, and also binds to <a href="https://en.wikipedia.org/wiki/Actin">actin microfilaments</a>, disrupting host cell structure.</p>
 <p>You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis.</p>
 </section>
@@ -1105,8 +1132,52 @@ Figure&nbsp;4.12: The tree generated for BipC by <code>Simple Phylogeny</code>, 
 </div>
 </div>
 </div>
+</section>
+<section id="summary" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">4.6</span> Summary</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Well Done!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Well Done!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After successfully working through this section you should be able to:</p>
+<ul>
+<li>use UniProt to obtain annotation and functional information about a protein sequence</li>
+<li>use UniProt to identify and download homologues of a protein sequence</li>
+<li>generate a protein multiple sequence alignment using <code>MUSCLE</code></li>
+<li>produce a Neighbour-Joining phylogenetic tree using <code>Simple Phylogeny</code></li>
+<li>visualise a phylogenetic tree using <code>iToL</code></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Please complete the workshop by answering the questions below in the formative quiz on MyPlace</strong></p>
+<ul>
+<li><a href="">MyPlace formative quiz</a></li>
+</ul>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Chewapreecha2017-lx" class="csl-entry" role="listitem">
+Chewapreecha, Claire, Matthew T G Holden, Minna Vehkala, Niko Välimäki, Zhirong Yang, Simon R Harris, Alison E Mather, et al. 2017. <span>“Global and Regional Dissemination and Evolution of Burkholderia Pseudomallei.”</span> <em>Nat. Microbiol.</em> 2 (4).
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1526,8 +1597,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tree-refinement.html" class="pagination-link" aria-label="Refining a Phylogenetic Tree Visualisation">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

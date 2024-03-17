@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>BM211 Workshop 5: Phylogenetic Trees - 2&nbsp; Loading a Phylogenetic Tree</title>
+<title>BM211 Workshop 5: Phylogenetic Trees - 5&nbsp; Refining a Phylogenetic Tree Visualisation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,8 +51,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./itol-visualisation-1.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./make-a-tree.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./loading-tree.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tree-refinement.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./loading-tree.html" class="sidebar-item-text sidebar-link active">
+  <a href="./loading-tree.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></span></a>
   </div>
 </li>
@@ -148,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tree-refinement.html" class="sidebar-item-text sidebar-link">
+  <a href="./tree-refinement.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></span></a>
   </div>
 </li>
@@ -168,24 +188,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#load-your-tree-data" id="toc-load-your-tree-data" class="nav-link" data-scroll-target="#load-your-tree-data"><span class="header-section-number">2.2</span> Load your tree data</a></li>
-  <li><a href="#understanding-your-tree" id="toc-understanding-your-tree" class="nav-link" data-scroll-target="#understanding-your-tree"><span class="header-section-number">2.3</span> Understanding your tree</a>
-  <ul class="collapse">
-  <li><a href="#trees-and-time" id="toc-trees-and-time" class="nav-link" data-scroll-target="#trees-and-time"><span class="header-section-number">2.3.1</span> Trees and time</a></li>
-  <li><a href="#ancestry-and-history" id="toc-ancestry-and-history" class="nav-link" data-scroll-target="#ancestry-and-history"><span class="header-section-number">2.3.2</span> Ancestry and history</a></li>
-  <li><a href="#clades" id="toc-clades" class="nav-link" data-scroll-target="#clades"><span class="header-section-number">2.3.3</span> Clades</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.4</span> Summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
+  <li><a href="#re-rooting-the-tree" id="toc-re-rooting-the-tree" class="nav-link" data-scroll-target="#re-rooting-the-tree"><span class="header-section-number">5.2</span> Re-rooting the tree</a></li>
+  <li><a href="#highlighting-clades" id="toc-highlighting-clades" class="nav-link" data-scroll-target="#highlighting-clades"><span class="header-section-number">5.3</span> Highlighting clades</a></li>
+  <li><a href="#gene-trees-and-species-trees" id="toc-gene-trees-and-species-trees" class="nav-link" data-scroll-target="#gene-trees-and-species-trees"><span class="header-section-number">5.4</span> Gene trees and species trees</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.5</span> Summary</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/loading-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/tree-refinement.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-itol-load" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Loading a Phylogenetic Tree</span></span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></h1>
 </div>
 
 
@@ -202,48 +218,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>As noted in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>, you will generally encounter phylogenetic trees as a plain text file in one of a handful of common file formats, such as:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Newick_format"><code>newick</code></a>, file ending <code>.new</code>, <code>.nwk</code>, <code>.newick</code></li>
-<li><a href="https://en.wikipedia.org/wiki/Nexus_file"><code>NEXUS</code></a>, file ending <code>.nex</code>, <code>.nexus</code></li>
-<li><a href="https://en.wikipedia.org/wiki/PHYLIP"><code>phylip</code></a>, file ending <code>.phy</code>, <code>.phylip</code></li>
-</ul>
-<p>Whichever software tool you use to read and visualise your tree, you will need to <em>load</em> the data into that tool. In <code>iToL</code> you would need to upload the data to the server. In <code>figtree</code> or <code>dendroscope</code> you would open the file through a dialogue box. Using <code>ggtree</code> in <code>R</code>, you would write code to open the file and run commands to visualise it.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In this workshop we will be using the online <code>iToL</code> service to visualise and interpret trees. This does not require you to install any software on your machine. The <code>iToL</code> service is available at the link below.</p>
-<ul>
-<li><a href="https://itol.embl.de/"><strong><code>iToL</code></strong></a></li>
-</ul>
-</div>
-</div>
-<div id="fig-itol-landing" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-itol-landing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/itol-landing.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-landing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: <code>iToL</code> landing page at <a href="https://itol.embl.de">https://itol.embl.de</a>.
-</figcaption>
+<section id="introduction" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
+<p>In <a href="make-a-tree.html" class="quarto-xref"><span>Chapter 4</span></a> you used UniProt, <code>MUSCLE</code>, <code>Simple Phylogeny</code> and <code>iTol</code> to construct a tree from homologues of the BipC effector protein. The tree you generated will have resembled that in <span class="quarto-unresolved-ref">?fig-itol-simphy-01</span>, which is a reflection of the data, but is possibly not the most informative tree layout.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="assets/images/itol-simphy-01.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>The default BipC tree output from <code>Simple Phylogeny</code>, visualised in <code>iToL</code>.</figcaption>
 </figure>
 </div>
+<p>In this section of the workshop, you will use <code>iToL</code>’s tools to make your tree more informative to a reader, using the tree you uploaded at the end of <a href="make-a-tree.html" class="quarto-xref"><span>Chapter 4</span></a>.</p>
 </section>
-<section id="load-your-tree-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="load-your-tree-data"><span class="header-section-number">2.2</span> Load your tree data</h2>
-<p>Your tree data is in a file called <code>tree_newick.nwk</code>. This tree file describes a phylogeny with 13 samples, and it should be downloaded to your computer from the link below.</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk"><strong><code>tree_newick.nwk</code></strong></a></li>
-</ul>
+<section id="re-rooting-the-tree" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="re-rooting-the-tree"><span class="header-section-number">5.2</span> Re-rooting the tree</h2>
+<p>The Neighbour-Joining methodology that was used to build the tree in <code>Simple Phylogeny</code> assigns a root to the tree, although this might not be the true phylogenetic root of the tree. We can inspect the tree without any assumption of root placement by examining the <em>unrooted</em> tree.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Task">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -254,71 +242,11 @@ Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Upload the tree file <code>tree_newick.nwk</code> to <code>iToL</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-I need a hint!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li>Click on the <code>Upload</code> button (<a href="#fig-itol-upload-button" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) to see the tree file upload page</li>
-<li>Follow the instructions on the page</li>
-</ul>
-<div id="fig-itol-upload-button" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-itol-upload-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/itol-upload-button.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-upload-button-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: <code>iTol</code> tree file upload button.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Help! I’m stuck!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li>Click on the <code>Upload</code> button (<a href="#fig-itol-upload-button" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) to see the tree file upload page</li>
-<li>Enter a name for the tree in the <code>Tree name:</code> field.</li>
-<li>Click on the <code>Browse</code> button, and select your downloaded <code>tree_newick.nwk</code> file. The name of the file will appear next to the button.</li>
-<li>Click on the <code>Upload</code> button</li>
-</ul>
-<div id="fig-itol-tree-upload" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-itol-tree-upload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/itol-tree-upload.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-tree-upload-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: <code>iToL</code> tree file upload page.
-</figcaption>
-</figure>
-</div>
-</div>
+<p><strong>Use <code>iToL</code> to see the unrooted layout of your tree.</strong></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -327,49 +255,22 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>After uploading the tree, <code>iTol</code> should present the default tree view, as in (<a href="#fig-itol-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>).</p>
-<div id="fig-itol-tree-newick-01" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>Your unrooted tree should look something like that in <a href="#fig-itol-simphy-unrooted" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>. There are two groups of sequences - one group closely related to each other (short branches) and one that is more diverse (longer branches).</p>
+<div id="fig-itol-simphy-unrooted" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-itol-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/itol-tree-newick-01.png" class="img-fluid figure-img" style="width:80.0%">
+<div aria-describedby="fig-itol-simphy-unrooted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-simphy-02.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: The default <code>iToL</code> view of the uploaded <code>tree_newick.nwk</code> tree.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-simphy-unrooted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Unrooted <code>Simple Phylogeny</code> tree for BipC generated in <code>iTol</code>. There are two groups of sequences - one closely related (on the left), and one more distantly related (on the right)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="understanding-your-tree" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="understanding-your-tree"><span class="header-section-number">2.3</span> Understanding your tree</h2>
-<p>Considering the <code>newick</code> file contents you saw in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a> (and shown below), you might expect that the tree shows relationships between species represented by the letters <code>A</code>-<code>M</code> in that file:</p>
-<pre class="text"><code>(((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);</code></pre>
-<p>The tree <code>iTol</code> presents at first (<a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>) shows these relationships.</p>
-<div id="fig-tree-newick-01" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/tree-newick-01.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.5: Rectangular phylogram representation of the <code>tree_newick.nwk</code> file.
-</figcaption>
-</figure>
-</div>
-<ul>
-<li>the tree is a set of <em>bifurcating branches</em> that spread out from the last common ancestor (LCA) and represent an <strong>estimated</strong> evolutionary history</li>
-<li>this is a <em>rooted tree</em>, so the last common ancestor (LCA) is considered to be represented at the very far left of the tree, at its <em>root</em>
-<ul>
-<li><strong>in this tree, <em>ancestors</em> are on the left, and <em>descendants</em> are on the right</strong></li>
-</ul></li>
-<li>the horizontal dimension in this plot shows the amount of genetic change since the LCA - less change towards the left-hand side, more towards the right
-<ul>
-<li><strong>this tree is a <em>phylogram</em>, which means that the lengths of the branches are meaningful and represent the amount of genetic change</strong></li>
-</ul></li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -380,62 +281,79 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Branch lengths are usually drawn in units of <em>nucleotide substitutions per site</em> - the estimated total number of nucleotide substitutions, divided by (<em>normalised to</em>) the length of the sequence.</p>
-<p>You may sometimes see alternative units being used, such as estimated time, or the percentage of sites that have changed.</p>
+<p>The unrooted tree suggests that there might be two distinct groups of sequences, but this information looks to be masked in the default rectangular tree, so we will try re-rooting it for clarity.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<p>A common approach to initial rooting of a tree, where an outgroup was not included in the analysis, is to use <em>midpoint rooting</em>. <em>Midpoint rooting</em> assumes that the root of the tree is halfway between the two most distantly-related sequences or species.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 01
+Midpoint rooting in <code>iTol</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which species shows the most genetic change since the LCA?</p>
+<p>To use midpoint rooting in <code>iTol</code></p>
 <ul>
-<li><code>A</code></li>
-<li><code>E</code></li>
-<li><code>G</code></li>
-<li><code>K</code></li>
+<li>Select the <code>Advanced</code> tab from the control panel</li>
+<li>Click on <code>Midpoint root</code> in the <code>Other functions</code> section</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer 01
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The total distance from the LCA to the leaf node for a species represents the total amount of genetic change. More straightforwardly here, the species whose leaf node is farthest to the right in <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> has accumulated the most genetic change since the LCA. Of the four options presented, the species with greatest genetic change since the LCA is <code>G</code>.</p>
-</div>
-</div>
-</div>
-<section id="trees-and-time" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="trees-and-time"><span class="header-section-number">2.3.1</span> Trees and time</h3>
-<p>The general relationship between this phylogram and time is shown in <a href="#fig-tree-newick-02" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>.</p>
-<div id="fig-tree-newick-02" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-control-advanced" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tree-newick-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/tree-newick-02.png" class="img-fluid figure-img" style="width:80.0%">
+<div aria-describedby="fig-itol-control-advanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-control-panel-02.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: <code>iToL</code> phylogram annotated with <em>root</em>, <em>leaves</em>, <em>bifurcations</em>, and the relationship between ancestors and descendents.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-control-advanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: <code>iTol</code>’s advanced control panel tab
 </figcaption>
 </figure>
 </div>
-<p>As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can’t immediately interpret branch lengths as time. The best we can sometimes do is - when the sequences/organisms used to build the tree are known to exist <em>now</em> - say that the leaves of the tree approximately represent the current date.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Use <code>iToL</code>’s Midpoint Rooting to modify the layout of your tree.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Your midpoint-rooted tree should look something like that in <a href="#fig-itol-simphy-midpoint" class="quarto-xref">Figure&nbsp;<span>5.3</span></a> There is a group of recently-diverged sequences (sharing a recent common ancestor with short branches), and a group of more anciently-diverged sequences (sharing a recent common ancestor with longer branches).</p>
+<div id="fig-itol-simphy-midpoint" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-itol-simphy-midpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-simphy-03.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-simphy-midpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Midpoint-rooted <code>Simple Phylogeny</code> tree for BipC generated in <code>iTol</code>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -446,179 +364,164 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are phylogenetic techniques that allow us to convert genetic distances into approximate times, but they are beyond the scope of this workshop.</p>
+<p>After midpoint rooting the tree, we might consider that there are two clades of interest - a recently-rooted clade, and a more anciently-rooted clade. It might be worth colouring these sequence groups in the figure, so we can refer a reader to them.</p>
 </div>
 </div>
+</section>
+<section id="highlighting-clades" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="highlighting-clades"><span class="header-section-number">5.3</span> Highlighting clades</h2>
+<p>To highlight a clade in <code>iToL</code> by changing branch colour and thickness, first select the ancestral branch to a clade, as in <a href="#fig-itol-clade-select" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>.</p>
+<div id="fig-itol-clade-select" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-itol-clade-select-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-clade-select.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-clade-select-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.4: Selecting the recently-rooted clade in the <code>iTol</code> tree.
+</figcaption>
+</figure>
+</div>
+<p>Then bring up the context menu and select <code>Branches -&gt; Whole Clade</code> to see colour and line thickness options (<a href="itol-visualisation-1.html#fig-itol-clade-context" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>). Set those options to whatever seems like a good visualisation choice for you.</p>
+<div id="fig-itol-clade-context-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-itol-clade-context-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-clade-context-2.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-clade-context-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.5: Selecting clade branch colouring options in the <code>iToL</code> context menu
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Use <code>iToL</code>’s formatting options to highlight the more deeply-rooting clade in a way that distinguishes it from the more shallow clade.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The resulting formatted tree should look something like that in <a href="#fig-itol-simphy-05" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>.</p>
+<div id="fig-itol-simphy-05" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-itol-simphy-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-simphy-05.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-simphy-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.6: The BipC tree with deep- and shallow clades highlighted using <code>iToL</code>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gene-trees-and-species-trees" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="gene-trees-and-species-trees"><span class="header-section-number">5.4</span> Gene trees and species trees</h2>
+<p>Any phylogenetic tree we generate reflects only the data used to construct it. If we use sequences corresponding to a single gene or gene produce, as we did for BipC, we generate a history <strong>for that gene/gene product</strong> - this is a <em>gene tree</em>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We might assume that genes are transmitted <em>vertically</em> from parent to offspring but, in most life on Earth - i.e.&nbsp;microbial life, genes can also be transmitted <em>horizontally</em> and <em>recombined</em> into a different organism, maybe even a different species.</p>
+<p><strong>We cannot always assume that the history of a gene reflects the history of the organism it is currently found in.</strong></p>
+</div>
+</div>
+<p>As the history of any particular gene may not be the same as that of the organism it is found in, we have developed alternative approaches to construct <em>species trees</em> that are more reflective of the evolution of the species as a whole. These approaches are out of scope for this workshop, but include:</p>
 <ul>
-<li><strong>currently existing species (<code>A</code>-<code>M</code>) - the input for building the tree - are shown at the <em>leaves</em></strong> (or <em>leaf nodes</em>) of the tree, at the ends of the <em>branches</em></li>
-<li>the branching events (<em>bifurcations</em>) show how evolutionary lineages split, as the amount of genetic change increases from left to right; they represent events in evolution where a population divides into two subgroups with different genetic histories
+<li>whole-genome SNP trees</li>
+<li>multigene phylogenetic trees, essentially averaging over many single gene trees
 <ul>
-<li><strong>in a biological context, this process is often referred to as <em>speciation</em></strong></li>
-<li><strong>the order of bifurcation can be interpreted as the order in which speciation events occurred</strong></li>
+<li>where a multigene tree includes every homologous gene across all the organisms involved, it is called a <em>core gene phylogeny</em>.</li>
 </ul></li>
-<li>the amount of genetic change between branching events is represented by the length of the branch that separates them; the scale bar allows you to interpret the branch length quantitatively</li>
+<li>whole-genome distance measures, like Average Nucleotide Identity (ANI) or digital DNA-DNA hybridisation (dDDH)</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Question 02
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> implies that which speciation event was the earliest?</p>
-<ul>
-<li>the speciation separating <code>A</code> and <code>B</code></li>
-<li>the speciation separating <code>B</code> and <code>C</code></li>
-<li>the speciation separating <code>B</code> and <code>D</code></li>
-<li>the speciation separating <code>C</code> and <code>E</code></li>
-</ul>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Answer 02
+Warning
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We have to be careful with the interpretation because the <strong>lengths of branches represent genetic change, not time</strong>. However, moving from left to right we can see that <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, and <code>E</code> derived from a single common ancestor. The order in which the individual species emerged is the order of speciations from left to right in this tree. So, <code>E</code> diverged first, then <code>D</code>, <code>C</code>, <code>B</code> and <code>A</code> in that order. The earliest specietion is the one involving species <code>E</code>, so the answer is the speciation separating <code>C</code> and <code>E</code>.</p>
+<p>We would like to know how similar our BipC gene tree is to the known species tree for the organisms represented in it. We can tell which organisms are present in the tree by looking at the annotation label, specifically the final few characters:</p>
+<ul>
+<li><code>9BURK</code>: <em>B. mayonis</em>, <em>B. humptydooensis</em>, <em>B. oklahomensis</em>, _Burkholderia sp.</li>
+<li><code>BURM7</code>: <em>B. mallei</em></li>
+<li><code>BURM9</code>: <em>B. mallei</em></li>
+<li><code>BURMA</code>: <em>B. mallei</em></li>
+<li><code>BURML</code>: <em>B. mallei</em></li>
+<li><code>BURP0</code>: <em>B. pseudomallei</em></li>
+<li><code>BURP1</code>: <em>B. pseudomallei</em></li>
+<li><code>BURP2</code>: <em>B. pseudomallei</em></li>
+<li><code>BURPS</code>: <em>B. pseudomallei</em></li>
+<li><code>BURP6</code>: <em>B. pseudomallei</em></li>
+<li><code>BURPB</code>: <em>B. pseudomallei</em></li>
+<li><code>BURPE</code>: <em>B. pseudomallei</em></li>
+<li><code>BURTA</code>: <em>B. thailandensis</em></li>
+<li><code>BURTH</code>: <em>B. thailandensis</em></li>
+</ul>
 </div>
 </div>
-</div>
-</section>
-<section id="ancestry-and-history" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="ancestry-and-history"><span class="header-section-number">2.3.2</span> Ancestry and history</h3>
-<p>Phylogenetic trees represent patterns of shared ancestry and history between lineages. For instance, in <a href="#fig-tree-newick-03" class="quarto-xref">Figure&nbsp;<span>2.7</span></a> common and unique ancestors of <code>A</code>, <code>B</code> and <code>C</code> are indicated, as are common and unique histories of <code>I</code> and <code>J</code>.</p>
-<div id="fig-tree-newick-03" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>A core gene tree has been produced for this group of organisms - the <em>B. pseudomallei</em> complex (<span class="citation" data-cites="Hall2022-pk">Hall et al. (<a href="references.html#ref-Hall2022-pk" role="doc-biblioref">2022</a>)</span>), and can be seen in <a href="#fig-pseudomallei-core" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>.</p>
+<div id="fig-pseudomallei-core" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tree-newick-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/tree-newick-03.png" class="img-fluid figure-img" style="width:80.0%">
+<div aria-describedby="fig-pseudomallei-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/pseudomallei_core.jpg" class="img-fluid figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: <code>iToL</code> phylogram annotated with unique and shared ancestries and histories. Ancestors are single points on a branch (represented here as boxes), whereas histories are the entire set of ancestors represented by a branch.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pseudomallei-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.7: Core genome phylogeny of 66 strains in the <em>B. pseudomallei</em> complex. This maximum-likelihood phylogeny was created using core genome SNPs shared by all strains and rooted on <em>B. ubonensis</em> strain MSMB22 as an outgroup
 </figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-important callout-titled" title="Discussion questions">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question 03
+Discussion questions
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following accumulated the greatest amount of genetic change?</p>
+<p><strong>Compare the tree in <a href="#fig-pseudomallei-core" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> to the tree you have produced from BipC.</strong></p>
 <ul>
-<li>the unique history of <code>E</code></li>
-<li>the shared history of <code>I</code> and <code>J</code></li>
-<li>the shared history of <code>I</code>, <code>J</code>, <code>K</code>, and <code>L</code></li>
-<li>the unique history of <code>D</code></li>
+<li>How are the trees similar?</li>
+<li>How do the trees differ?</li>
+</ul>
+<p><strong><em>B. mallei</em> (glanders) and <em>B. pseudomallei</em> are the only pathogenic members of the <em>B. pseudomallei</em> complex (<span class="citation" data-cites="Janesomboon2021-dd">Janesomboon et al. (<a href="references.html#ref-Janesomboon2021-dd" role="doc-biblioref">2021</a>)</span>). BipC is an effector protein that promotes infection of human and animal hosts.</strong></p>
+<ul>
+<li>Considered in the context of the core genome tree in <a href="#fig-pseudomallei-core" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>, what does your tree suggest about the evolution of BipC?</li>
 </ul>
 </div>
 </div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer 03
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>From those listed, the branch that accumulated the most genetic change is the longest of the branches. The shared history of <code>I</code> and <code>J</code> is the longest of these, so has accumulated the most genetic change.</p>
-</div>
-</div>
-</div>
 </section>
-<section id="clades" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="clades"><span class="header-section-number">2.3.3</span> Clades</h3>
-<p>A <em>clade</em> is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties <em>monpphyletic</em> (i.e.&nbsp;it comprises a single phylum). <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows examples of clades in the <code>iToL</code> tree you generated.</p>
-<div id="fig-tree-newick-04" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tree-newick-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="assets/images/tree-newick-04.png" class="img-fluid figure-img" style="width:80.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-newick-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: <code>iToL</code> phylogram annotated with <em>clades</em>, groupings on the tree that include a common ancestor and all its descendants. Clades can be <em>nested</em> inside each other as a hierarchy. Clade4 (<code>A</code>, <code>B</code>, <code>C</code>) is completely contained within Clade3 (<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>).
-</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Question 04
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following groups of leaf nodes form a <em>clade</em>?</p>
-<ol type="1">
-<li>(<code>J</code>, <code>K</code>, <code>L</code>)</li>
-<li>(<code>F</code>, <code>G</code>, <code>H</code>)</li>
-<li>(<code>D</code>, <code>E</code>)</li>
-<li>(<code>K</code>, <code>L</code>)</li>
-</ol>
-<ul>
-<li>all of the groups form a clade</li>
-<li>only groups 1 and 4 form clades</li>
-<li>only groups 2 and 4 form clades</li>
-<li>only group 1 forms a clade</li>
-<li>only group 2 forms a clade</li>
-<li>only group 3 forms a clade</li>
-<li>only group 4 forms a clade</li>
-<li>only groups 2 and 3 form clades</li>
-<li>none of the groups form a clade</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer 04
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Group 1, (<code>J</code>, <code>K</code>, <code>L</code>) does not form a clade because the common ancestor of these species also has <code>I</code> as a descendent, and it is not included in the group.</p>
-<p>Group 2, (<code>F</code>, <code>G</code>, <code>H</code>) forms a clade (see <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>).</p>
-<p>Group 3, (<code>D</code>, <code>E</code>) does not form a clade because the common ancestor of these species also has <code>A</code> , <code>B</code>, and <code>C</code> as descendents, and they are not included in the group.</p>
-<p>Group 4, (<code>K</code>, <code>L</code>) does form a clade as <code>K</code>, <code>L</code> and all descendants from their common ancestor are included.</p>
-<p>Thus, the answer is <strong>only groups 2 and 4 form clades</strong>.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="summary" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.4</span> Summary</h2>
+<section id="summary" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.5</span> Summary</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Well Done!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -631,10 +534,10 @@ Well Done!
 <div class="callout-body-container callout-body">
 <p>After successfully working through this section you should be able to:</p>
 <ul>
-<li>upload a phylogenetic tree into <code>iToL</code></li>
-<li>explain the meaning of branching events and branch lengths in a phylogenetic tree</li>
-<li>explain how a phylogenetic tree represents history and ancestry</li>
-<li>explain the concept of a <em>clade</em> in phylogenetics</li>
+<li>midpoint root a tree in <code>iToL</code></li>
+<li>colour highlight clades of a tree in <code>iToL</code></li>
+<li>explain the difference between a <em>gene tree</em> and a <em>species tree</em></li>
+<li>compare a gene tree with a species tree to interpret evolutionary history</li>
 </ul>
 </div>
 </div>
@@ -648,7 +551,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Please answer the questions below in the formative quiz on MyPlace</strong></p>
+<p><strong>Please complete the workshop by answering the questions below in the formative quiz on MyPlace</strong></p>
 <ul>
 <li><a href="">MyPlace formative quiz</a></li>
 </ul>
@@ -656,6 +559,14 @@ Important
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Hall2022-pk" class="csl-entry" role="listitem">
+Hall, Carina M, Anthony L Baker, Jason W Sahl, Mark Mayo, Holger C Scholz, Mirjam Kaestli, James Schupp, et al. 2022. <span>“Expanding the Burkholderia Pseudomallei Complex with the Addition of Two Novel Species: Burkholderia Mayonis Sp. Nov. And Burkholderia Savannae Sp. Nov.”</span> <em>Appl. Environ. Microbiol.</em> 88 (1): e0158321.
+</div>
+<div id="ref-Janesomboon2021-dd" class="csl-entry" role="listitem">
+Janesomboon, Sujintana, Veerachat Muangsombut, Varintip Srinon, Chatruthai Meethai, Chayada S Tharinjaroen, Premjit Amornchai, Patoo Withatanung, et al. 2021. <span>“Detection and Differentiation of Burkholderia Species with Pathogenic Potential in Environmental Soil Samples.”</span> <em>PLoS One</em> 16 (1): e0245175.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1070,13 +981,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./make-a-tree.html" class="pagination-link" aria-label="Making a Phylogenetic Tree">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./itol-visualisation-1.html" class="pagination-link" aria-label="Types of Phylogenetic Tree">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of Phylogenetic Tree</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1088,7 +999,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/loading-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/tree-refinement.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
