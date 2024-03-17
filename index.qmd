@@ -20,11 +20,16 @@ There is new material in this workshop that is not covered in lectures, and this
 
 By the end of this workshop, students will be able to:
 
-[**FILL IN TEXT HERE**]
+- explain how a phylogenetic tree represents history and ancestry
+- use `iToL` to visualise a variety of phylogenetic tree types
+- describe and interpret the _topology_ of a tree
+- generate a phylogenetic tree for a protein sequence and its homologues using UniProt, `MUSCLE`, and `iToL`
+- explain the difference between a _gene tree_ and a _species tree_
+- compare a gene tree with a species tree to interpret evolutionary history
 
 ## Assessment
 
-The workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. [**FILL IN TEXT HERE**]
+The workshop is not formally assessed although, as noted above, all the material contained in the workshop is examinable. We have provided formative exercises to help you measure your progress.
 
 ::: { .callout-important }
 There are four formative exercises in this workshop, and they can be found on the workshop [MyPlace page]({{< var myplace.bm211 >}}). You should complete these as part of the workshop.

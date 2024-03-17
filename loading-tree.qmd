@@ -91,12 +91,6 @@ In @fig-tree-newick-01 which species shows the most genetic change since the LCA
 - `K`
 :::
 
-::: { .callout-warning collapse="true" }
-## Answer 01
-
-The total distance from the LCA to the leaf node for a species represents the total amount of genetic change. More straightforwardly here, the species whose leaf node is farthest to the right in @fig-tree-newick-01 has accumulated the most genetic change since the LCA. Of the four options presented, the species with greatest genetic change since the LCA is `G`.
-:::
-
 ### Trees and time
 
 The general relationship between this phylogram and time is shown in @fig-tree-newick-02.
@@ -126,12 +120,6 @@ There are phylogenetic techniques that allow us to convert genetic distances int
 - the speciation separating `C` and `E`
 :::
 
-::: { .callout-warning collapse="true" }
-## Answer 02
-
-We have to be careful with the interpretation because the **lengths of branches represent genetic change, not time**. However, moving from left to right we can see that `A`, `B`, `C`, `D`, and `E` derived from a single common ancestor. The order in which the individual species emerged is the order of speciations from left to right in this tree. So, `E` diverged first, then `D`, `C`, `B` and `A` in that order. The earliest specietion is the one involving species `E`, so the answer is the speciation separating `C` and `E`.
-:::
-
 ### Ancestry and history
 
 Phylogenetic trees represent patterns of shared ancestry and history between lineages. For instance, in @fig-tree-newick-03 common and unique ancestors of `A`, `B` and `C` are indicated, as are common and unique histories of `I` and `J`.
@@ -149,12 +137,6 @@ In @fig-tree-newick-01 which of the following accumulated the greatest amount of
 - the unique history of `D`
 :::
 
-::: { .callout-warning collapse="true" }
-## Answer 03
-
-From those listed, the branch that accumulated the most genetic change is the longest of the branches. The shared history of `I` and `J` is the longest of these, so has accumulated the most genetic change.
-:::
-
 ### Clades
 
 A _clade_ is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties _monpphyletic_ (i.e. it comprises a single phylum). @fig-tree-newick-04 shows examples of clades in the `iToL` tree you generated. 
@@ -170,30 +152,6 @@ In @fig-tree-newick-01 which of the following groups of leaf nodes form a _clade
 2. (`F`, `G`, `H`)
 3. (`D`, `E`)
 4. (`K`, `L`)
-
-- all of the groups form a clade
-- only groups 1 and 4 form clades
-- only groups 2 and 4 form clades
-- only group 1 forms a clade
-- only group 2 forms a clade
-- only group 3 forms a clade
-- only group 4 forms a clade
-- only groups 2 and 3 form clades
-- none of the groups form a clade
-:::
-
-::: { .callout-warning collapse="true" }
-## Answer 04
-
-Group 1, (`J`, `K`, `L`) does not form a clade because the common ancestor of these species also has `I` as a descendent, and it is not included in the group.
-
-Group 2, (`F`, `G`, `H`) forms a clade (see @fig-tree-newick-04).
-
-Group 3, (`D`, `E`) does not form a clade because the common ancestor of these species also has `A` , `B`, and `C` as descendents, and they are not included in the group.
-
-Group 4, (`K`, `L`) does form a clade as `K`, `L` and all descendants from their common ancestor are included.
-
-Thus, the answer is **only groups 2 and 4 form clades**.
 :::
 
 ## Summary

@@ -68,25 +68,6 @@ How many amino acids does this protein contain (i.e. how long is the sequence)?
 
 Look at the header for the record page, or click on `Sequence` in the sidebar.
 :::
-::: { .callout-important title="Question 1"}
-What organism does this sequence come from?
-:::
-
-::: { .callout-tip collapse="true" }
-## I need a hint!
-
-Look at the header for the record page.
-:::
-
-::: { .callout-important title="Question 2"}
-How many amino acids does this protein contain (i.e. how long is the sequence)?
-:::
-
-::: { .callout-tip collapse="true" }
-## I need a hint!
-
-Look at the header for the record page, or click on `Sequence` in the sidebar.
-:::
 
 ::: { .callout-important title="Question 3"}
 According to the Gene Ontology (GO), what is the subcellular location of this protein?
@@ -109,7 +90,7 @@ Click on `Similar Proteins` and look at the table.
 :::
 
 ::: { .callout-important title="Question 5"}
-What is the accession of the identical sequence in _Burkholderia pseudomallei_
+What are the accessions of the identical sequences in _Burkholderia pseudomallei_
 :::
 
 ::: { .callout-tip collapse="true" }
