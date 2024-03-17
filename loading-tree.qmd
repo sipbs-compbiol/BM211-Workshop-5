@@ -196,7 +196,16 @@ Group 4, (`K`, `L`) does form a clade as `K`, `L` and all descendants from their
 Thus, the answer is **only groups 2 and 4 form clades**.
 :::
 
-## MyPlace Quiz
+## Summary
+
+::: { .callout-note title="Well Done!"}
+After successfully working through this section you should be able to:
+
+- upload a phylogenetic tree into `iToL`
+- explain the meaning of branching events and branch lengths in a phylogenetic tree
+- explain how a phylogenetic tree represents history and ancestry
+- explain the concept of a _clade_ in phylogenetics
+:::
 
 ::: { .callout-important }
 **Please answer the questions below in the formative quiz on MyPlace**

@@ -1,0 +1,148 @@
+# Refining a Phylogenetic Tree Visualisation
+
+## Introduction
+
+In @sec-making-a-tree you used UniProt, `MUSCLE`, `Simple Phylogeny` and `iTol` to construct a tree from homologues of the BipC effector protein. The tree you generated will have resembled that in @fig-itol-simphy-01, which is a reflection of the data, but is possibly not the most informative tree layout.
+
+![The default BipC tree output from `Simple Phylogeny`, visualised in `iToL`.](assets/images/itol-simphy-01.png){#figi-tol-simphy-01 width=80%}
+
+In this section of the workshop, you will use `iToL`'s tools to make your tree more informative to a reader, using the tree you uploaded at the end of @sec-making-a-tree.
+
+## Re-rooting the tree
+
+The Neighbour-Joining methodology that was used to build the tree in `Simple Phylogeny` assigns a root to the tree, although this might not be the true phylogenetic root of the tree. We can inspect the tree without any assumption of root placement by examining the _unrooted_ tree.
+
+::: { .callout-important title="Task" }
+**Use `iToL` to see the unrooted layout of your tree.**
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your unrooted tree should look something like that in @fig-itol-simphy-unrooted. There are two groups of sequences - one group closely related to each other (short branches) and one that is more diverse (longer branches).
+
+![Unrooted `Simple Phylogeny` tree for BipC generated in `iTol`. There are two groups of sequences - one closely related (on the left), and one more distantly related (on the right)](assets/images/itol-simphy-02.png){#fig-itol-simphy-unrooted}
+:::
+
+::: { .callout-note }
+The unrooted tree suggests that there might be two distinct groups of sequences, but this information looks to be masked in the default rectangular tree, so we will try re-rooting it for clarity.
+:::
+
+A common approach to initial rooting of a tree, where an outgroup was not included in the analysis, is to use _midpoint rooting_. _Midpoint rooting_ assumes that the root of the tree is halfway between the two most distantly-related sequences or species.
+
+::: { .callout-tip collapse="true"}
+## Midpoint rooting in `iTol`
+
+To use midpoint rooting in `iTol`
+
+- Select the `Advanced` tab from the control panel
+- Click on `Midpoint root` in the `Other functions` section
+
+![`iTol`'s advanced control panel tab](assets/images/itol-control-panel-02.png){#fig-itol-control-advanced width=80%}
+:::
+
+::: { .callout-important title="Task" }
+**Use `iToL`'s Midpoint Rooting to modify the layout of your tree.**
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your midpoint-rooted tree should look something like that in @fig-itol-simphy-midpoint There is a group of recently-diverged sequences (sharing a recent common ancestor with short branches), and a group of more anciently-diverged sequences (sharing a recent common ancestor with longer branches).
+
+![Midpoint-rooted `Simple Phylogeny` tree for BipC generated in `iTol`.](assets/images/itol-simphy-03.png){#fig-itol-simphy-midpoint}
+:::
+
+::: { .callout-note }
+After midpoint rooting the tree, we might consider that there are two clades of interest - a recently-rooted clade, and a more anciently-rooted clade. It might be worth colouring these sequence groups in the figure, so we can refer a reader to them.
+:::
+
+## Highlighting clades
+
+To highlight a clade in `iToL` by changing branch colour and thickness, first select the ancestral branch to a clade, as in @fig-itol-clade-select.
+
+![Selecting the recently-rooted clade in the `iTol` tree.](assets/images/itol-clade-select.png){#fig-itol-clade-select width=80%}
+
+Then bring up the context menu and select `Branches -> Whole Clade` to see colour and line thickness options (@fig-itol-clade-context). Set those options to whatever seems like a good visualisation choice for you.
+
+![Selecting clade branch colouring options in the `iToL` context menu](assets/images/itol-clade-context-2.png){#fig-itol-clade-context-2 width=80%}
+
+::: { .callout-important title="Task" }
+**Use `iToL`'s formatting options to highlight the more deeply-rooting clade in a way that distinguishes it from the more shallow clade.**
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+The resulting formatted tree should look something like that in @fig-itol-simphy-05.
+
+![The BipC tree with deep- and shallow clades highlighted using `iToL`.](assets/images/itol-simphy-05.png){#fig-itol-simphy-05 width=80%}
+:::
+
+## Gene trees and species trees
+
+Any phylogenetic tree we generate reflects only the data used to construct it. If we use sequences corresponding to a single gene or gene produce, as we did for BipC, we generate a history **for that gene/gene product** - this is a _gene tree_.
+
+::: { .callout-note }
+We might assume that genes are transmitted _vertically_ from parent to offspring but, in most life on Earth - i.e. microbial life, genes can also be transmitted _horizontally_ and _recombined_ into a different organism, maybe even a different species.
+
+**We cannot always assume that the history of a gene reflects the history of the organism it is currently found in.**
+:::
+
+As the history of any particular gene may not be the same as that of the organism it is found in, we have developed alternative approaches to construct _species trees_ that are more reflective of the evolution of the species as a whole. These approaches are out of scope for this workshop, but include:
+
+- whole-genome SNP trees
+- multigene phylogenetic trees, essentially averaging over many single gene trees
+  - where a multigene tree includes every homologous gene across all the organisms involved, it is called a _core gene phylogeny_.
+- whole-genome distance measures, like Average Nucleotide Identity (ANI) or digital DNA-DNA hybridisation (dDDH)
+
+::: { .callout-warning }
+We would like to know how similar our BipC gene tree is to the known species tree for the organisms represented in it. We can tell which organisms are present in the tree by looking at the annotation label, specifically the final few characters:
+
+- `9BURK`: _B. mayonis_, _B. humptydooensis_, _B. oklahomensis_, _Burkholderia sp. 
+- `BURM7`: _B. mallei_
+- `BURM9`: _B. mallei_
+- `BURMA`: _B. mallei_
+- `BURML`: _B. mallei_
+- `BURP0`: _B. pseudomallei_
+- `BURP1`: _B. pseudomallei_
+- `BURP2`: _B. pseudomallei_
+- `BURPS`: _B. pseudomallei_
+- `BURP6`: _B. pseudomallei_
+- `BURPB`: _B. pseudomallei_
+- `BURPE`: _B. pseudomallei_
+- `BURTA`: _B. thailandensis_
+- `BURTH`: _B. thailandensis_
+:::
+
+A core gene tree has been produced for this group of organisms - the _B. pseudomallei_ complex (@Hall2022-pk), and can be seen in @fig-pseudomallei-core.
+
+![Core genome phylogeny of 66 strains in the _B. pseudomallei_ complex. This maximum-likelihood phylogeny was created using core genome SNPs shared by all strains and rooted on _B. ubonensis_ strain MSMB22 as an outgroup](assets/images/pseudomallei_core.jpg){#fig-pseudomallei-core width=80%}
+
+::: { .callout-important title="Discussion questions"}
+**Compare the tree in @fig-pseudomallei-core to the tree you have produced from BipC.**
+
+- How are the trees similar?
+- How do the trees differ?
+
+**_B. mallei_ (glanders) and _B. pseudomallei_ are the only pathogenic members of the _B. pseudomallei_ complex (@Janesomboon2021-dd). BipC is an effector protein that promotes infection of human and animal hosts.** 
+
+- Considered in the context of the core genome tree in @fig-pseudomallei-core, what does your tree suggest about the evolution of BipC?
+:::
+
+## Summary
+
+::: { .callout-note title="Well Done!"}
+After successfully working through this section you should be able to:
+
+- midpoint root a tree in `iToL`
+- colour highlight clades of a tree in `iToL`
+- explain the difference between a _gene tree_ and a _species tree_
+- compare a gene tree with a species tree to interpret evolutionary history
+:::
+
+::: { .callout-important }
+**Please complete the workshop by answering the questions below in the formative quiz on MyPlace**
+
+- [MyPlace formative quiz]({{< var myplace.quiz4 >}})
+:::

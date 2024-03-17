@@ -184,3 +184,22 @@ To generate an unrooted tree in `iTol`, select `Unrooted` mode in the `Basic` ta
 
 ![Use the `Circular` mode to generate an unrooted tree in `iToL`](assets/images/itol-control-panel-unrooted.png){#fig-itol-unrooted width=80%}
 :::
+
+## Summary
+
+::: { .callout-note title="Well Done!"}
+After successfully working through this section you should be able to:
+
+- explain the difference between a phylogram and cladogram
+- generate a rectangular phylogram and a rectangular cladogram using `iToL`
+- describe and interpret the _topology_ of a tree
+- describe and interpret _branch lengths_ of a tree
+- explain how rotation of a tree, and clades within the tree, affects what the tree represents
+- generate slanted cladograms, unrooted trees, and circular trees using `iToL`
+:::
+
+::: { .callout-important }
+**Please complete the workshop by answering the questions below in the formative quiz on MyPlace**
+
+- [MyPlace formative quiz]({{< var myplace.quiz2 >}})
+:::

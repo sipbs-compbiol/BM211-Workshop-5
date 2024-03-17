@@ -1,4 +1,4 @@
-# Making a Phylogenetic Tree
+# Making a Phylogenetic Tree {#sec-making-a-tree}
 
 ## Introduction
 
@@ -15,7 +15,7 @@ Although the principles and the order of actions taken here are the same as we w
 
 ### Scenario
 
-You are a biomedical researcher interested in the pathogen _Burkholderia pseudomallei_, which causes [melioidosis](https://en.wikipedia.org/wiki/Melioidosis) in humans. Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called _effectors_: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.
+You are a biomedical researcher interested in evolution of the pathogen _Burkholderia pseudomallei_, which causes [melioidosis](https://en.wikipedia.org/wiki/Melioidosis) in humans (@Chewapreecha2017-lx). Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called _effectors_: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.
 
 The protein you are studying, BipC, is such an _effector_ protein. Specifically, it is a _translocator_ protein that makes holes in the host's cells, allowing its own effector proteins to enter and manipulate host biochemistry, and also binds to [actin microfilaments](https://en.wikipedia.org/wiki/Actin), disrupting host cell structure.
 
@@ -343,4 +343,22 @@ You will now use `iTol` to visualise the tree you produced. Use what you have le
 The tree file shown in `iTol` should resemble @fig-itol-simpphy-tree.
 
 ![The tree generated for BipC by `Simple Phylogeny`, visualised in `iTol`](assets/images/itol-simpphy-tree.png){#fig-itol-simpphy-tree width=80%}
+:::
+
+## Summary
+
+::: { .callout-note title="Well Done!"}
+After successfully working through this section you should be able to:
+
+- use UniProt to obtain annotation and functional information about a protein sequence
+- use UniProt to identify and download homologues of a protein sequence
+- generate a protein multiple sequence alignment using `MUSCLE`
+- produce a Neighbour-Joining phylogenetic tree using `Simple Phylogeny`
+- visualise a phylogenetic tree using `iToL`
+:::
+
+::: { .callout-important }
+**Please complete the workshop by answering the questions below in the formative quiz on MyPlace**
+
+- [MyPlace formative quiz]({{< var myplace.quiz3 >}})
 :::
