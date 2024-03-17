@@ -1,4 +1,4 @@
-# Types of Phylogenetic Tree
+# Types of Phylogenetic Tree {#sec-itol-visualise}
 
 ## Introduction
 

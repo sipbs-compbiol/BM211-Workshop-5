@@ -260,7 +260,87 @@ The output from the online tool can be very helpful. You can use your mouse to s
 ## Check your result
 
 Your alignment file should be the same as that which you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt)
-```
+:::
 
 ## Construct a phylogenetic tree
 
+Now you have a sequence alignment, you are ready to build a phylogenetic tree.
+
+::: { .callout-warning }
+For this workshop we are using a relatively simple tool that will give us a phylogenetic tree quickly. The approach we are using here is known to have systematic issues and would not be used in a modern research setting. However, it is a method that was very widely-used until the early 2000s and is still sometimes seen in current research.
+:::
+
+You are going to use a tool called `Simple Phylogeny` to make a phylogenetic tree from your multiple sequence alignment (@fig-simple-phylogeny-loading). This tool implements tree generation methods from the `ClustalW` software tool, and is restricted to two relatively basic clustering approaches:
+
+- `UPGMA` (Unweighted Pair Group Method with Arithmetic Mean) [link](https://sipbs-compbiol.github.io/BM329_Block_B_Workshop/upgma.html)
+- `Neighbour Joining` [link](https://en.wikipedia.org/wiki/Neighbor_joining)
+
+We will use this program _via_ its online service (@fig-simple-phylogeny-loading)
+
+- `Simple Phylogeny` online service: [https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny](https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny))
+
+![`Simple Phylogeny` online service landing page.](assets/images/simple-phylogeny-landing.png){#fig-simple-phylogeny-loading width=80%}
+
+::: { .callout-important title="Task" }
+**Use the online `Simple Phylogeny` service to generate a Neighbour-Joining phylogenetic tree from your alignment.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- Open the sequence alignment file you downloaded in a text editor (**Use Notepad or similar - do not use Microsoft Word**).
+- Copy the data from the file and paste it into the `Input Sequence` field.
+- You can leave all the options as their default settings (@fig-simpphy-settings).
+- Scroll down the page and click `Submit`
+
+![Default settings for `Simple Phylogeny` tree generation.](assets/images/simpphy-settings.png){#fig-simpphy-settings}
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+The output should look similar to the tree data in @fig-simpphy-tree. Note that this file is in `.newick` format, but puts each parenthesis (`(`) on a new line.
+
+![`Simple Phylogeny` tree output.](){#fig-simpphy-tree width=80%}
+:::
+
+::: { .callout-important title="Task" }
+**Download the `.newick` format tree file to your computer.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- On the `Simple Phylogeny` output page, click on the `Result Files` tab.
+- Find the `Phylogenetic Tree` line in the table, click on the `Download button next to it, and use the dialogue box to save the file somewhere you can find it.
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your tree file should be the same as that which you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/simple-phylogeny.newick)
+:::
+
+## Visualise the tree
+
+You will now use `iTol` to visualise the tree you produced. Use what you have learned from @sec-itol-load to view the tree.
+
+::: { .callout-important title="Task" }
+**Use `iToL` to visualise the `.newick` tree file you generated with `Simple Phylogeny`.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- Click on the `Upload` button in `iTol`
+- Click on the `Browse…` button and use the dialogue box to navigate to the location of the tree file you downloaded.
+- Click the `Upload` button
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+The tree file shown in `iTol` should resemble @fig-itol-simpphy-tree.
+
+![The tree generated for BipC by `Simple Phylogeny`, visualised in `iTol`](assets/images/itol-simpphy-tree.png){#fig-itol-simpphy-tree width=80%}
+:::

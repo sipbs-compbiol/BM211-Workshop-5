@@ -1,4 +1,4 @@
-# Loading a Phylogenetic Tree
+# Loading a Phylogenetic Tree {#sec-itol-load}
 
 ## Introduction
 
