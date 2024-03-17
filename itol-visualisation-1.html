@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./make-a-tree.html" rel="next">
 <link href="./loading-tree.html" rel="prev">
 <link href="./icon_32.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -162,6 +162,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./make-a-tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -252,14 +258,13 @@ Figure&nbsp;3.2: The default <code>iToL</code> view of the uploaded <code>tree_n
 </figcaption>
 </figure>
 </div>
-<p>There are two forms of rectangular tree.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="Two forms of rectangular tree">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Two forms of rectangular tree
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -398,7 +403,7 @@ Figure&nbsp;3.6: The same cladogram, rotated through 90, 180, and 270 degrees. T
 </section>
 <section id="rotating-clades" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="rotating-clades"><span class="header-section-number">3.4</span> Rotating clades</h2>
-<p>Rotating the members of a clade around their common ancestor also does not affect the content of the tree - and specifically leaves its <em>topology</em> unchanged - even if it makes the tree appear visually quite different. The four trees in <a href="#fig-four-rotated-clades" class="quarto-xref">Figure&nbsp;<span>3.7</span></a> have exactly the same topology.</p>
+<p>Rotating the members of a clade around their common ancestor also does not affect the content of the tree - and specifically leaves its <em>topology</em> (branching order) unchanged - even if it makes the tree appear visually quite different. The four trees in <a href="#fig-four-rotated-clades" class="quarto-xref">Figure&nbsp;<span>3.7</span></a> have exactly the same topology.</p>
 <div id="fig-four-rotated-clades" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-four-rotated-clades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -578,7 +583,7 @@ Figure&nbsp;3.12: The <code>Basic</code> tab has a <code>Rotation</code> setting
 </section>
 <section id="circular-phylogram" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="circular-phylogram"><span class="header-section-number">3.5.2</span> Circular phylogram</h3>
-<p>It is increasingly common, as datasets increase in size, to see <em>circular phylograms</em> in publications. These place the root at the centre of a circle and show the branches as radii pointing away from the centre as genetic changes increase.</p>
+<p>It is increasingly common, as datasets increase in size, to see <em>circular phylograms</em> in publications. These place the root at the centre of a circle and show the branches as radii with branching points moving away from the centre as genetic changes increase.</p>
 <p>Rendering a tree in circular form does not change the information being presented, in comparison with a rectangular phylogram, as can be seen in <a href="#fig-circular-comparison" class="quarto-xref">Figure&nbsp;<span>3.13</span></a>.</p>
 <div id="fig-circular-comparison" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1177,8 +1182,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./make-a-tree.html" class="pagination-link" aria-label="Making a Phylogenetic Tree">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
