@@ -173,6 +173,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#make-a-multiple-sequence-alignment" id="toc-make-a-multiple-sequence-alignment" class="nav-link" data-scroll-target="#make-a-multiple-sequence-alignment"><span class="header-section-number">4.3</span> Make a multiple sequence alignment</a></li>
   <li><a href="#construct-a-phylogenetic-tree" id="toc-construct-a-phylogenetic-tree" class="nav-link" data-scroll-target="#construct-a-phylogenetic-tree"><span class="header-section-number">4.4</span> Construct a phylogenetic tree</a></li>
+  <li><a href="#visualise-the-tree" id="toc-visualise-the-tree" class="nav-link" data-scroll-target="#visualise-the-tree"><span class="header-section-number">4.5</span> Visualise the tree</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/edit/main/make-a-tree.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sipbs-compbiol/BM211-Workshop-5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -871,11 +872,239 @@ I need a hint!
 </div>
 </div>
 </div>
-<p>::: { .callout-caution collapse=“true” } ## Check your result</p>
-<p>Your alignment file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt">this link</a> ```</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Your alignment file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt">this link</a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="construct-a-phylogenetic-tree" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="construct-a-phylogenetic-tree"><span class="header-section-number">4.4</span> Construct a phylogenetic tree</h2>
+<p>Now you have a sequence alignment, you are ready to build a phylogenetic tree.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this workshop we are using a relatively simple tool that will give us a phylogenetic tree quickly. The approach we are using here is known to have systematic issues and would not be used in a modern research setting. However, it is a method that was very widely-used until the early 2000s and is still sometimes seen in current research.</p>
+</div>
+</div>
+<p>You are going to use a tool called <code>Simple Phylogeny</code> to make a phylogenetic tree from your multiple sequence alignment (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>). This tool implements tree generation methods from the <code>ClustalW</code> software tool, and is restricted to two relatively basic clustering approaches:</p>
+<ul>
+<li><code>UPGMA</code> (Unweighted Pair Group Method with Arithmetic Mean) <a href="https://sipbs-compbiol.github.io/BM329_Block_B_Workshop/upgma.html">link</a></li>
+<li><code>Neighbour Joining</code> <a href="https://en.wikipedia.org/wiki/Neighbor_joining">link</a></li>
+</ul>
+<p>We will use this program <em>via</em> its online service (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>)</p>
+<ul>
+<li><code>Simple Phylogeny</code> online service: <a href="https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny">https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny</a>)</li>
+</ul>
+<div id="fig-simple-phylogeny-loading" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-simple-phylogeny-loading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/simple-phylogeny-landing.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-phylogeny-loading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.9: <code>Simple Phylogeny</code> online service landing page.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Use the online <code>Simple Phylogeny</code> service to generate a Neighbour-Joining phylogenetic tree from your alignment.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I need a hint!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Open the sequence alignment file you downloaded in a text editor (<strong>Use Notepad or similar - do not use Microsoft Word</strong>).</li>
+<li>Copy the data from the file and paste it into the <code>Input Sequence</code> field.</li>
+<li>You can leave all the options as their default settings (<a href="#fig-simpphy-settings" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</li>
+<li>Scroll down the page and click <code>Submit</code></li>
+</ul>
+<div id="fig-simpphy-settings" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-simpphy-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/simpphy-settings.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simpphy-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.10: Default settings for <code>Simple Phylogeny</code> tree generation.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The output should look similar to the tree data in <a href="#fig-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>. Note that this file is in <code>.newick</code> format, but puts each parenthesis (<code>(</code>) on a new line.</p>
+<div id="fig-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src=".png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.11: <code>Simple Phylogeny</code> tree output.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Download the <code>.newick</code> format tree file to your computer.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I need a hint!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>On the <code>Simple Phylogeny</code> output page, click on the <code>Result Files</code> tab.</li>
+<li>Find the <code>Phylogenetic Tree</code> line in the table, click on the `Download button next to it, and use the dialogue box to save the file somewhere you can find it.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Your tree file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/simple-phylogeny.newick">this link</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="visualise-the-tree" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="visualise-the-tree"><span class="header-section-number">4.5</span> Visualise the tree</h2>
+<p>You will now use <code>iTol</code> to visualise the tree you produced. Use what you have learned from <a href="loading-tree.html" class="quarto-xref"><span>Chapter 2</span></a> to view the tree.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Use <code>iToL</code> to visualise the <code>.newick</code> tree file you generated with <code>Simple Phylogeny</code>.</strong></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I need a hint!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Click on the <code>Upload</code> button in <code>iTol</code></li>
+<li>Click on the <code>Browse…</code> button and use the dialogue box to navigate to the location of the tree file you downloaded.</li>
+<li>Click the <code>Upload</code> button</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The tree file shown in <code>iTol</code> should resemble <a href="#fig-itol-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>.</p>
+<div id="fig-itol-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-itol-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/itol-simpphy-tree.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.12: The tree generated for BipC by <code>Simple Phylogeny</code>, visualised in <code>iTol</code>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
