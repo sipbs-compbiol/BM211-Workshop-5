@@ -31,7 +31,7 @@ If you have not done so already, please don't forget to complete the four format
 - [Formative quiz 1]({{< var myplace.quiz1 >}})
 - [Formative quiz 2]({{< var myplace.quiz2 >}})
 - [Formative quiz 3]({{< var myplace.quiz3 >}})
-- [Formative quiz 3]({{< var myplace.quiz4 >}})
+- [Formative quiz 4]({{< var myplace.quiz4 >}})
 :::
 
 ## That's All, Folks!
@@ -40,4 +40,4 @@ Thank you for taking part in this workshop. We hope you enjoyed it, and found it
 
 ::: { .callout-caution title="Tell us about problems with the workshop, what you liked, or how you think it can be improved!"}
 We would be very grateful to head feedback [by email](mailto:{{< var admin.email >}}) or through the [GitHub repository issues page]({{< var github.issues >}}).
-
+:::
