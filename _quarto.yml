@@ -27,6 +27,7 @@ book:
     - intro.qmd
     - loading-tree.qmd
     - itol-visualisation-1.qmd
+    - make-a-tree.qmd
 #    - playground.qmd        
 #    - summary.qmd
 #    - glossary.qmd

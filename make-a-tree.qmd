@@ -1,0 +1,263 @@
+# Making a Phylogenetic Tree
+
+## Introduction
+
+In this section, you will start with a set of bacterial protein sequences and use these to construct and visualise a phylogenetic tree, using online bioinformatics software tools. To do this you will move through the following stages:
+
+1. Acquire sequence data
+2. Align sequences
+3. Construct a tree from the alignment
+4. Visualise the tree
+
+::: { .callout-note }
+Although the principles and the order of actions taken here are the same as we would use at a research level, most research-level phylogenetic reconstruction will use a different set of tools than those employed here. 
+:::
+
+### Scenario
+
+You are a biomedical researcher interested in the pathogen _Burkholderia pseudomallei_, which causes [melioidosis](https://en.wikipedia.org/wiki/Melioidosis) in humans. Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called _effectors_: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.
+
+The protein you are studying, BipC, is such an _effector_ protein. Specifically, it is a _translocator_ protein that makes holes in the host's cells, allowing its own effector proteins to enter and manipulate host biochemistry, and also binds to [actin microfilaments](https://en.wikipedia.org/wiki/Actin), disrupting host cell structure.
+
+You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis.
+
+## Obtain sequences from UniProt
+
+The [UniProt database](https://www.uniprot.org) is the most comprehensive protein sequence database, combining protein sequence, structure, and annotation data. UniProt has an entry for a relative of the protein you are interested in, which has accession `Q62B08`.
+
+::: { .callout-important title="Task" }
+**Go to the UniProt database [link](https://www.uniprot.org) and find the record associated with accession number `Q62B08`.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+On the main UniProt landing page, enter the accession in the field under `Find your protein` and click `Search`
+
+![The main UniProt landing page](assets/images/uniprot-query.png){#fig-uniprot-query width=80%}
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+You should find yourself at the [page](https://www.uniprot.org/uniprotkb/Q62B08/entry) for `Q62B08`, `BIPC_BURMA`.
+
+![The UniProt `Q62B08` page header.](assets/images/uniprot-bipc-header.png){#fig-uniprot-bipc-header width=80%}
+:::
+
+### Exploring the UniProt record
+
+The UniProt database can provide a great deal of information about the proteins it contains. This can be a great help in understanding more about your protein, and finding useful links to other sources of information. To help you get greater knowledge about BipC, **please answer the formative questions below in the [MyPlace quiz]({{< var myplace.quiz2 >}})**
+
+::: { .callout-important title="Question 1"}
+What organism does this sequence come from?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look at the header for the record page.
+:::
+
+::: { .callout-important title="Question 2"}
+How many amino acids does this protein contain (i.e. how long is the sequence)?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look at the header for the record page, or click on `Sequence` in the sidebar.
+:::
+::: { .callout-important title="Question 1"}
+What organism does this sequence come from?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look at the header for the record page.
+:::
+
+::: { .callout-important title="Question 2"}
+How many amino acids does this protein contain (i.e. how long is the sequence)?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look at the header for the record page, or click on `Sequence` in the sidebar.
+:::
+
+::: { .callout-important title="Question 3"}
+According to the Gene Ontology (GO), what is the subcellular location of this protein?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Click on `Subcellular Location` in the sidebar, and then look at the `GO Annotation` tab.
+:::
+
+::: { .callout-important title="Question 4"}
+How many identical (100% identity) sequences are there in the UniProt database?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Click on `Similar Proteins` and look at the table.
+:::
+
+::: { .callout-important title="Question 5"}
+What is the accession of the identical sequence in _Burkholderia pseudomallei_
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Can you find this organism in the `Similar Proteins` table?
+:::
+
+### Downloading sequence homologues
+
+We only construct phylogenetic trees from protein sequences that are _related_ to each other  - it wouldn't make much sense to try to infer relationships between unrelated sequences!. When we say that two sequences are related we mean that they _share a common ancestor_ and two sequences that share a common ancestor are said to be **_homologous_**.
+
+::: { .callout-caution title="On homology"}
+**Homology** - the state of two sequences sharing a common ancestor - is an all-or-nothing state. Two sequences are either homologous to each other, or they are not. It is incorrect to talk about gradation or percentage of homology. 
+:::
+
+UniProt provides a precomputed cluster of all the proteins it knows about that are potentially homologous to any other protein sequence in its database, and you can find this by clicking on the `Similar Proteins` link in the sidebar of the record page. This will take you to a table of similar protein sequences (@fig-uniprot-similar-proteins).
+
+![The `Similar Proteins` table for `Q62B08`](assets/images/uniprot-similar-proteins.png){#fig-uniprot-similar-proteins width=80%}
+
+This table has three tabs: `100% identity`, `90% identity`, and `50% identity`. Clicking on these will show you the clusters of sequences in UniProt sharing at least that level of _sequence identity_ with the current record. In general, the number of sequences in the cluster increases as the percentage identity used to gather the cluster goes down.
+
+::: { .callout-important title="Task" }
+**View all sequences in the 50% identity cluster for `Q62B08`.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- On the UniProt record page for `Q62B08` click on the `Similar Proteins` link in the sidebar to get the similar proteins table.
+- Click on the `50% identity` tab to see the first few proteins in the cluster.
+- Click on `View All` to see the full list of sequences in the cluster.
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+You should find yourself at the [UniRef cluster page](https://www.uniprot.org/uniprotkb?query=uniref_cluster_50:UniRef50_A3P6Z6) with 50% identity to `Q62B08`.
+
+![The UniProt `Q62B08` 50% sequence identity cluster page header.](assets/images/uniprot-cluster-header.png){#fig-uniprot-cluster-header width=80%}
+:::
+
+This set of sequences are all closely-enough related to each other for drawing a phylogenetic tree to be worthwhile. Several different species are represented, which should make it an informative tree in regards to the evolution of this protein effector. You will use this set of sequences to construct your tree.
+
+::: { .callout-important title="Task" }
+**Download all sequences (_not compressed_) in the 50% identity cluster for `Q62B08` to your computer.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- Click on the `Download` link at the top of the table. This will bring up a set of options (@fig-uniprot-download-options).
+- Make sure `Download all` and `Compressed - No` are selected.
+- Click on `Download` and save the file somewhere you can find it again (e.g. on your `Desktop`).
+
+![The download options for UniProt sequence clusters.](assets/images/uniprot-download-options.png){#fig-uniprot-download-options width=80%}
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your sequence file should be the same as that which you can download from [this link]().
+:::
+
+**Please answer the formative questions below in the [MyPlace quiz]({{< var myplace.quiz2 >}})**
+
+::: { .callout-important title="Question 6"}
+How many sequences are there in this cluster?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look at the header for the cluster page.
+:::
+
+::: { .callout-important title="Question 7"}
+How long is the shortest sequence in this cluster?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look in the `Length` column of the cluster table.
+:::
+
+::: { .callout-important title="Question 8"}
+How many species are represented in the dataset?
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Look in the `Organism` column of the cluster table.
+:::
+
+## Make a multiple sequence alignment
+
+The sequences in the cluster you have downloaded from UniProt are different lengths, and are not identical to each other.
+
+If we were to compare animal body parts to understand their evolution, we would naturally try to compare only _equivalent_ elements, such as forelimbs, with each other. It wouldn't be reasonable to compare organ structure with skull shape, say.In the same way, for biological sequence data, we want to compare genetic changes at _equivalent sites_, which means we have to find which sites are _equivalent_ before we build the tree.
+
+We find equivalent sites by aligning sequences against each other in a **Multiple Sequence Alignment (MSA)**. The methods involved in multiple sequence alignment are beyond the scope of the course, but they can be similar in some cases to the pairwise sequence alignment that [you have already seen](https://sipbs-compbiol.github.io/BM214-Workshop-2/pairwise.html).
+
+You are going to use a widely-used research tool called `MUSCLE` to make a multiple sequence alignment from the sequences in the cluster you downloaded. This program is availble to install on your own computer, but can also be used through an online service (@fig-muscle-landing).
+
+- `MUSCLE` online service: [https://www.ebi.ac.uk/jdispatcher/msa/muscle](https://www.ebi.ac.uk/jdispatcher/msa/muscle)
+
+![`MUSCLE` online service landing page.](assets/images/muscle-landing.png){#fig-muscle-landing width=80%}
+
+::: { .callout-important title="Task" }
+**Use the online `MUSCLE` service to generate a multiple sequence alignment from your cluster sequences.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- On the `MUSCLE` service landing page, click on `Browse…` and use the dialogue box that appears to navigate to your downloaded cluster sequences.
+- Scroll down the page and click `Submit`
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your alignment should look similar to the one in @fig-muscle-alignment.
+
+![`MUSCLE` multiple sequence alignment.](assets/images/muscle-alignment.png){#fig-muscle-alignment}
+:::
+
+::: { .callout-note }
+The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (@fig-muscle-colours).
+
+![`MUSCLE` multiple sequence alignment highlighting polar residues.](assets/images/muscle-colours.png){#fig-muscle-colours}
+:::
+
+::: { .callout-important title="Task" }
+**Download the `CLUSTAL` format `MUSCLE` sequence alignment file to your computer.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+- On the sequence alignment page, click on the `Result Files` tab.
+- Find the `Alignment in CLUSTAL format` line in the table, click on the `Download button next to it, and use the dialogue box to save the file somewhere you can find it.
+:::
+
+::: { .callout-caution collapse="true" }
+## Check your result
+
+Your alignment file should be the same as that which you can download from [this link]()
+```
