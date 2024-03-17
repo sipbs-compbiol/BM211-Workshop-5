@@ -3,3 +3,11 @@
 ## Understanding phylogenetic trees
 
 - Evolutionary trees: A primer (UC Berkeley) [link](https://evolution.berkeley.edu/the-tree-room/evolutionary-trees-a-primer/)
+- Field guide to evolutionary trees (UC Berkeley) [link](https://evolution.berkeley.edu/the-tree-room/field-guide-to-evolutionary-trees/)
+
+## Online tools
+
+- `iToL` (Interactive Tree of Life): online tool to visualise tree files [link](https://itol.embl.de/)
+- `MUSCLE`: multiple sequence alignment [link](https://www.ebi.ac.uk/jdispatcher/msa/muscle)
+- `PhyloT`: generate a tree from a list of taxonomic names [link](https://phylot.biobyte.de/)
+- `Simple Phylogeny`: simple tree generation methods [link](https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny)
