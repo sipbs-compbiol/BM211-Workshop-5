@@ -18,9 +18,7 @@ Broadly-speaking this means that the tree looks "rectangular" (it has lots of ri
 
 ![The default `iToL` view of the uploaded `tree_newick.nwk` tree is a _rectangular_ tree - specifically a _phylogram_.](assets/images/tree-newick-05.png){#fig-itol-tree-newick-05 width=80%}
 
-There are two forms of rectangular tree.
-
-::: { .callout-tip }
+::: { .callout-tip title="Two forms of rectangular tree"}
 1. a tree in which the branch lengths are proportional to the genetic change represented by the tree - this is called a _phylogram_
 2. a tree in which the branch lengths carry no meaning, or are an arbitrary length - this is called a _cladogram_
 :::
@@ -66,7 +64,7 @@ The same cladogram, rotated through 90, 180, and 270 degrees. The tree shows exa
 
 ## Rotating clades
 
-Rotating the members of a clade around their common ancestor also does not affect the content of the tree - and specifically leaves its _topology_ unchanged - even if it makes the tree appear visually quite different. The four trees in @fig-four-rotated-clades have exactly the same topology.
+Rotating the members of a clade around their common ancestor also does not affect the content of the tree - and specifically leaves its _topology_ (branching order) unchanged - even if it makes the tree appear visually quite different. The four trees in @fig-four-rotated-clades have exactly the same topology.
 
 ::: {#fig-four-rotated-clades layout-ncol=2}
 
@@ -122,7 +120,7 @@ To generate a slanted cladogram in `iTol`, select `Yes` for the `Slanted` option
 
 ### Circular phylogram
 
-It is increasingly common, as datasets increase in size, to see _circular phylograms_ in publications. These place the root at the centre of a circle and show the branches as radii pointing away from the centre as genetic changes increase.
+It is increasingly common, as datasets increase in size, to see _circular phylograms_ in publications. These place the root at the centre of a circle and show the branches as radii with branching points moving away from the centre as genetic changes increase.
 
 Rendering a tree in circular form does not change the information being presented, in comparison with a rectangular phylogram, as can be seen in @fig-circular-comparison.
 
