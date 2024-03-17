@@ -314,7 +314,17 @@
     "href": "summary.html",
     "title": "6  Summary",
     "section": "",
-    "text": "6.1 That’s All, Folks!\nThank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.\n::: { .callout-caution title=“Tell us about problems with the workshop, what you liked, or how you think it can be improved!”} We would be very grateful to head feedback by email or through the GitHub repository issues page.",
+    "text": "6.1 That’s All, Folks!\nThank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#thats-all-folks",
+    "href": "summary.html#thats-all-folks",
+    "title": "6  Summary",
+    "section": "",
+    "text": "Tell us about problems with the workshop, what you liked, or how you think it can be improved!\n\n\n\nWe would be very grateful to head feedback by email or through the GitHub repository issues page.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
     ]
