@@ -1,7 +1,43 @@
 # Summary
 
-In summary, this book has no content whatsoever.
+In this workshop you have learned how to build, visualise, and interpret phylogenetic trees. By using UniProt, `MUSCLE`, and `iToL`, you have been gaining experience with the same research-level tools that biologists and bioinformaticians use in their day-to-day work.
 
-```{r}
-1 + 1
-```
+::: { .callout-tip title="What you have learned" }
+After working through the material, you should now be able to:
+
+- upload a phylogenetic tree into `iToL`
+- explain the meaning of branching events and branch lengths in a phylogenetic tree
+- explain how a phylogenetic tree represents history and ancestry
+- explain the concept of a _clade_ in phylogenetics
+- explain the difference between a phylogram and cladogram
+- generate a variety of phylogenetic tree types using `iToL`
+- describe and interpret the _topology_ of a tree
+- describe and interpret _branch lengths_ of a tree
+- explain how rotation of a tree, and clades within the tree, affects what the tree represents
+- use UniProt to obtain annotation and functional information about a protein sequence
+- use UniProt to identify and download homologues of a protein sequence
+- generate a protein multiple sequence alignment using `MUSCLE`
+- produce a Neighbour-Joining phylogenetic tree using `Simple Phylogeny`
+- visualise a phylogenetic tree using `iToL`
+- midpoint root a tree in `iToL`
+- colour highlight clades of a tree in `iToL`
+- explain the difference between a _gene tree_ and a _species tree_
+- compare a gene tree with a species tree to interpret evolutionary history
+:::
+
+::: { .callout-important }
+If you have not done so already, please don't forget to complete the four formative exercises in this workshop, and they can be found on the workshop [MyPlace page]({{< var myplace.bm211 >}}). You should complete these as part of the workshop.
+
+- [Formative quiz 1]({{< var myplace.quiz1 >}})
+- [Formative quiz 2]({{< var myplace.quiz2 >}})
+- [Formative quiz 3]({{< var myplace.quiz3 >}})
+- [Formative quiz 3]({{< var myplace.quiz4 >}})
+:::
+
+## That's All, Folks!
+
+Thank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.
+
+::: { .callout-caution title="Tell us about problems with the workshop, what you liked, or how you think it can be improved!"}
+We would be very grateful to head feedback [by email](mailto:{{< var admin.email >}}) or through the [GitHub repository issues page]({{< var github.issues >}}).
+

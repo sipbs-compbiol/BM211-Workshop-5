@@ -36,7 +36,7 @@ The `R` software ecosystem is a very powerful tool for computational biology and
 ::: { .callout-note }
 You can produce equivalent trees to those you will produce in these exercises using standalone tools like `figtree` and `dendroscope`. Some tree visualisations can only be achieved in specialised packages, or with tools like `ggtree`.
 
-`ggtree` is an `R` packages that extends the `ggplot2` data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).
+`ggtree` is an `R` package that extends the `ggplot2` data visualisation package to visualise and annotate phylogenetic trees (or any other tree-like structure!).
 
 - [`ggtree` homepage](https://guangchuangyu.github.io/ggtree/)
 - [The `ggtree` book](https://yulab-smu.top/treedata-book/)
