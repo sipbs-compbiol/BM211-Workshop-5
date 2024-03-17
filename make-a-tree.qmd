@@ -171,7 +171,7 @@ This set of sequences are all closely-enough related to each other for drawing a
 ::: { .callout-caution collapse="true" }
 ## Check your result
 
-Your sequence file should be the same as that which you can download from [this link]().
+Your sequence file should be the same as that which you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/Q62B08_50pc_cluster.fasta).
 :::
 
 **Please answer the formative questions below in the [MyPlace quiz]({{< var myplace.quiz2 >}})**
@@ -259,5 +259,8 @@ The output from the online tool can be very helpful. You can use your mouse to s
 ::: { .callout-caution collapse="true" }
 ## Check your result
 
-Your alignment file should be the same as that which you can download from [this link]()
+Your alignment file should be the same as that which you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt)
 ```
+
+## Construct a phylogenetic tree
+
