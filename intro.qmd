@@ -25,13 +25,15 @@ A number of software packages are available to visualise, edit, and refine phylo
 - [`figtree`]() _this is the one I use most often - LP_
 - [`dendroscope`](https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/)
 
-but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you, once you register and sign in, to edit trees directly in the browser. Traditionally, phylogenetic trees have been visualised using independent software tools like these.
+but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you to visualise and edit trees directly in the browser. If you register and sign in, you can save your trees for future use. 
 
 ::: { .callout-caution }
 In this workshop we will be using the online `iToL` service to visualise and interpret trees.
 :::
 
-The `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities. As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
+Traditionally, phylogenetic trees have been visualised using independent software tools like these, but the `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities - including for phylogenetic trees.
+
+As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
 
 ::: { .callout-note }
 You can produce equivalent trees to those you will produce in these exercises using standalone tools like `figtree` and `dendroscope`. Some tree visualisations can only be achieved in specialised packages, or with tools like `ggtree`.

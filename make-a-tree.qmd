@@ -10,16 +10,20 @@ In this section, you will start with a set of bacterial protein sequences and us
 4. Visualise the tree
 
 ::: { .callout-note }
-Although the principles and the order of actions taken here are the same as we would use at a research level, most research-level phylogenetic reconstruction will use a different set of tools than those employed here. 
+Although the principles and the order of actions taken here are the same as we would use at a research level, most research-level phylogenetic reconstruction you will see is likely to use a different set of tools than those employed here. 
 :::
 
 ### Scenario
 
-You are a biomedical researcher interested in evolution of the pathogen _Burkholderia pseudomallei_, which causes [melioidosis](https://en.wikipedia.org/wiki/Melioidosis) in humans (@Chewapreecha2017-lx). Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called _effectors_: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.
+You are a biomedical researcher interested in evolution of the pathogen _Burkholderia pseudomallei_, which causes [melioidosis](https://en.wikipedia.org/wiki/Melioidosis) in humans (@Chewapreecha2017-lx). 
+
+![Large, septated hepatic abscess due to hepatic melioidosis (honeycomb structure in the liver). Case courtesy of Ian Bickle, Radiopaedia.org. From the case [rID: 36526](https://radiopaedia.org/cases/36526?lang=gb).](assets/images/hepatic-melioidosis.jpg){#fig-hepatic-melioidosis width=80%}
+
+Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called _effectors_: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.
 
 The protein you are studying, BipC, is such an _effector_ protein. Specifically, it is a _translocator_ protein that makes holes in the host's cells, allowing its own effector proteins to enter and manipulate host biochemistry, and also binds to [actin microfilaments](https://en.wikipedia.org/wiki/Actin), disrupting host cell structure.
 
-You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis.
+You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis. To do this, you will produce a phylogenetic tree for the protein.
 
 ## Obtain sequences from UniProt
 
@@ -32,7 +36,7 @@ The [UniProt database](https://www.uniprot.org) is the most comprehensive protei
 ::: { .callout-tip collapse="true" }
 ## I need a hint!
 
-On the main UniProt landing page, enter the accession in the field under `Find your protein` and click `Search`
+On the main UniProt landing page, enter the accession of the sequence you are searching for in the field under `Find your protein` and click `Search`
 
 ![The main UniProt landing page](assets/images/uniprot-query.png){#fig-uniprot-query width=80%}
 :::
@@ -101,10 +105,14 @@ Can you find this organism in the `Similar Proteins` table?
 
 ### Downloading sequence homologues
 
-We only construct phylogenetic trees from protein sequences that are _related_ to each other  - it wouldn't make much sense to try to infer relationships between unrelated sequences!. When we say that two sequences are related we mean that they _share a common ancestor_ and two sequences that share a common ancestor are said to be **_homologous_**.
+We only construct phylogenetic trees from protein sequences that are _related_ to each other  - it wouldn't make much sense to try to infer relationships between unrelated sequences!. When we say that two sequences are related we mean that they _share a recognisable common ancestor_. 
+
+::: { .callout-note }
+Two sequences that share a common ancestor are said to be **_homologous_**.
+:::
 
 ::: { .callout-caution title="On homology"}
-**Homology** - the state of two sequences sharing a common ancestor - is an all-or-nothing state. Two sequences are either homologous to each other, or they are not. It is incorrect to talk about gradation or percentage of homology. 
+**Homology** - the state of two sequences sharing a common ancestor - is an all-or-nothing state. Two sequences are either homologous to each other, or they are not. It is incorrect to talk about gradation or percentage of homology (though you will encounter people doing so). 
 :::
 
 UniProt provides a precomputed cluster of all the proteins it knows about that are potentially homologous to any other protein sequence in its database, and you can find this by clicking on the `Similar Proteins` link in the sidebar of the record page. This will take you to a table of similar protein sequences (@fig-uniprot-similar-proteins).
@@ -193,9 +201,9 @@ The sequences in the cluster you have downloaded from UniProt are different leng
 
 If we were to compare animal body parts to understand their evolution, we would naturally try to compare only _equivalent_ elements, such as forelimbs, with each other. It wouldn't be reasonable to compare organ structure with skull shape, say.In the same way, for biological sequence data, we want to compare genetic changes at _equivalent sites_, which means we have to find which sites are _equivalent_ before we build the tree.
 
-We find equivalent sites by aligning sequences against each other in a **Multiple Sequence Alignment (MSA)**. The methods involved in multiple sequence alignment are beyond the scope of the course, but they can be similar in some cases to the pairwise sequence alignment that [you have already seen](https://sipbs-compbiol.github.io/BM214-Workshop-2/pairwise.html).
+We find equivalent sites by aligning sequences against each other in a **Multiple Sequence Alignment (MSA)**. Detailed accounts of the methods involved in multiple sequence alignment are beyond the scope of the course, but they can be similar in some cases to the pairwise sequence alignment process that [you have already seen in BM214](https://sipbs-compbiol.github.io/BM214-Workshop-2/pairwise.html).
 
-You are going to use a widely-used research tool called `MUSCLE` to make a multiple sequence alignment from the sequences in the cluster you downloaded. This program is availble to install on your own computer, but can also be used through an online service (@fig-muscle-landing).
+You are going to employ a widely-used research tool called `MUSCLE` to make a multiple sequence alignment from the sequences in the cluster you downloaded. This program is availble to install on your own computer, but can also be used through an online service (@fig-muscle-landing).
 
 - `MUSCLE` online service: [https://www.ebi.ac.uk/jdispatcher/msa/muscle](https://www.ebi.ac.uk/jdispatcher/msa/muscle)
 
@@ -221,7 +229,7 @@ Your alignment should look similar to the one in @fig-muscle-alignment.
 :::
 
 ::: { .callout-note }
-The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (@fig-muscle-colours).
+The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation to see which regions are similar, and which differ. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (@fig-muscle-colours).
 
 ![`MUSCLE` multiple sequence alignment highlighting polar residues.](assets/images/muscle-colours.png){#fig-muscle-colours}
 :::
@@ -240,7 +248,7 @@ The output from the online tool can be very helpful. You can use your mouse to s
 ::: { .callout-caution collapse="true" }
 ## Check your result
 
-Your alignment file should be the same as that which you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt)
+Your alignment file should be the same as the one you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt)
 :::
 
 ## Construct a phylogenetic tree
@@ -269,7 +277,7 @@ We will use this program _via_ its online service (@fig-simple-phylogeny-loading
 ::: { .callout-tip collapse="true" }
 ## I need a hint!
 
-- Open the sequence alignment file you downloaded in a text editor (**Use Notepad or similar - do not use Microsoft Word**).
+- Open the sequence alignment file you downloaded in a text editor (**Use Notepad or similar - DO NOT USE MICROSOFT WORD**).
 - Copy the data from the file and paste it into the `Input Sequence` field.
 - You can leave all the options as their default settings (@fig-simpphy-settings).
 - Scroll down the page and click `Submit`
@@ -282,7 +290,7 @@ We will use this program _via_ its online service (@fig-simple-phylogeny-loading
 
 The output should look similar to the tree data in @fig-simpphy-tree. Note that this file is in `.newick` format, but puts each parenthesis (`(`) on a new line.
 
-![`Simple Phylogeny` tree output.](){#fig-simpphy-tree width=80%}
+![`Simple Phylogeny` tree output.](assets/images/simpphy-tree.png){#fig-simpphy-tree width=80%}
 :::
 
 ::: { .callout-important title="Task" }

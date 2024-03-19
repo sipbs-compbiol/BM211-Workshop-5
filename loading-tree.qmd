@@ -8,7 +8,7 @@ As noted in @sec-introduction, you will generally encounter phylogenetic trees a
 - [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file), file ending `.nex`, `.nexus`
 - [`phylip`](https://en.wikipedia.org/wiki/PHYLIP), file ending `.phy`, `.phylip`
 
-Whichever software tool you use to read and visualise your tree, you will need to _load_ the data into that tool. In `iToL` you would need to upload the data to the server. In `figtree` or `dendroscope` you would open the file through a dialogue box. Using `ggtree` in `R`, you would write code to open the file and run commands to visualise it.
+Whichever software tool you use to read and visualise your tree, you will need to _load_ your data into that tool. In `iToL` you need to upload the data to the server. In `figtree` or `dendroscope` you would open the file in the application. Using `ggtree` in `R`, you would write code to open the file and run commands to visualise it.
 
 ::: { .callout-note }
 In this workshop we will be using the online `iToL` service to visualise and interpret trees. This does not require you to install any software on your machine. The `iToL` service is available at the link below.
@@ -22,7 +22,23 @@ In this workshop we will be using the online `iToL` service to visualise and int
 
 Your tree data is in a file called `tree_newick.nwk`. This tree file describes a phylogeny with 13 samples, and it should be downloaded to your computer from the link below.
 
+::: { .callout-note }
+If you single-click on the link below, the tree file will open in your browser.
+
+If you right-click on the link, you will see a _context menu_ with the option `Save link as…` (or similar, depending on your operating system/browser). This will allow you to save the file to your computer.
+:::
+
 - [**`tree_newick.nwk`**](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk)
+
+::: { .callout-important title="Task" }
+Download the tree file `tree_newick.nwk` to your computer.
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint!
+
+Right-click on the link above and use `Save link as…` to save the file on your computer.
+:::
 
 ::: { .callout-important title="Task" }
 Upload the tree file `tree_newick.nwk` to `iToL`.
@@ -68,14 +84,14 @@ The tree `iTol` presents at first (@fig-tree-newick-01) shows these relationship
 
 ![Rectangular phylogram representation of the `tree_newick.nwk` file.](assets/images/tree-newick-01.png){#fig-tree-newick-01 width=80%}
 
-- the tree is a set of _bifurcating branches_ that spread out from the last common ancestor (LCA) and represent an **estimated** evolutionary history
-- this is a _rooted tree_, so the last common ancestor (LCA) is considered to be represented at the very far left of the tree, at its _root_
+- the tree is a set of _bifurcating branches_ that spread out from the most recent common ancestor (MRCA) and represent an **estimated** evolutionary history
+- this is a _rooted tree_, so the most recent common ancestor (MRCA) is considered to be represented at the very far left of the tree, at its _root_
   - **in this tree, _ancestors_ are on the left, and _descendants_ are on the right**
-- the horizontal dimension in this plot shows the amount of genetic change since the LCA - less change towards the left-hand side, more towards the right
+- the horizontal dimension in this plot shows the amount of genetic change since the MRCA - less change towards the left-hand side, more towards the right
   - **this tree is a _phylogram_, which means that the lengths of the branches are meaningful and represent the amount of genetic change**
 
 ::: { .callout-note }
-Branch lengths are usually drawn in units of _nucleotide substitutions per site_ - the estimated total number of nucleotide substitutions, divided by (_normalised to_) the length of the sequence.
+Branch lengths are usually drawn in units of _substitutions per site_ - the estimated total number of nucleotide substitutions, divided by (_normalised to_) the length of the sequence.
 
 You may sometimes see alternative units being used, such as estimated time, or the percentage of sites that have changed.
 :::
@@ -83,7 +99,7 @@ You may sometimes see alternative units being used, such as estimated time, or t
 ::: { .callout-important collapse="true" }
 ## Question 01
 
-In @fig-tree-newick-01 which species shows the most genetic change since the LCA?
+In @fig-tree-newick-01 which species shows the most genetic change since the MRCA?
 
 - `A`
 - `E`
@@ -93,11 +109,11 @@ In @fig-tree-newick-01 which species shows the most genetic change since the LCA
 
 ### Trees and time
 
-The general relationship between this phylogram and time is shown in @fig-tree-newick-02.
+The general relationship between the phylogram you have made and time is shown in @fig-tree-newick-02.
 
 ![`iToL` phylogram annotated with _root_, _leaves_, _bifurcations_, and the relationship between ancestors and descendents.](assets/images/tree-newick-02.png){#fig-tree-newick-02 width=80%}
 
-As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can't immediately interpret branch lengths as time. The best we can sometimes do is - when the sequences/organisms used to build the tree are known to exist _now_ - say that the leaves of the tree approximately represent the current date.
+As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can't immediately interpret branch lengths in terms of _elapsed time_. But, when the sequences/organisms used to build the tree are known to exist _now_, we can say that the leaves of the tree approximately represent the current date.
 
 ::: { .callout-note }
 There are phylogenetic techniques that allow us to convert genetic distances into approximate times, but they are beyond the scope of this workshop.
@@ -139,7 +155,7 @@ In @fig-tree-newick-01 which of the following accumulated the greatest amount of
 
 ### Clades
 
-A _clade_ is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties _monpphyletic_ (i.e. it comprises a single phylum). @fig-tree-newick-04 shows examples of clades in the `iToL` tree you generated. 
+A _clade_ is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties _monophyletic_ (i.e. it comprises a single phylum). @fig-tree-newick-04 shows examples of clades in the `iToL` tree you generated. 
 
 ![`iToL` phylogram annotated with _clades_, groupings on the tree that include a common ancestor and all its descendants. Clades can be _nested_ inside each other as a hierarchy. Clade4 (`A`, `B`, `C`) is completely contained within Clade3 (`A`, `B`, `C`, `D`, `E`).](assets/images/tree-newick-04.png){#fig-tree-newick-04 width=80%}
 
@@ -160,9 +176,9 @@ In @fig-tree-newick-01 which of the following groups of leaf nodes form a _clade
 After successfully working through this section you should be able to:
 
 - upload a phylogenetic tree into `iToL`
-- explain the meaning of branching events and branch lengths in a phylogenetic tree
+- explain the meaning of branching events and branch lengths in a phylogenetic tree, and interpret the speciation events in a tree
 - explain how a phylogenetic tree represents history and ancestry
-- explain the concept of a _clade_ in phylogenetics
+- explain the concept of a _clade_ in phylogenetics, and identify one on a phylogenetic tree
 :::
 
 ::: { .callout-important }

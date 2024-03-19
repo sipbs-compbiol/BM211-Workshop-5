@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section, we will work through some of the visualisation options available in `iToL` to explore how the same phylogenetic tree can be presented to accentuate different aspects of the data. These options are controlled through the control panel (@fig-itol-control-panel).
+In this section, we will work through some of the visualisation options available in `iToL` to explore how the same phylogenetic tree can be presented to accentuate different aspects of the data. These options are managed through the control panel (@fig-itol-control-panel).
 
 ![The `iTol` control panel. Options in this menu allow you to change the way the tree is visualised.](assets/images/itol-control-panel.png){#fig-itol-control-panel width=80%}
 
@@ -14,7 +14,7 @@ The default tree presented by `iToL` (@fig-tree-newick-01) is a _rectangular_ tr
 You can see from @fig-itol-control-panel that the `Rectangular` mode is selected by default.
 :::
 
-Broadly-speaking this means that the tree looks "rectangular" (it has lots of right angles) in a way that other tree representations do not. More specifically, every bifurcation is presented as a kind of "T-junction" where the ancestral lineage splits into two descendant lineages that leave the bifurcation at right angles (@fig-tree-newick-05)
+Broadly-speaking this means that the tree looks "rectangular" (it has lots of right angles) in a way that other tree representations do not. More specifically, every bifurcation is presented as a kind of "T-junction" where the ancestral lineage splits into two descendant lineages that leave the bifurcation at right angles (@fig-itol-tree-newick-05)
 
 ![The default `iToL` view of the uploaded `tree_newick.nwk` tree is a _rectangular_ tree - specifically a _phylogram_.](assets/images/tree-newick-05.png){#fig-itol-tree-newick-05 width=80%}
 
@@ -23,7 +23,7 @@ Broadly-speaking this means that the tree looks "rectangular" (it has lots of ri
 2. a tree in which the branch lengths carry no meaning, or are an arbitrary length - this is called a _cladogram_
 :::
 
-You can toggle between these two forms of _rectangular_ tree in `iTol` by changing the `Branch lengths:` option from `Use` to `Ignore`. A cladogram shows the order of branching events, but does not provide visual information about the genetic change between nodes on the tree (branching events or leaves).
+You can toggle between these two forms of _rectangular_ tree in `iTol` by changing the `Branch lengths:` option from `Use` to `Ignore` (@fig-itol-control-panel). A cladogram shows the order of branching events, but does not provide visual information about the genetic change between nodes on the tree (branching events or leaves).
 
 ::: { .callout-tip }
 **The order of branching events in a tree is referred to as its _topology_.**
@@ -70,11 +70,11 @@ Rotating the members of a clade around their common ancestor also does not affec
 
 ![The phylogram prior to any rotation, with the clade containing (`I`, `J`, `K`, and `L`) highlighted.](assets/images/tree-newick-10.png){#fig-clade-rot1}
 
-![The phylogram after rotating the clade containing (`I`, `J`, `K`, and `L`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-11.png){#fig-clade-rot2}
+![The phylogram in @fig-clade-rot1 after rotating the clade containing (`I`, `J`, `K`, and `L`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-11.png){#fig-clade-rot2}
 
-![The phylogram after rotating the clade containing (`F`, `G`, and `H`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-12.png){#fig-clade-rot3}
+![The phylogram in @fig-clade-rot2 after rotating the clade containing (`F`, `G`, and `H`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-12.png){#fig-clade-rot3}
 
-![The phylogram after rotating the clade containing (`A`, `B`, `C`, and `D`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-13.png){#fig-clade-rot4}
+![The phylogram in @fig-clade-rot3 after rotating the clade containing (`A`, `B`, `C`, and `D`) around their common ancestor. This does not change the topology of the tree.](assets/images/tree-newick-13.png){#fig-clade-rot4}
 
 The same cladogram, progressively rotating clades so that node order increases along the tree. The tree shows exactly the same information in each rotation - the _topology_ (branching order) of the tree remains unchanged.
 :::

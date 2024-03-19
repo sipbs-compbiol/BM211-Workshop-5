@@ -4,16 +4,22 @@
 
 In @sec-making-a-tree you used UniProt, `MUSCLE`, `Simple Phylogeny` and `iTol` to construct a tree from homologues of the BipC effector protein. The tree you generated will have resembled that in @fig-itol-simphy-01, which is a reflection of the data, but is possibly not the most informative tree layout.
 
-![The default BipC tree output from `Simple Phylogeny`, visualised in `iToL`.](assets/images/itol-simphy-01.png){#figi-tol-simphy-01 width=80%}
+![The default BipC tree output from `Simple Phylogeny`, visualised in `iToL`.](assets/images/itol-simphy-01.png){#fig-itol-simphy-01 width=80%}
 
 In this section of the workshop, you will use `iToL`'s tools to make your tree more informative to a reader, using the tree you uploaded at the end of @sec-making-a-tree.
 
 ## Re-rooting the tree
 
-The Neighbour-Joining methodology that was used to build the tree in `Simple Phylogeny` assigns a root to the tree, although this might not be the true phylogenetic root of the tree. We can inspect the tree without any assumption of root placement by examining the _unrooted_ tree.
+The Neighbour-Joining methodology that was used to build the tree in `Simple Phylogeny` assigns a root to the tree, although due to the way the algorithm works, this might not be the true _phylogenetic_ root of the tree. We can inspect the tree without any assumption of root placement by examining the _unrooted_ tree.
 
 ::: { .callout-important title="Task" }
 **Use `iToL` to see the unrooted layout of your tree.**
+:::
+
+::: { .callout-tip collapse="true" }
+## I need a hint
+
+You should find what you need in [@sec-itol-visualise](itol-visualisation-1.qmd#unrooted-trees).
 :::
 
 ::: { .callout-caution collapse="true" }
@@ -59,11 +65,11 @@ After midpoint rooting the tree, we might consider that there are two clades of 
 
 ## Highlighting clades
 
-To highlight a clade in `iToL` by changing branch colour and thickness, first select the ancestral branch to a clade, as in @fig-itol-clade-select.
+To highlight a clade in `iToL` by changing branch colour and thickness, first select the ancestral branch to a clade **using your mouse**, as in @fig-itol-clade-select.
 
 ![Selecting the recently-rooted clade in the `iTol` tree.](assets/images/itol-clade-select.png){#fig-itol-clade-select width=80%}
 
-Then bring up the context menu and select `Branches -> Whole Clade` to see colour and line thickness options (@fig-itol-clade-context). Set those options to whatever seems like a good visualisation choice for you.
+Then bring up the context menu **by clicking on the branch** and select `Branches -> Whole Clade` to see colour and line thickness options (@fig-itol-clade-context). Set those options to whatever seems like a good visualisation choice for you.
 
 ![Selecting clade branch colouring options in the `iToL` context menu](assets/images/itol-clade-context-2.png){#fig-itol-clade-context-2 width=80%}
 
@@ -81,12 +87,12 @@ The resulting formatted tree should look something like that in @fig-itol-simphy
 
 ## Gene trees and species trees
 
-Any phylogenetic tree we generate reflects only the data used to construct it. If we use sequences corresponding to a single gene or gene produce, as we did for BipC, we generate a history **for that gene/gene product** - this is a _gene tree_.
+Any phylogenetic tree we generate reflects only the data used to construct it. If we use sequences corresponding to a single gene or gene product, as we did for BipC, we generate a history **only for that gene/gene product** - this is called a _gene tree_.
 
 ::: { .callout-note }
 We might assume that genes are transmitted _vertically_ from parent to offspring but, in most life on Earth - i.e. microbial life, genes can also be transmitted _horizontally_ and _recombined_ into a different organism, maybe even a different species.
 
-**We cannot always assume that the history of a gene reflects the history of the organism it is currently found in.**
+**We cannot always assume that the history of a gene exactly represents the history of the organism it is currently found in.**
 :::
 
 As the history of any particular gene may not be the same as that of the organism it is found in, we have developed alternative approaches to construct _species trees_ that are more reflective of the evolution of the species as a whole. These approaches are out of scope for this workshop, but include:
@@ -99,7 +105,7 @@ As the history of any particular gene may not be the same as that of the organis
 ::: { .callout-warning }
 We would like to know how similar our BipC gene tree is to the known species tree for the organisms represented in it. We can tell which organisms are present in the tree by looking at the annotation label, specifically the final few characters:
 
-- `9BURK`: _B. mayonis_, _B. humptydooensis_, _B. oklahomensis_, _Burkholderia sp. 
+- `9BURK`: _B. mayonis_, _B. humptydooensis_, _B. oklahomensis_, _Burkholderia_ sp. 
 - `BURM7`: _B. mallei_
 - `BURM9`: _B. mallei_
 - `BURMA`: _B. mallei_
