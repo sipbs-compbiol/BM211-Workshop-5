@@ -257,14 +257,25 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Although the principles and the order of actions taken here are the same as we would use at a research level, most research-level phylogenetic reconstruction will use a different set of tools than those employed here.</p>
+<p>Although the principles and the order of actions taken here are the same as we would use at a research level, most research-level phylogenetic reconstruction you will see is likely to use a different set of tools than those employed here.</p>
 </div>
 </div>
 <section id="scenario" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="scenario"><span class="header-section-number">4.1.1</span> Scenario</h3>
-<p>You are a biomedical researcher interested in evolution of the pathogen <em>Burkholderia pseudomallei</em>, which causes <a href="https://en.wikipedia.org/wiki/Melioidosis">melioidosis</a> in humans (<span class="citation" data-cites="Chewapreecha2017-lx">Chewapreecha et al. (<a href="references.html#ref-Chewapreecha2017-lx" role="doc-biblioref">2017</a>)</span>). Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called <em>effectors</em>: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.</p>
+<p>You are a biomedical researcher interested in evolution of the pathogen <em>Burkholderia pseudomallei</em>, which causes <a href="https://en.wikipedia.org/wiki/Melioidosis">melioidosis</a> in humans (<span class="citation" data-cites="Chewapreecha2017-lx">Chewapreecha et al. (<a href="references.html#ref-Chewapreecha2017-lx" role="doc-biblioref">2017</a>)</span>).</p>
+<div id="fig-hepatic-melioidosis" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hepatic-melioidosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/images/hepatic-melioidosis.jpg" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hepatic-melioidosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Large, septated hepatic abscess due to hepatic melioidosis (honeycomb structure in the liver). Case courtesy of Ian Bickle, Radiopaedia.org. From the case <a href="https://radiopaedia.org/cases/36526?lang=gb">rID: 36526</a>.
+</figcaption>
+</figure>
+</div>
+<p>Depending on whether you live in a medically well-resourced, or poorly-resourced, area the risk of death from infection varies from 10%-40%. The pathogen itself has the capability to infect a range of human cells and evade the immune system, in part because it produces proteins called <em>effectors</em>: these are proteins adapted to interfere with host biology and make the environment more favourable for the bacterium.</p>
 <p>The protein you are studying, BipC, is such an <em>effector</em> protein. Specifically, it is a <em>translocator</em> protein that makes holes in the host’s cells, allowing its own effector proteins to enter and manipulate host biochemistry, and also binds to <a href="https://en.wikipedia.org/wiki/Actin">actin microfilaments</a>, disrupting host cell structure.</p>
-<p>You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis.</p>
+<p>You would like to understand the evolution of this protein, to see whether the knowledge can help you design drug compounds that interfere with the action of BipC as a treatment for melioidosis. To do this, you will produce a phylogenetic tree for the protein.</p>
 </section>
 </section>
 <section id="obtain-sequences-from-uniprot" class="level2" data-number="4.2">
@@ -295,14 +306,14 @@ I need a hint!
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>On the main UniProt landing page, enter the accession in the field under <code>Find your protein</code> and click <code>Search</code></p>
+<p>On the main UniProt landing page, enter the accession of the sequence you are searching for in the field under <code>Find your protein</code> and click <code>Search</code></p>
 <div id="fig-uniprot-query" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-query-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-query.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniprot-query-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: The main UniProt landing page
+Figure&nbsp;4.2: The main UniProt landing page
 </figcaption>
 </figure>
 </div>
@@ -328,7 +339,7 @@ Check your result
 <img src="assets/images/uniprot-bipc-header.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniprot-bipc-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: The UniProt <code>Q62B08</code> page header.
+Figure&nbsp;4.3: The UniProt <code>Q62B08</code> page header.
 </figcaption>
 </figure>
 </div>
@@ -486,7 +497,20 @@ I need a hint!
 </section>
 <section id="downloading-sequence-homologues" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="downloading-sequence-homologues"><span class="header-section-number">4.2.2</span> Downloading sequence homologues</h3>
-<p>We only construct phylogenetic trees from protein sequences that are <em>related</em> to each other - it wouldn’t make much sense to try to infer relationships between unrelated sequences!. When we say that two sequences are related we mean that they <em>share a common ancestor</em> and two sequences that share a common ancestor are said to be <strong><em>homologous</em></strong>.</p>
+<p>We only construct phylogenetic trees from protein sequences that are <em>related</em> to each other - it wouldn’t make much sense to try to infer relationships between unrelated sequences!. When we say that two sequences are related we mean that they <em>share a recognisable common ancestor</em>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two sequences that share a common ancestor are said to be <strong><em>homologous</em></strong>.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled" title="On homology">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -497,17 +521,17 @@ On homology
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Homology</strong> - the state of two sequences sharing a common ancestor - is an all-or-nothing state. Two sequences are either homologous to each other, or they are not. It is incorrect to talk about gradation or percentage of homology.</p>
+<p><strong>Homology</strong> - the state of two sequences sharing a common ancestor - is an all-or-nothing state. Two sequences are either homologous to each other, or they are not. It is incorrect to talk about gradation or percentage of homology (though you will encounter people doing so).</p>
 </div>
 </div>
-<p>UniProt provides a precomputed cluster of all the proteins it knows about that are potentially homologous to any other protein sequence in its database, and you can find this by clicking on the <code>Similar Proteins</code> link in the sidebar of the record page. This will take you to a table of similar protein sequences (<a href="#fig-uniprot-similar-proteins" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>).</p>
+<p>UniProt provides a precomputed cluster of all the proteins it knows about that are potentially homologous to any other protein sequence in its database, and you can find this by clicking on the <code>Similar Proteins</code> link in the sidebar of the record page. This will take you to a table of similar protein sequences (<a href="#fig-uniprot-similar-proteins" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>).</p>
 <div id="fig-uniprot-similar-proteins" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-similar-proteins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-similar-proteins.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniprot-similar-proteins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: The <code>Similar Proteins</code> table for <code>Q62B08</code>
+Figure&nbsp;4.4: The <code>Similar Proteins</code> table for <code>Q62B08</code>
 </figcaption>
 </figure>
 </div>
@@ -526,7 +550,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -535,7 +559,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>On the UniProt record page for <code>Q62B08</code> click on the <code>Similar Proteins</code> link in the sidebar to get the similar proteins table.</li>
@@ -546,7 +570,7 @@ I need a hint!
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -555,7 +579,7 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You should find yourself at the <a href="https://www.uniprot.org/uniprotkb?query=uniref_cluster_50:UniRef50_A3P6Z6">UniRef cluster page</a> with 50% identity to <code>Q62B08</code>.</p>
 <div id="fig-uniprot-cluster-header" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -564,7 +588,7 @@ Check your result
 <img src="assets/images/uniprot-cluster-header.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniprot-cluster-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: The UniProt <code>Q62B08</code> 50% sequence identity cluster page header.
+Figure&nbsp;4.5: The UniProt <code>Q62B08</code> 50% sequence identity cluster page header.
 </figcaption>
 </figure>
 </div>
@@ -586,7 +610,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -595,10 +619,10 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Click on the <code>Download</code> link at the top of the table. This will bring up a set of options (<a href="#fig-uniprot-download-options" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>).</li>
+<li>Click on the <code>Download</code> link at the top of the table. This will bring up a set of options (<a href="#fig-uniprot-download-options" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>).</li>
 <li>Make sure <code>Download all</code> and <code>Compressed - No</code> are selected.</li>
 <li>Click on <code>Download</code> and save the file somewhere you can find it again (e.g.&nbsp;on your <code>Desktop</code>).</li>
 </ul>
@@ -608,7 +632,7 @@ I need a hint!
 <img src="assets/images/uniprot-download-options.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uniprot-download-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: The download options for UniProt sequence clusters.
+Figure&nbsp;4.6: The download options for UniProt sequence clusters.
 </figcaption>
 </figure>
 </div>
@@ -616,7 +640,7 @@ Figure&nbsp;4.5: The download options for UniProt sequence clusters.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -625,7 +649,7 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your sequence file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/Q62B08_50pc_cluster.fasta">this link</a>.</p>
 </div>
@@ -646,7 +670,7 @@ Question 6
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -655,7 +679,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Look at the header for the cluster page.</p>
 </div>
@@ -675,7 +699,7 @@ Question 7
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -684,7 +708,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Look in the <code>Length</code> column of the cluster table.</p>
 </div>
@@ -704,7 +728,7 @@ Question 8
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -713,7 +737,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Look in the <code>Organism</code> column of the cluster table.</p>
 </div>
@@ -725,8 +749,8 @@ I need a hint!
 <h2 data-number="4.3" class="anchored" data-anchor-id="make-a-multiple-sequence-alignment"><span class="header-section-number">4.3</span> Make a multiple sequence alignment</h2>
 <p>The sequences in the cluster you have downloaded from UniProt are different lengths, and are not identical to each other.</p>
 <p>If we were to compare animal body parts to understand their evolution, we would naturally try to compare only <em>equivalent</em> elements, such as forelimbs, with each other. It wouldn’t be reasonable to compare organ structure with skull shape, say.In the same way, for biological sequence data, we want to compare genetic changes at <em>equivalent sites</em>, which means we have to find which sites are <em>equivalent</em> before we build the tree.</p>
-<p>We find equivalent sites by aligning sequences against each other in a <strong>Multiple Sequence Alignment (MSA)</strong>. The methods involved in multiple sequence alignment are beyond the scope of the course, but they can be similar in some cases to the pairwise sequence alignment that <a href="https://sipbs-compbiol.github.io/BM214-Workshop-2/pairwise.html">you have already seen</a>.</p>
-<p>You are going to use a widely-used research tool called <code>MUSCLE</code> to make a multiple sequence alignment from the sequences in the cluster you downloaded. This program is availble to install on your own computer, but can also be used through an online service (<a href="#fig-muscle-landing" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>).</p>
+<p>We find equivalent sites by aligning sequences against each other in a <strong>Multiple Sequence Alignment (MSA)</strong>. Detailed accounts of the methods involved in multiple sequence alignment are beyond the scope of the course, but they can be similar in some cases to the pairwise sequence alignment process that <a href="https://sipbs-compbiol.github.io/BM214-Workshop-2/pairwise.html">you have already seen in BM214</a>.</p>
+<p>You are going to employ a widely-used research tool called <code>MUSCLE</code> to make a multiple sequence alignment from the sequences in the cluster you downloaded. This program is availble to install on your own computer, but can also be used through an online service (<a href="#fig-muscle-landing" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>).</p>
 <ul>
 <li><code>MUSCLE</code> online service: <a href="https://www.ebi.ac.uk/jdispatcher/msa/muscle">https://www.ebi.ac.uk/jdispatcher/msa/muscle</a></li>
 </ul>
@@ -736,7 +760,7 @@ I need a hint!
 <img src="assets/images/muscle-landing.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-muscle-landing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: <code>MUSCLE</code> online service landing page.
+Figure&nbsp;4.7: <code>MUSCLE</code> online service landing page.
 </figcaption>
 </figure>
 </div>
@@ -754,7 +778,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -763,7 +787,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>On the <code>MUSCLE</code> service landing page, click on <code>Browse…</code> and use the dialogue box that appears to navigate to your downloaded cluster sequences.</li>
@@ -773,7 +797,7 @@ I need a hint!
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -782,16 +806,16 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Your alignment should look similar to the one in <a href="#fig-muscle-alignment" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>.</p>
+<p>Your alignment should look similar to the one in <a href="#fig-muscle-alignment" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>.</p>
 <div id="fig-muscle-alignment" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-muscle-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/muscle-alignment.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-muscle-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: <code>MUSCLE</code> multiple sequence alignment.
+Figure&nbsp;4.8: <code>MUSCLE</code> multiple sequence alignment.
 </figcaption>
 </figure>
 </div>
@@ -808,14 +832,14 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (<a href="#fig-muscle-colours" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>).</p>
+<p>The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation to see which regions are similar, and which differ. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (<a href="#fig-muscle-colours" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
 <div id="fig-muscle-colours" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-muscle-colours-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/muscle-colours.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-muscle-colours-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: <code>MUSCLE</code> multiple sequence alignment highlighting polar residues.
+Figure&nbsp;4.9: <code>MUSCLE</code> multiple sequence alignment highlighting polar residues.
 </figcaption>
 </figure>
 </div>
@@ -835,7 +859,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -844,7 +868,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>On the sequence alignment page, click on the <code>Result Files</code> tab.</li>
@@ -854,7 +878,7 @@ I need a hint!
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -863,9 +887,9 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Your alignment file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt">this link</a></p>
+<p>Your alignment file should be the same as the one you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt">this link</a></p>
 </div>
 </div>
 </div>
@@ -886,12 +910,12 @@ Warning
 <p>For this workshop we are using a relatively simple tool that will give us a phylogenetic tree quickly. The approach we are using here is known to have systematic issues and would not be used in a modern research setting. However, it is a method that was very widely-used until the early 2000s and is still sometimes seen in current research.</p>
 </div>
 </div>
-<p>You are going to use a tool called <code>Simple Phylogeny</code> to make a phylogenetic tree from your multiple sequence alignment (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>). This tool implements tree generation methods from the <code>ClustalW</code> software tool, and is restricted to two relatively basic clustering approaches:</p>
+<p>You are going to use a tool called <code>Simple Phylogeny</code> to make a phylogenetic tree from your multiple sequence alignment (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>). This tool implements tree generation methods from the <code>ClustalW</code> software tool, and is restricted to two relatively basic clustering approaches:</p>
 <ul>
 <li><code>UPGMA</code> (Unweighted Pair Group Method with Arithmetic Mean) <a href="https://sipbs-compbiol.github.io/BM329_Block_B_Workshop/upgma.html">link</a></li>
 <li><code>Neighbour Joining</code> <a href="https://en.wikipedia.org/wiki/Neighbor_joining">link</a></li>
 </ul>
-<p>We will use this program <em>via</em> its online service (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>)</p>
+<p>We will use this program <em>via</em> its online service (<a href="#fig-simple-phylogeny-loading" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>)</p>
 <ul>
 <li><code>Simple Phylogeny</code> online service: <a href="https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny">https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny</a>)</li>
 </ul>
@@ -901,7 +925,7 @@ Warning
 <img src="assets/images/simple-phylogeny-landing.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-phylogeny-loading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: <code>Simple Phylogeny</code> online service landing page.
+Figure&nbsp;4.10: <code>Simple Phylogeny</code> online service landing page.
 </figcaption>
 </figure>
 </div>
@@ -919,7 +943,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -928,12 +952,12 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Open the sequence alignment file you downloaded in a text editor (<strong>Use Notepad or similar - do not use Microsoft Word</strong>).</li>
+<li>Open the sequence alignment file you downloaded in a text editor (<strong>Use Notepad or similar - DO NOT USE MICROSOFT WORD</strong>).</li>
 <li>Copy the data from the file and paste it into the <code>Input Sequence</code> field.</li>
-<li>You can leave all the options as their default settings (<a href="#fig-simpphy-settings" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>).</li>
+<li>You can leave all the options as their default settings (<a href="#fig-simpphy-settings" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>).</li>
 <li>Scroll down the page and click <code>Submit</code></li>
 </ul>
 <div id="fig-simpphy-settings" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -942,7 +966,7 @@ I need a hint!
 <img src="assets/images/simpphy-settings.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simpphy-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: Default settings for <code>Simple Phylogeny</code> tree generation.
+Figure&nbsp;4.11: Default settings for <code>Simple Phylogeny</code> tree generation.
 </figcaption>
 </figure>
 </div>
@@ -950,7 +974,7 @@ Figure&nbsp;4.10: Default settings for <code>Simple Phylogeny</code> tree genera
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -959,16 +983,16 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The output should look similar to the tree data in <a href="#fig-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>. Note that this file is in <code>.newick</code> format, but puts each parenthesis (<code>(</code>) on a new line.</p>
+<p>The output should look similar to the tree data in <a href="#fig-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. Note that this file is in <code>.newick</code> format, but puts each parenthesis (<code>(</code>) on a new line.</p>
 <div id="fig-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src=".png" class="img-fluid figure-img" style="width:80.0%">
+<img src="assets/images/simpphy-tree.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: <code>Simple Phylogeny</code> tree output.
+Figure&nbsp;4.12: <code>Simple Phylogeny</code> tree output.
 </figcaption>
 </figure>
 </div>
@@ -989,7 +1013,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -998,7 +1022,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>On the <code>Simple Phylogeny</code> output page, click on the <code>Result Files</code> tab.</li>
@@ -1008,7 +1032,7 @@ I need a hint!
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1017,7 +1041,7 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your tree file should be the same as that which you can download from <a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/simple-phylogeny.newick">this link</a></p>
 </div>
@@ -1041,7 +1065,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1050,7 +1074,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Click on the <code>Upload</code> button in <code>iTol</code></li>
@@ -1061,7 +1085,7 @@ I need a hint!
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1070,16 +1094,16 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The tree file shown in <code>iTol</code> should resemble <a href="#fig-itol-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>.</p>
+<p>The tree file shown in <code>iTol</code> should resemble <a href="#fig-itol-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.</p>
 <div id="fig-itol-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simpphy-tree.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-itol-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: The tree generated for BipC by <code>Simple Phylogeny</code>, visualised in <code>iTol</code>
+Figure&nbsp;4.13: The tree generated for BipC by <code>Simple Phylogeny</code>, visualised in <code>iTol</code>
 </figcaption>
 </figure>
 </div>

@@ -222,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://en.wikipedia.org/wiki/Nexus_file"><code>NEXUS</code></a>, file ending <code>.nex</code>, <code>.nexus</code></li>
 <li><a href="https://en.wikipedia.org/wiki/PHYLIP"><code>phylip</code></a>, file ending <code>.phy</code>, <code>.phylip</code></li>
 </ul>
-<p>Whichever software tool you use to read and visualise your tree, you will need to <em>load</em> the data into that tool. In <code>iToL</code> you would need to upload the data to the server. In <code>figtree</code> or <code>dendroscope</code> you would open the file through a dialogue box. Using <code>ggtree</code> in <code>R</code>, you would write code to open the file and run commands to visualise it.</p>
+<p>Whichever software tool you use to read and visualise your tree, you will need to <em>load</em> your data into that tool. In <code>iToL</code> you need to upload the data to the server. In <code>figtree</code> or <code>dendroscope</code> you would open the file in the application. Using <code>ggtree</code> in <code>R</code>, you would write code to open the file and run commands to visualise it.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -253,9 +253,52 @@ Figure&nbsp;2.1: <code>iToL</code> landing page at <a href="https://itol.embl.de
 <section id="load-your-tree-data" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="load-your-tree-data"><span class="header-section-number">2.2</span> Load your tree data</h2>
 <p>Your tree data is in a file called <code>tree_newick.nwk</code>. This tree file describes a phylogeny with 13 samples, and it should be downloaded to your computer from the link below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you single-click on the link below, the tree file will open in your browser.</p>
+<p>If you right-click on the link, you will see a <em>context menu</em> with the option <code>Save link as…</code> (or similar, depending on your operating system/browser). This will allow you to save the file to your computer.</p>
+</div>
+</div>
 <ul>
 <li><a href="https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/trees/tree_newick.nwk"><strong><code>tree_newick.nwk</code></strong></a></li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled" title="Task">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Download the tree file <code>tree_newick.nwk</code> to your computer.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I need a hint!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Right-click on the link above and use <code>Save link as…</code> to save the file on your computer.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled" title="Task">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -270,7 +313,7 @@ Task
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -279,7 +322,7 @@ I need a hint!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Click on the <code>Upload</code> button (<a href="#fig-itol-upload-button" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) to see the tree file upload page</li>
@@ -299,7 +342,7 @@ Figure&nbsp;2.2: <code>iTol</code> tree file upload button.
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -308,7 +351,7 @@ Help! I’m stuck!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Click on the <code>Upload</code> button (<a href="#fig-itol-upload-button" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>) to see the tree file upload page</li>
@@ -330,7 +373,7 @@ Figure&nbsp;2.3: <code>iToL</code> tree file upload page.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -339,7 +382,7 @@ Check your result
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>After uploading the tree, <code>iTol</code> should present the default tree view, as in (<a href="#fig-itol-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>).</p>
 <div id="fig-itol-tree-newick-01" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -372,12 +415,12 @@ Figure&nbsp;2.5: Rectangular phylogram representation of the <code>tree_newick.n
 </figure>
 </div>
 <ul>
-<li>the tree is a set of <em>bifurcating branches</em> that spread out from the last common ancestor (LCA) and represent an <strong>estimated</strong> evolutionary history</li>
-<li>this is a <em>rooted tree</em>, so the last common ancestor (LCA) is considered to be represented at the very far left of the tree, at its <em>root</em>
+<li>the tree is a set of <em>bifurcating branches</em> that spread out from the most recent common ancestor (MRCA) and represent an <strong>estimated</strong> evolutionary history</li>
+<li>this is a <em>rooted tree</em>, so the most recent common ancestor (MRCA) is considered to be represented at the very far left of the tree, at its <em>root</em>
 <ul>
 <li><strong>in this tree, <em>ancestors</em> are on the left, and <em>descendants</em> are on the right</strong></li>
 </ul></li>
-<li>the horizontal dimension in this plot shows the amount of genetic change since the LCA - less change towards the left-hand side, more towards the right
+<li>the horizontal dimension in this plot shows the amount of genetic change since the MRCA - less change towards the left-hand side, more towards the right
 <ul>
 <li><strong>this tree is a <em>phylogram</em>, which means that the lengths of the branches are meaningful and represent the amount of genetic change</strong></li>
 </ul></li>
@@ -392,12 +435,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Branch lengths are usually drawn in units of <em>nucleotide substitutions per site</em> - the estimated total number of nucleotide substitutions, divided by (<em>normalised to</em>) the length of the sequence.</p>
+<p>Branch lengths are usually drawn in units of <em>substitutions per site</em> - the estimated total number of nucleotide substitutions, divided by (<em>normalised to</em>) the length of the sequence.</p>
 <p>You may sometimes see alternative units being used, such as estimated time, or the percentage of sites that have changed.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -406,9 +449,9 @@ Question 01
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which species shows the most genetic change since the LCA?</p>
+<p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which species shows the most genetic change since the MRCA?</p>
 <ul>
 <li><code>A</code></li>
 <li><code>E</code></li>
@@ -420,7 +463,7 @@ Question 01
 </div>
 <section id="trees-and-time" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="trees-and-time"><span class="header-section-number">2.3.1</span> Trees and time</h3>
-<p>The general relationship between this phylogram and time is shown in <a href="#fig-tree-newick-02" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>.</p>
+<p>The general relationship between the phylogram you have made and time is shown in <a href="#fig-tree-newick-02" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>.</p>
 <div id="fig-tree-newick-02" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tree-newick-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -431,7 +474,7 @@ Figure&nbsp;2.6: <code>iToL</code> phylogram annotated with <em>root</em>, <em>l
 </figcaption>
 </figure>
 </div>
-<p>As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can’t immediately interpret branch lengths as time. The best we can sometimes do is - when the sequences/organisms used to build the tree are known to exist <em>now</em> - say that the leaves of the tree approximately represent the current date.</p>
+<p>As the tree represents genetic change, and the rate of genetic change may not be constant in all sequences or organisms, we can’t immediately interpret branch lengths in terms of <em>elapsed time</em>. But, when the sequences/organisms used to build the tree are known to exist <em>now</em>, we can say that the leaves of the tree approximately represent the current date.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -455,7 +498,7 @@ Note
 <li>the amount of genetic change between branching events is represented by the length of the branch that separates them; the scale bar allows you to interpret the branch length quantitatively</li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -464,7 +507,7 @@ Question 02
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> implies that which speciation event was the earliest?</p>
 <ul>
@@ -491,7 +534,7 @@ Figure&nbsp;2.7: <code>iToL</code> phylogram annotated with unique and shared an
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -500,7 +543,7 @@ Question 03
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following accumulated the greatest amount of genetic change?</p>
 <ul>
@@ -515,7 +558,7 @@ Question 03
 </section>
 <section id="clades" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="clades"><span class="header-section-number">2.3.3</span> Clades</h3>
-<p>A <em>clade</em> is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties <em>monpphyletic</em> (i.e.&nbsp;it comprises a single phylum). <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows examples of clades in the <code>iToL</code> tree you generated.</p>
+<p>A <em>clade</em> is a grouping on the tree that includes a common ancestor and all of its descendants. We call a group with these properties <em>monophyletic</em> (i.e.&nbsp;it comprises a single phylum). <a href="#fig-tree-newick-04" class="quarto-xref">Figure&nbsp;<span>2.8</span></a> shows examples of clades in the <code>iToL</code> tree you generated.</p>
 <div id="fig-tree-newick-04" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tree-newick-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -527,7 +570,7 @@ Figure&nbsp;2.8: <code>iToL</code> phylogram annotated with <em>clades</em>, gro
 </figure>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -536,7 +579,7 @@ Question 04
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In <a href="#fig-tree-newick-01" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> which of the following groups of leaf nodes form a <em>clade</em>?</p>
 <ol type="1">
@@ -565,9 +608,9 @@ Well Done!
 <p>After successfully working through this section you should be able to:</p>
 <ul>
 <li>upload a phylogenetic tree into <code>iToL</code></li>
-<li>explain the meaning of branching events and branch lengths in a phylogenetic tree</li>
+<li>explain the meaning of branching events and branch lengths in a phylogenetic tree, and interpret the speciation events in a tree</li>
 <li>explain how a phylogenetic tree represents history and ancestry</li>
-<li>explain the concept of a <em>clade</em> in phylogenetics</li>
+<li>explain the concept of a <em>clade</em> in phylogenetics, and identify one on a phylogenetic tree</li>
 </ul>
 </div>
 </div>
