@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>BM211 Workshop 5: Phylogenetic Trees - 4&nbsp; Making a Phylogenetic Tree</title>
+<title>4&nbsp; Making a Phylogenetic Tree – BM211 Workshop 5: Phylogenetic Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,13 +100,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./make-a-tree.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Making a Phylogenetic Tree</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -139,7 +139,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees</span></a>
+ <span class="menu-text">Preface to 2024-25 BM211 Workshop 5: Phylogenetic Trees</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,7 +263,7 @@ Note
 <section id="scenario" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="scenario"><span class="header-section-number">4.1.1</span> Scenario</h3>
 <p>You are a biomedical researcher interested in evolution of the pathogen <em>Burkholderia pseudomallei</em>, which causes <a href="https://en.wikipedia.org/wiki/Melioidosis">melioidosis</a> in humans (<span class="citation" data-cites="Chewapreecha2017-lx">Chewapreecha et al. (<a href="references.html#ref-Chewapreecha2017-lx" role="doc-biblioref">2017</a>)</span>).</p>
-<div id="fig-hepatic-melioidosis" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-hepatic-melioidosis" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hepatic-melioidosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/hepatic-melioidosis.jpg" class="img-fluid figure-img" style="width:80.0%">
@@ -307,7 +307,7 @@ I need a hint!
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>On the main UniProt landing page, enter the accession of the sequence you are searching for in the field under <code>Find your protein</code> and click <code>Search</code></p>
-<div id="fig-uniprot-query" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-uniprot-query" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-query-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-query.png" class="img-fluid figure-img" style="width:80.0%">
@@ -333,7 +333,7 @@ Check your result
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You should find yourself at the <a href="https://www.uniprot.org/uniprotkb/Q62B08/entry">page</a> for <code>Q62B08</code>, <code>BIPC_BURMA</code>.</p>
-<div id="fig-uniprot-bipc-header" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-uniprot-bipc-header" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-bipc-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-bipc-header.png" class="img-fluid figure-img" style="width:80.0%">
@@ -525,7 +525,7 @@ On homology
 </div>
 </div>
 <p>UniProt provides a precomputed cluster of all the proteins it knows about that are potentially homologous to any other protein sequence in its database, and you can find this by clicking on the <code>Similar Proteins</code> link in the sidebar of the record page. This will take you to a table of similar protein sequences (<a href="#fig-uniprot-similar-proteins" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>).</p>
-<div id="fig-uniprot-similar-proteins" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-uniprot-similar-proteins" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-similar-proteins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-similar-proteins.png" class="img-fluid figure-img" style="width:80.0%">
@@ -582,7 +582,7 @@ Check your result
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You should find yourself at the <a href="https://www.uniprot.org/uniprotkb?query=uniref_cluster_50:UniRef50_A3P6Z6">UniRef cluster page</a> with 50% identity to <code>Q62B08</code>.</p>
-<div id="fig-uniprot-cluster-header" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-uniprot-cluster-header" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-cluster-header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-cluster-header.png" class="img-fluid figure-img" style="width:80.0%">
@@ -626,7 +626,7 @@ I need a hint!
 <li>Make sure <code>Download all</code> and <code>Compressed - No</code> are selected.</li>
 <li>Click on <code>Download</code> and save the file somewhere you can find it again (e.g.&nbsp;on your <code>Desktop</code>).</li>
 </ul>
-<div id="fig-uniprot-download-options" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-uniprot-download-options" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uniprot-download-options-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/uniprot-download-options.png" class="img-fluid figure-img" style="width:80.0%">
@@ -754,7 +754,7 @@ I need a hint!
 <ul>
 <li><code>MUSCLE</code> online service: <a href="https://www.ebi.ac.uk/jdispatcher/msa/muscle">https://www.ebi.ac.uk/jdispatcher/msa/muscle</a></li>
 </ul>
-<div id="fig-muscle-landing" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-muscle-landing" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-muscle-landing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/muscle-landing.png" class="img-fluid figure-img" style="width:80.0%">
@@ -809,7 +809,7 @@ Check your result
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your alignment should look similar to the one in <a href="#fig-muscle-alignment" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>.</p>
-<div id="fig-muscle-alignment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-muscle-alignment" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-muscle-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/muscle-alignment.png" class="img-fluid figure-img">
@@ -833,7 +833,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>The output from the online tool can be very helpful. You can use your mouse to scroll around the alignment visualisation to see which regions are similar, and which differ. There are also options for colouring the residues in the alignment by a range of schemes, to highlight potentially conserved biochemical properties of the residues (<a href="#fig-muscle-colours" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
-<div id="fig-muscle-colours" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-muscle-colours" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-muscle-colours-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/muscle-colours.png" class="img-fluid figure-img">
@@ -919,7 +919,7 @@ Warning
 <ul>
 <li><code>Simple Phylogeny</code> online service: <a href="https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny">https://www.ebi.ac.uk/jdispatcher/phylogeny/simple_phylogeny</a>)</li>
 </ul>
-<div id="fig-simple-phylogeny-loading" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-phylogeny-loading" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simple-phylogeny-loading-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/simple-phylogeny-landing.png" class="img-fluid figure-img" style="width:80.0%">
@@ -960,7 +960,7 @@ I need a hint!
 <li>You can leave all the options as their default settings (<a href="#fig-simpphy-settings" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>).</li>
 <li>Scroll down the page and click <code>Submit</code></li>
 </ul>
-<div id="fig-simpphy-settings" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simpphy-settings" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simpphy-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/simpphy-settings.png" class="img-fluid figure-img">
@@ -986,7 +986,7 @@ Check your result
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The output should look similar to the tree data in <a href="#fig-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. Note that this file is in <code>.newick</code> format, but puts each parenthesis (<code>(</code>) on a new line.</p>
-<div id="fig-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simpphy-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/simpphy-tree.png" class="img-fluid figure-img" style="width:80.0%">
@@ -1097,7 +1097,7 @@ Check your result
 <div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The tree file shown in <code>iTol</code> should resemble <a href="#fig-itol-simpphy-tree" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>.</p>
-<div id="fig-itol-simpphy-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-simpphy-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simpphy-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simpphy-tree.png" class="img-fluid figure-img" style="width:80.0%">
@@ -1194,18 +1194,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1237,7 +1226,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1245,7 +1254,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1342,7 +1351,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>BM211 Workshop 5: Phylogenetic Trees - 3&nbsp; Types of Phylogenetic Tree</title>
+<title>3&nbsp; Types of Phylogenetic Tree – BM211 Workshop 5: Phylogenetic Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,13 +100,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./itol-visualisation-1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of Phylogenetic Tree</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -139,7 +139,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees</span></a>
+ <span class="menu-text">Preface to 2024-25 BM211 Workshop 5: Phylogenetic Trees</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -239,7 +239,7 @@ div.csl-indent {
 <section id="introduction" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
 <p>In this section, we will work through some of the visualisation options available in <code>iToL</code> to explore how the same phylogenetic tree can be presented to accentuate different aspects of the data. These options are managed through the control panel (<a href="#fig-itol-control-panel" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>).</p>
-<div id="fig-itol-control-panel" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-control-panel" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-control-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel.png" class="img-fluid figure-img" style="width:80.0%">
@@ -267,7 +267,7 @@ Note
 </div>
 </div>
 <p>Broadly-speaking this means that the tree looks “rectangular” (it has lots of right angles) in a way that other tree representations do not. More specifically, every bifurcation is presented as a kind of “T-junction” where the ancestral lineage splits into two descendant lineages that leave the bifurcation at right angles (<a href="#fig-itol-tree-newick-05" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>)</p>
-<div id="fig-itol-tree-newick-05" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-tree-newick-05" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-tree-newick-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-05.png" class="img-fluid figure-img" style="width:80.0%">
@@ -307,7 +307,7 @@ Tip
 <p><strong>The order of branching events in a tree is referred to as its <em>topology</em>.</strong></p>
 </div>
 </div>
-<div id="fig-itol-tree-newick-06" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-tree-newick-06" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-tree-newick-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-06.png" class="img-fluid figure-img" style="width:80.0%">
@@ -334,7 +334,7 @@ Scaling and rotating trees in <code>iToL</code>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To rotate your tree in <code>iToL</code>, use the <code>Rotation</code> setting in the <code>Mode Options</code> part of the <code>Basic</code> tab:</p>
-<div id="fig-itol-rotation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-rotation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-rotation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel.png" class="img-fluid figure-img" style="width:80.0%">
@@ -345,7 +345,7 @@ Figure&nbsp;3.4: The <code>Basic</code> tab has a <code>Rotation</code> setting 
 </figure>
 </div>
 <p>Changing the <em>scaling</em> of the tree (stretching or compressing it in any direction) also does not change the information presented. The trees in <a href="#fig-four-rotated-trees" class="quarto-xref">Figure&nbsp;<span>3.6</span></a> were scaled horizontally by 50% using the <code>Advanced</code> tab of the <code>iToL</code> control panel (<a href="#fig-itol-control-panel-02" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>).</p>
-<div id="fig-itol-control-panel-02" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-control-panel-02" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-control-panel-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel-02.png" class="img-fluid figure-img" style="width:80.0%">
@@ -363,7 +363,7 @@ Figure&nbsp;3.5: The advanced tab of the <code>iTol</code> control panel. Option
 <div aria-describedby="fig-four-rotated-trees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-trees" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-no-rotation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-no-rotation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-no-rotation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-06.png" class="img-fluid figure-img" style="width:80.0%" data-ref-parent="fig-four-rotated-trees">
@@ -375,7 +375,7 @@ Figure&nbsp;3.5: The advanced tab of the <code>iTol</code> control panel. Option
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-trees" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-90deg-rot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-90deg-rot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-90deg-rot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-07.png" style="width:80.0%;height:20.0%" data-ref-parent="fig-four-rotated-trees" class="figure-img">
@@ -389,7 +389,7 @@ Figure&nbsp;3.5: The advanced tab of the <code>iTol</code> control panel. Option
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-trees" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-180deg-rot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-180deg-rot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-180deg-rot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-08.png" class="img-fluid figure-img" style="width:80.0%" data-ref-parent="fig-four-rotated-trees">
@@ -401,7 +401,7 @@ Figure&nbsp;3.5: The advanced tab of the <code>iTol</code> control panel. Option
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-trees" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-270deg-rot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-270deg-rot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-270deg-rot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-09.png" style="width:80.0%;height:20.0%" data-ref-parent="fig-four-rotated-trees" class="figure-img">
@@ -428,7 +428,7 @@ Figure&nbsp;3.6: The same cladogram, rotated through 90, 180, and 270 degrees. T
 <div aria-describedby="fig-four-rotated-clades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-clades" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-clade-rot1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-clade-rot1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-clade-rot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-10.png" class="img-fluid figure-img" data-ref-parent="fig-four-rotated-clades">
@@ -440,7 +440,7 @@ Figure&nbsp;3.6: The same cladogram, rotated through 90, 180, and 270 degrees. T
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-clades" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-clade-rot2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-clade-rot2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-clade-rot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-11.png" class="img-fluid figure-img" data-ref-parent="fig-four-rotated-clades">
@@ -454,7 +454,7 @@ Figure&nbsp;3.6: The same cladogram, rotated through 90, 180, and 270 degrees. T
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-clades" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-clade-rot3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-clade-rot3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-clade-rot3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-12.png" class="img-fluid figure-img" data-ref-parent="fig-four-rotated-clades">
@@ -466,7 +466,7 @@ Figure&nbsp;3.6: The same cladogram, rotated through 90, 180, and 270 degrees. T
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-four-rotated-clades" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-clade-rot4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-clade-rot4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-clade-rot4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-13.png" class="img-fluid figure-img" data-ref-parent="fig-four-rotated-clades">
@@ -497,7 +497,7 @@ Rotating a clade in <code>iToL</code>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To rotate a clade in <code>iTol</code>, select the clade in the tree by clicking on its ancestral branch:</p>
-<div id="fig-itol-select-clade" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-select-clade" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-select-clade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-select clade.png" class="img-fluid figure-img" style="width:80.0%">
@@ -508,7 +508,7 @@ Figure&nbsp;3.8: Select a clade in <code>iTol</code> by clicking on its ancestra
 </figure>
 </div>
 <p>This will bring up a <em>context menu</em> that includes the action to <code>Rotate children</code>. Clicking on the <code>Rotate children</code> action will rotate the two “child” branches of the clade around their common ancestor.</p>
-<div id="fig-itol-clade-context" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-clade-context" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-clade-context-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-clade-context.png" class="img-fluid figure-img" style="width:80.0%">
@@ -518,7 +518,7 @@ Figure&nbsp;3.9: The clade <em>context menu</em>, showing the <code>Rotate child
 </figcaption>
 </figure>
 </div>
-<div id="fig-itol-rotate-clade" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-rotate-clade" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-rotate-clade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-rotate-clade.png" class="img-fluid figure-img" style="width:80.0%">
@@ -543,7 +543,7 @@ Figure&nbsp;3.10: The result of rotating a clade
 <div aria-describedby="fig-slanted-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-slanted-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-rect-clad" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-rect-clad" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-rect-clad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-15.png" class="img-fluid figure-img" data-ref-parent="fig-slanted-comparison">
@@ -555,7 +555,7 @@ Figure&nbsp;3.10: The result of rotating a clade
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-slanted-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-rect-clad" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-rect-clad" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-rect-clad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-14.png" class="img-fluid figure-img" data-ref-parent="fig-slanted-comparison">
@@ -586,7 +586,7 @@ Drawing a slanted cladogram in <code>iToL</code>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To generate a slanted cladogram in <code>iTol</code>, select <code>Yes</code> for the <code>Slanted</code> option in the <code>Basic</code> tab:</p>
-<div id="fig-itol-slanted" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-slanted" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-slanted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel-slanted.png" class="img-fluid figure-img" style="width:80.0%">
@@ -609,7 +609,7 @@ Figure&nbsp;3.12: The <code>Basic</code> tab has a <code>Rotation</code> setting
 <div aria-describedby="fig-circular-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-circular-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-rect-phyl" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-rect-phyl" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-rect-phyl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-17.png" class="img-fluid figure-img" data-ref-parent="fig-circular-comparison">
@@ -621,7 +621,7 @@ Figure&nbsp;3.12: The <code>Basic</code> tab has a <code>Rotation</code> setting
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-circular-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-circ-phyl" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-circ-phyl" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-circ-phyl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-16.png" class="img-fluid figure-img" data-ref-parent="fig-circular-comparison">
@@ -652,7 +652,7 @@ Drawing a circular phylogram in <code>iToL</code>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To generate a circular phylogram in <code>iTol</code>, select <code>Circular</code> mode in the <code>Basic</code> tab, and ensure that <code>Branch lengths</code> is set to <code>Use</code>:</p>
-<div id="fig-itol-circular" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-circular" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-circular-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel-circular.png" class="img-fluid figure-img" style="width:80.0%">
@@ -718,7 +718,7 @@ Rooted vs Unrooted Trees
 <div aria-describedby="fig-unrooted-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-unrooted-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-rect-phyl2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-rect-phyl2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-rect-phyl2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-17.png" class="img-fluid figure-img" data-ref-parent="fig-unrooted-comparison">
@@ -730,7 +730,7 @@ Rooted vs Unrooted Trees
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-unrooted-comparison" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-unrooted" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-unrooted" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-unrooted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/tree-newick-18.png" class="img-fluid figure-img" data-ref-parent="fig-unrooted-comparison">
@@ -761,7 +761,7 @@ Drawing an unrooted tree in <code>iToL</code>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To generate an unrooted tree in <code>iTol</code>, select <code>Unrooted</code> mode in the <code>Basic</code> tab:</p>
-<div id="fig-itol-unrooted" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-unrooted" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-unrooted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel-unrooted.png" class="img-fluid figure-img" style="width:80.0%">
@@ -860,18 +860,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -903,7 +892,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -911,7 +920,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1008,7 +1017,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

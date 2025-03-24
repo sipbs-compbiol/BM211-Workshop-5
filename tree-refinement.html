@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>BM211 Workshop 5: Phylogenetic Trees - 5&nbsp; Refining a Phylogenetic Tree Visualisation</title>
+<title>5&nbsp; Refining a Phylogenetic Tree Visualisation – BM211 Workshop 5: Phylogenetic Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a34d670291f06f286357e447776a572a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,13 +100,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tree-refinement.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Refining a Phylogenetic Tree Visualisation</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -139,7 +139,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees</span></a>
+ <span class="menu-text">Preface to 2024-25 BM211 Workshop 5: Phylogenetic Trees</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,7 +233,7 @@ div.csl-indent {
 <section id="introduction" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
 <p>In <a href="make-a-tree.html" class="quarto-xref"><span>Chapter 4</span></a> you used UniProt, <code>MUSCLE</code>, <code>Simple Phylogeny</code> and <code>iTol</code> to construct a tree from homologues of the BipC effector protein. The tree you generated will have resembled that in <a href="#fig-itol-simphy-01" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>, which is a reflection of the data, but is possibly not the most informative tree layout.</p>
-<div id="fig-itol-simphy-01" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-simphy-01" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simphy-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simphy-01.png" class="img-fluid figure-img" style="width:80.0%">
@@ -290,7 +290,7 @@ Check your result
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your unrooted tree should look something like that in <a href="#fig-itol-simphy-unrooted" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>. There are two groups of sequences - one group closely related to each other (short branches) and one that is more diverse (longer branches).</p>
-<div id="fig-itol-simphy-unrooted" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-simphy-unrooted" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simphy-unrooted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simphy-02.png" class="img-fluid figure-img">
@@ -334,7 +334,7 @@ Midpoint rooting in <code>iTol</code>
 <li>Select the <code>Advanced</code> tab from the control panel</li>
 <li>Click on <code>Midpoint root</code> in the <code>Other functions</code> section</li>
 </ul>
-<div id="fig-itol-control-advanced" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-control-advanced" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-control-advanced-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-control-panel-02.png" class="img-fluid figure-img" style="width:80.0%">
@@ -373,7 +373,7 @@ Check your result
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Your midpoint-rooted tree should look something like that in <a href="#fig-itol-simphy-midpoint" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> There is a group of recently-diverged sequences (sharing a recent common ancestor with short branches), and a group of more anciently-diverged sequences (sharing a recent common ancestor with longer branches).</p>
-<div id="fig-itol-simphy-midpoint" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-simphy-midpoint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simphy-midpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simphy-03.png" class="img-fluid figure-img">
@@ -403,7 +403,7 @@ Note
 <section id="highlighting-clades" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="highlighting-clades"><span class="header-section-number">5.3</span> Highlighting clades</h2>
 <p>To highlight a clade in <code>iToL</code> by changing branch colour and thickness, first select the ancestral branch to a clade <strong>using your mouse</strong>, as in <a href="#fig-itol-clade-select" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>.</p>
-<div id="fig-itol-clade-select" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-clade-select" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-clade-select-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-clade-select.png" class="img-fluid figure-img" style="width:80.0%">
@@ -414,7 +414,7 @@ Figure&nbsp;5.5: Selecting the recently-rooted clade in the <code>iTol</code> tr
 </figure>
 </div>
 <p>Then bring up the context menu <strong>by clicking on the branch</strong> and select <code>Branches -&gt; Whole Clade</code> to see colour and line thickness options (<a href="itol-visualisation-1.html#fig-itol-clade-context" class="quarto-xref">Figure&nbsp;<span>3.9</span></a>). Set those options to whatever seems like a good visualisation choice for you.</p>
-<div id="fig-itol-clade-context-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-clade-context-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-clade-context-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-clade-context-2.png" class="img-fluid figure-img" style="width:80.0%">
@@ -450,7 +450,7 @@ Check your result
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The resulting formatted tree should look something like that in <a href="#fig-itol-simphy-05" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>.</p>
-<div id="fig-itol-simphy-05" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-itol-simphy-05" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-itol-simphy-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/itol-simphy-05.png" class="img-fluid figure-img" style="width:80.0%">
@@ -520,7 +520,7 @@ Warning
 </div>
 </div>
 <p>A core gene tree has been produced for this group of organisms - the <em>B. pseudomallei</em> complex (<span class="citation" data-cites="Hall2022-pk">Hall et al. (<a href="references.html#ref-Hall2022-pk" role="doc-biblioref">2022</a>)</span>), and can be seen in <a href="#fig-pseudomallei-core" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>.</p>
-<div id="fig-pseudomallei-core" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-pseudomallei-core" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pseudomallei-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="assets/images/pseudomallei_core.jpg" class="img-fluid figure-img" style="width:80.0%">
@@ -637,18 +637,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -680,7 +669,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -688,7 +697,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -785,7 +794,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

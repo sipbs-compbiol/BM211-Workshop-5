@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "BM211 Workshop 5: Phylogenetic Trees",
     "section": "",
-    "text": "Preface to 2023-24 BM211 Workshop 5: Phylogenetic Trees\nWelcome to the BM211 (Introduction to Microbiology) workshop on phylogenetic trees, for 2023-24.\nThis year is the first presentation of the workshop material in this format, and we would be very grateful to hear feedback by email or through the GitHub repository Issues page.",
+    "text": "Preface to 2024-25 BM211 Workshop 5: Phylogenetic Trees\nWelcome to the BM211 (Introduction to Microbiology) workshop on phylogenetic trees, for 2024-25.\nWe would be very grateful to hear feedback by email or through the GitHub repository Issues page.",
     "crumbs": [
       "Preface to {{< var ay >}} BM211 Workshop 5: Phylogenetic Trees"
     ]
@@ -314,7 +314,7 @@
     "href": "summary.html",
     "title": "6  Summary",
     "section": "",
-    "text": "6.1 That’s All, Folks!\nThank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.",
+    "text": "6.1 That’s All, Folks!\nIn this workshop you have learned how to build, visualise, and interpret phylogenetic trees. By using UniProt, MUSCLE, and iToL, you have been gaining experience with the same research-level tools that biologists and bioinformaticians use in their day-to-day work.\nThank you for taking part in this workshop. We hope you enjoyed it, and found it interesting.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
     ]
