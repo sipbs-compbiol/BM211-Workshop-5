@@ -120,15 +120,15 @@ There are phylogenetic techniques that allow us to convert genetic distances int
 :::
 
 - **currently existing species (`A`-`M`) - the input for building the tree - are shown at the _leaves_** (or _leaf nodes_) of the tree, at the ends of the _branches_
-- the branching events (_bifurcations_) show how evolutionary lineages split, as the amount of genetic change increases from left to right; they represent events in evolution where a population divides into two subgroups with different genetic histories
+- the branching events (_bifurcations_) show how evolutionary lineages split, as the amount of genetic change since the MRCA increases from left to right; they represent events in evolution where a population divides into two subgroups the go on to have distinct genetic histories
   - **in a biological context, this process is often referred to as _speciation_**
-  - **the order of bifurcation can be interpreted as the order in which speciation events occurred**
+  - **the order of bifurcation since the MRCA can be interpreted as the order in which speciation events occurred**
 - the amount of genetic change between branching events is represented by the length of the branch that separates them; the scale bar allows you to interpret the branch length quantitatively
 
 ::: { .callout-important collapse="true" }
 ## Question 02
 
-@fig-tree-newick-01 implies that which speciation event was the earliest?
+@fig-tree-newick-01 implies that which speciation event was the earliest in time?
 
 - the speciation separating `A` and `B`
 - the speciation separating `B` and `C`
