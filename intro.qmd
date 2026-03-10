@@ -2,19 +2,19 @@
 
 ## Working with phylogenetic trees
 
-When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats, such as:
+When you use a software tool to build, or you otherwise acquire, phylogenetic tree data it will be in a (plain text) file. This file will be in one of a number of more or less cryptic file formats designed for computers and software to read, such as:
 
 - [`newick`](https://en.wikipedia.org/wiki/Newick_format), file ending `.new`, `.nwk`, `.newick`
 - [`NEXUS`](https://en.wikipedia.org/wiki/Nexus_file), file ending `.nex`, `.nexus`
 - [`phylip`](https://en.wikipedia.org/wiki/PHYLIP), file ending `.phy`, `.phylip`
 
-These files can be cryptic to read, as a human. For example, the first `newick` format file we will work with has these contents:
+These files can be cryptic to read, as a human. For example, the first `newick` format file we will work with has these contents (scroll right in the text to see the full dataset):
 
 ```text
 (((((((A:4,B:4):6,C:5):8,D:6):3,E:21):10,((F:4,G:12):14,H:8):13):13,((I:5,J:2):30,(K:11,L:11):2):17):4,M:56);
 ```
 
-It is difficult, as a human, to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.
+It is difficult as a human to read a file like this and understand the structure of the tree it describes, so we almost always use computational tools to open these files and visualise the trees they represent.
 
 ![A genAI representation of "phylogenetic tree as a real tree."](assets/images/bing_tree.jpg){#fig-bing-tree width=80%}
 
@@ -22,7 +22,7 @@ It is difficult, as a human, to read a file like this and understand the structu
 
 A number of software packages are available to visualise, edit, and refine phylogenetic tree files for reports and publications. Some of these can be downloaded and run on your own computer, such as:
 
-- [`figtree`]() _this is the one I use most often - LP_
+- [`figtree`]() _this is the one I use most often, but it has issues and will be superseded at some point by [`peartree`](https://github.com/artic-network/peartree) - LP_
 - [`dendroscope`](https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/)
 
 but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows you to visualise and edit trees directly in the browser. If you register and sign in, you can save your trees for future use. 
@@ -31,7 +31,7 @@ but the [interactive Tree of Life (iTol)](https://itol.embl.de/) service allows 
 In this workshop we will be using the online `iToL` service to visualise and interpret trees.
 :::
 
-Traditionally, phylogenetic trees have been visualised using independent software tools like these, but the `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities - including for phylogenetic trees.
+Traditionally, phylogenetic trees have been visualised using independent software tools like these that are dedicated to phylogenetics, but the `R` software ecosystem is a very powerful tool for computational biology and bioinformatics work, encompassing sequence analysis and genomics, transcriptomic and evolutionary analyses, with excellent visualisation capabilities - including for phylogenetic trees.
 
 As `R` is also a programming language, large parts of the analysis can be automated and made reproducible, which is an advantage over independent tools, and a factor in the growing popularity of this approach. Basic competence and skills in `R` are in high demand in academia and industry.
 

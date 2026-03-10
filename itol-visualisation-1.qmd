@@ -144,7 +144,7 @@ To generate a circular phylogram in `iTol`, select `Circular` mode in the `Basic
 ::: { .callout-caution title="Pros and cons of circular phylograms" collapse="true"}
 **Pros**
 
-- Circular trees are efficient with space 
+- Circular trees use space on the page efficiently
 - Circular trees are especially useful for fitting large trees into a small space, such as a journal page.
 
 **Cons**
@@ -155,15 +155,15 @@ To generate a circular phylogram in `iTol`, select `Circular` mode in the `Basic
 
 ### Unrooted trees
 
-All the trees you have seen so far have an implied _root_ - a single ancestral point from which all the sequences or species represented on the tree have descended. In terms of all like on Earth, we would call this root the [Last Universal Common Ancestor (LUCA)](https://astrobiology.nasa.gov/news/looking-for-luca-the-last-universal-common-ancestor/). For most trees we work with as scientists, the common ancestor would be much more recent than LUCA.
+All the trees you have seen so far have an implied _root_ - a single ancestral point from which all the sequences or species represented on the tree have descended. In terms of all life on Earth, we would call this root the [Last Universal Common Ancestor (LUCA)](https://astrobiology.nasa.gov/news/looking-for-luca-the-last-universal-common-ancestor/). For most trees we work with as scientists, the common ancestor would be much more recent than LUCA.
 
 ::: { .callout-tip collapse="true"}
 ## Rooted vs Unrooted Trees
 Some tree reconstruction methods, such as UPGMA or Neighbour-Joining (NJ) automatically produce _rooted_ trees, because of the way their algorithms work.
 
-Other, more accurate and precise, phylogenetic reconstruction methods such as Maximum Likelihood (ML) and Bayesian approaches produce _unrooted_ trees. These methods do not tell the user where the root of the tree is likely to be, so we often include an _outgroup_ - a species/sequence, or set of species/sequences that we already believe to be _ancestral to_ the part of the tree we're more focused on. This allows us to determine the most likely order of divergenece in that part of the tree.
+Other, more accurate and precise, phylogenetic reconstruction methods such as Maximum Likelihood (ML) and Bayesian approaches (typically) produce _unrooted_ trees. These methods do not (typically) produce a result that makes a claim about where the root of the tree is, so we often include an _outgroup_ - a species/sequence, or set of species/sequences whose divergence point we already believe to be _ancestral to_ the part of the tree we're more focused on. This allows us to determine the most likely order of divergence in that part of the tree.
 
-For example, if we wanted to produce a phylogenetic tree for primates, we would choose an _outgroup_ such as lagomorphs (rabbits, hares, etc.) oor colugos (Dermoptera), that diverged from an earlier common ancestor with primates (@Perelman2011-jg). 
+For example, if we wanted to produce a phylogenetic tree for primates, we would choose an _outgroup_ such as lagomorphs (rabbits, hares, etc.) or colugos (Dermoptera), that diverged from an earlier common ancestor with primates (@Perelman2011-jg). 
 :::
 
 Unrooted trees, like that in @fig-unrooted-comparison, appear to extend out from a central point, **but that central point may or may not be the real root of the tree.** In @fig-unrooted-comparison, the rectangular tree implies that the root, i.e. the point at which the last common ancestor diverged into the ancestor of `M` and the ancestor of the remaining species, lies somewhere between M and the last common ancestor of `J` and `D`, **_not_** at the central junction in the tree. 

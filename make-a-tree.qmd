@@ -248,7 +248,7 @@ The output from the online tool can be very helpful. You can use your mouse to s
 ::: { .callout-caution collapse="true" }
 ## Check your result
 
-Your alignment file should be the same as the one you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/main/assets/data/sequences/muscle_alignment.clustalw.txt)
+Your alignment file should be the same as the one you can download from [this link](https://raw.githubusercontent.com/sipbs-compbiol/BM211-Workshop-5/refs/heads/main/assets/data/sequences/muscle_alignment.clustalw)
 :::
 
 ## Construct a phylogenetic tree
@@ -279,7 +279,8 @@ We will use this program _via_ its online service (@fig-simple-phylogeny-loading
 
 - Open the sequence alignment file you downloaded in a text editor (**Use Notepad or similar - DO NOT USE MICROSOFT WORD**).
 - Copy the data from the file and paste it into the `Input Sequence` field.
-- You can leave all the options as their default settings (@fig-simpphy-settings).
+- Set Tree Format to `Clustal`
+- You can leave all the other options as their default settings (@fig-simpphy-settings).
 - Scroll down the page and click `Submit`
 
 ![Default settings for `Simple Phylogeny` tree generation.](assets/images/simpphy-settings.png){#fig-simpphy-settings}
